@@ -272,7 +272,7 @@ class SolutionOne(Scene):
         lhs = deriv_inf_series[:4] # 1 + sum x^k
         x_k = lhs[-1] # x^k
         rhs = deriv_inf_series[-1]
-        deriv_inf_series.shift(2*DOWN+LEFT)
+        deriv_inf_series.shift(2*DOWN+2*LEFT)
         self.add(deriv_inf_series)
         self.wait()
 
