@@ -253,7 +253,7 @@ class SolutionOne(Scene):
 
         # take 1/6 out
         one_sixth = generic_term[1][:2]
-        self.play(one_sixth.animate.shift(4*LEFT))
+        self.play(one_sixth.animate.next_to(sigma, LEFT))
         self.wait()
         return
 
