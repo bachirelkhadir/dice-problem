@@ -103,8 +103,8 @@ class SolutionOne(Scene):
         equal = equal.copy()
         five_sixth = five_sixth.copy()
         one_sixth = one_sixth.copy()
-        equal.next_to(probs[1], RIGHT, MED_LARGE_BUFF)
-        five_sixth.next_to(equal, RIGHT)
+        equal.next_to(probs[1], RIGHT, )
+        five_sixth.next_to(equal, RIGHT, MED_LARGE_BUFF)
         one_sixth.next_to(five_sixth, RIGHT, MED_LARGE_BUFF)
         rhs_obj.extend([equal, five_sixth, one_sixth])
 
