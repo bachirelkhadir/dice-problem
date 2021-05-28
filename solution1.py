@@ -140,7 +140,6 @@ class SolutionOne(Scene):
         self.wait()
         self.add(five_sixth_2)
         self.wait()
-        return
 
         # 5/6 5/6 to (5/6)^2
         paren_pow_2 = Tex(r"\left({{\frac 1 6}}\right)^{2}").scale(TEXT_SCALE)
