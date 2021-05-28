@@ -89,7 +89,7 @@ class SolutionOne(Scene):
         one_sixth = Tex(r"\frac 1 6").scale(TEXT_SCALE)
         five_sixth = Tex(r"\frac 5 6").scale(TEXT_SCALE)
         equal.next_to(probs[0], RIGHT)
-        one_sixth.next_to(equal, RIGHT)
+        one_sixth.next_to(equal, RIGHT, MED_LARGE_BUFF)
         rhs_obj.extend([equal, one_sixth, ])
 
         self.play(ShowCreation(arr_T_numbers[0]))
