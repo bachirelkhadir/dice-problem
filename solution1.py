@@ -152,7 +152,6 @@ class SolutionOne(Scene):
         self.play(Transform(five_sixth_2, paren_pow_2))
         self.wait()
 
-        return
 
         # P(T = k)
         equal = equal.copy()
