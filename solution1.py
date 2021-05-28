@@ -155,7 +155,7 @@ class SolutionOne(Scene):
         # P(T = k)
         equal = equal.copy()
         five_sixth = five_sixth.copy()
-        one_sixth_k = Tex(r"\left(\frac 1 6\right)^{\phantom{k}-1}").scale(TEXT_SCALE)
+        five_sixth_k = Tex(r"\left(\frac 5 6\right)^{\phantom{k}-1}").scale(TEXT_SCALE)
         one_sixth_k_power = Tex(r"k", color=YELLOW).scale(.75).scale(TEXT_SCALE)
         one_sixth_k_power.move_to(one_sixth_k.get_corner(UP)).shift(.09*DOWN+.22*RIGHT)
         one_sixth_k = VGroup(one_sixth_k, one_sixth_k_power)
