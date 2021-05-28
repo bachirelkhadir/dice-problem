@@ -361,12 +361,13 @@ class SolutionOne(Scene):
         five_sixth = tex_fn(r"\left(\frac 5 6\right)").scale(.7).move_to(deriv_x_k[1]).shift(LEFT/8)
         self.play(Transform(deriv_x_k[1], five_sixth),
                   Transform(one_minus_x_left, one_sixth))
-        inf_sum_2.append(one_sixth)
         self.wait()
 
         # replace rhs
         x = one_over_1_x[2][3]
         five_sixth = tex_fn(r"\frac 5 6").scale(.7).move_to(x).shift(DOWN/10)
+
+        inf_sum_2.append(one_sixth)
         self.play(Transform(x, five_sixth))
         self.wait()
 
