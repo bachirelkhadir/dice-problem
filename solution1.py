@@ -336,8 +336,8 @@ class SolutionOne(Scene):
 
         #one_over_1_x = tex_fn(r"\frac{1}{1-{{x}}}").move_to(deriv_1_over_1_x)
         # remove the square
-        self.play(Transform(deriv_1_over_1_x[2][0], Tex("")),
-                  Transform(deriv_1_over_1_x[2][4:], Tex("")),
+        self.play(deriv_1_over_1_x[2][0].animate.fade(1),
+                  deriv_1_over_1_x[2][4:].animate.fade(1),
                   )
         one_over_1_x = deriv_1_over_1_x
         self.wait()
