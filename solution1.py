@@ -253,6 +253,7 @@ class SolutionOne(Scene):
 
 
 
+        # complicated formula
         left_paren = Tex(r"\left(\phantom{\frac11}\right.")
         right_paren = Tex(r"\left.\phantom{\frac11}\right)'")
         tex_fn = lambda s: Tex(s, tex_to_color_map={"k": YELLOW})\
