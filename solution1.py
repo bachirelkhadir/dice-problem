@@ -313,8 +313,6 @@ class SolutionOne(Scene):
 
 
 
-        return
-
         inf_series = VGroup(*hstack([sigma.copy(), Tex(r"\quad k\ x^{k-1} = \frac{1}{(1 - x)^2}", tex_to_color_map={"k": YELLOW}).scale(TEXT_SCALE)], SMALL_BUFF))
         inf_series.shift(2*DOWN+LEFT)
         self.add(inf_series)
