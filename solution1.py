@@ -379,7 +379,7 @@ class SolutionOne(Scene):
         self.add(equal_6)
         six_rect = SurroundingRectangle(equal_6[1])
         six_with_rect = VGroup(equal_6[1], six_rect)
-        self.play(ShowCreation(six_rec))
+        self.play(ShowCreation(six_rect))
         self.wait()
 
         # clean up
