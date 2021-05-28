@@ -105,7 +105,7 @@ class SolutionOne(Scene):
         one_sixth = one_sixth.copy()
         equal.next_to(probs[1], RIGHT, )
         five_sixth.next_to(equal, RIGHT, MED_LARGE_BUFF)
-        one_sixth.next_to(five_sixth, RIGHT, MED_LARGE_BUFF)
+        one_sixth.next_to(five_sixth, RIGHT)
         rhs_obj.extend([equal, five_sixth, one_sixth])
 
         self.play(ShowCreation(arr_T_numbers[1]))
