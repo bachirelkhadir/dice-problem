@@ -250,6 +250,7 @@ class SolutionOne(Scene):
         self.play(Transform(generic_term[1], prob_T_k))
         self.wait()
 
+        return
         # take 1/6 out
         one_sixth = generic_term[1][:2]
         self.play(one_sixth.animate.shift(1.5*LEFT))
