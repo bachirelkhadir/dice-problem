@@ -310,7 +310,7 @@ class SolutionOne(Scene):
                   FadeOut(VGroup(left_paren_1, right_paren_1)))
         self.wait()
 
-        # multiply by (1-x)
+        # multiply lhs by (1-x)
         one_minus_x_left = tex_fn(r"(1-x)")
         one_minus_x_right= one_minus_x_left.copy()
         one_minus_x_left.next_to(lhs, LEFT, 0*SMALL_BUFF)
