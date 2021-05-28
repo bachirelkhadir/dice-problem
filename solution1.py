@@ -134,11 +134,11 @@ class SolutionOne(Scene):
         self.add(probs[2])
         self.wait()
         self.add(equal)
-        self.add(one_sixth)
-        self.wait()
         self.add(five_sixth)
         self.wait()
         self.add(five_sixth_2)
+        self.wait()
+        self.add(one_sixth)
         self.wait()
 
         # 5/6 5/6 to (5/6)^2
