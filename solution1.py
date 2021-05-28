@@ -44,6 +44,7 @@ class SolutionOne(Scene):
         self.add(var_T)
         self.play(ShowCreation(desc_T))
         self.wait()
+        return
 
         # realizations of T
         self.remove(desc_T)
