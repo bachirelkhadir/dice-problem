@@ -377,5 +377,4 @@ class SolutionOne(Scene):
         self.wait()
 
         # clean up
-        inf_sum_1 = [  ]
-        self.remove(*generic_term)
+        self.remove(*inf_sum_1)
