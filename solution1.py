@@ -149,6 +149,7 @@ class SolutionOne(Scene):
             )
 
 
+        return
         self.play(Transform(one_sixth_2, paren_pow_2))
         self.wait()
 
