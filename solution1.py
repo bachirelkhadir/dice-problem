@@ -378,6 +378,7 @@ class SolutionOne(Scene):
         equal_6 = tex_fn("{{=}} 6").next_to(one_over_1_x[1])
         self.add(equal_6)
         six_rect = SurroundingRectangle(equal_6[1])
+        six_with_rect = VGroup(equal_6[1], six_rect)
         self.play(ShowCreation(six_rec))
         self.wait()
 
@@ -385,4 +386,4 @@ class SolutionOne(Scene):
         self.remove(*inf_sum_1)
         self.remove(*inf_sum_2)
         self.remove(equal_6[0])
-        self.play(equal_6[1].animate.next_to(var_T, RIGHT))
+        self.play(six_with_rect[1].animate.next_to(var_T, RIGHT))
