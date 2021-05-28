@@ -350,7 +350,6 @@ class SolutionOne(Scene):
         x_5_6.to_corner(UR).shift(LEFT)
         one_minus_x_1_6.next_to(x_5_6, DOWN).align_to(x_5_6, RIGHT)
 
-        inf_sum_2.append(one_sixth)
 
         self.add(x_5_6)
         self.wait()
