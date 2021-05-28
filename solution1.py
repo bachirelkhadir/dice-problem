@@ -362,9 +362,9 @@ class SolutionOne(Scene):
         self.play(Transform(deriv_x_k[1], five_sixth),
                   Transform(one_minus_x_left, one_sixth))
         one_sixth = one_minus_x_left
+        inf_sum_2.append(one_sixth)
         self.wait()
 
-        inf_sum_2.append(one_sixth)
 
         # replace rhs
         x = one_over_1_x[2][3]
@@ -375,7 +375,7 @@ class SolutionOne(Scene):
 
 
         # equal 6
-        equal_6 = tex_fn("= 6").next_to(one_over_1_x[1])
+        equal_6 = tex_fn("{{=}} 6").next_to(one_over_1_x[1])
         self.add(equal_6)
         self.play(ShowCreation(SurroundingRectangle(equal_6)))
         self.wait()
