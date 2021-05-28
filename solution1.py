@@ -174,7 +174,6 @@ class SolutionOne(Scene):
         self.add(five_sixth)
         self.add(one_sixth_k)
         self.wait()
-        return
 
         # prepare for expectation
 
