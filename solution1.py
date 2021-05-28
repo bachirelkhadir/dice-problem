@@ -391,4 +391,4 @@ class SolutionOne(Scene):
         self.add(frame)
 
         self.play(six_with_rect.animate.next_to(var_T, RIGHT, LARGE_BUFF),
-                  frame.animate.set_height(5))
+                  Transform(frame, frame.copy().set_height(4).shift(RIGHT))
