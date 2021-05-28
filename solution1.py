@@ -316,6 +316,10 @@ class SolutionOne(Scene):
         one_minus_x_left.next_to(lhs, LEFT, 0*SMALL_BUFF)
         self.add(one_minus_x_left)
 
+        # multiply rhs by (1-x)
+
+        1_over_1_x = tex_fn(r"\frac{1}{1-x}").move_to(deriv_1_over_1_x) )
+
 
         return
 
