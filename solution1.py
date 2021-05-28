@@ -250,7 +250,6 @@ class SolutionOne(Scene):
         # take 1/6 out
         one_sixth = generic_term[1][:2]
         one_sixth.shift(1.5*LEFT)
-        return
 
 
 
