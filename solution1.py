@@ -127,7 +127,7 @@ class SolutionOne(Scene):
         one_sixth.next_to(five_sixth, RIGHT, MED_LARGE_BUFF)
         five_sixth.next_to(equal, RIGHT)
         five_sixth_2.next_to(five_sixth, RIGHT)
-        rhs_obj.extend([equal, five_sixth, one_sixth, one_sixth_2])
+        rhs_obj.extend([equal, one_sixth, five_sixth, five_sixth_2])
 
 
         self.play(ShowCreation(arr_T_numbers[2]))
