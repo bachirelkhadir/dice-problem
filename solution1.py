@@ -384,3 +384,4 @@ class SolutionOne(Scene):
         self.remove(*inf_sum_1)
         self.remove(*inf_sum_2)
         self.remove(equal_6[0])
+        self.play(equal_6[1].animate.next_to(var_T, RIGHT))
