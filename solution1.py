@@ -120,13 +120,13 @@ class SolutionOne(Scene):
 
         # P(T = 3)
         equal = equal.copy()
-        five_sixth = five_sixth.copy()
         one_sixth = one_sixth.copy()
-        one_sixth_2 = one_sixth.copy()
+        five_sixth = five_sixth.copy()
+        five_sixth_2 = five_sixth.copy()
         equal.next_to(probs[2], RIGHT)
-        five_sixth.next_to(equal, RIGHT)
         one_sixth.next_to(five_sixth, RIGHT, MED_LARGE_BUFF)
-        one_sixth_2.next_to(one_sixth, RIGHT)
+        five_sixth.next_to(equal, RIGHT)
+        five_sixth_2.next_to(five_sixth, RIGHT)
         rhs_obj.extend([equal, five_sixth, one_sixth, one_sixth_2])
 
 
@@ -134,11 +134,11 @@ class SolutionOne(Scene):
         self.add(probs[2])
         self.wait()
         self.add(equal)
-        self.add(five_sixth)
-        self.wait()
         self.add(one_sixth)
         self.wait()
-        self.add(one_sixth_2)
+        self.add(five_sixth)
+        self.wait()
+        self.add(five_sixth_2)
         self.wait()
 
         # 5/6 5/6 to (5/6)^2
