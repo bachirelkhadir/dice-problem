@@ -310,6 +310,8 @@ class SolutionOne(Scene):
                   FadeOut(VGroup(left_paren_1, right_paren_1)))
         self.wait()
 
+        # multiply by (1-x)
+        one_minus_x =
 
 
         return
