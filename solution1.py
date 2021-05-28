@@ -242,6 +242,7 @@ class SolutionOne(Scene):
         self.add(sigma)
         self.play(Transform(generic_term, generic_term_target))
         self.play(VGroup(var_T, eq).animate.shift(4.5*RIGHT))
+        inf_sum_1 = [ sigma, generic_term, ] # save for later
         self.wait()
 
 
@@ -277,6 +278,7 @@ class SolutionOne(Scene):
         rhs = deriv_inf_series[-1]
         deriv_inf_series.shift(2*DOWN+2*LEFT)
         self.add(deriv_inf_series)
+        inf_sum_2 = [ deriv_inf_series ] # save for later
         self.wait()
 
         # take derivatives
