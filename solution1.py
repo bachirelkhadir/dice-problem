@@ -318,7 +318,8 @@ class SolutionOne(Scene):
 
         # multiply rhs by (1-x)
 
-        1_over_1_x = tex_fn(r"\frac{1}{1-x}").move_to(deriv_1_over_1_x) )
+        1_over_1_x = tex_fn(r"\frac{1}{1-x}").move_to(deriv_1_over_1_x)
+
 
 
         return
