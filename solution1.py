@@ -186,6 +186,7 @@ class SolutionOne(Scene):
         )
         self.wait()
 
+        return
         # multiply by numbers
         multipliers = [
             VGroup(p[1].copy(), p) for p in probs if len(p) > 1
