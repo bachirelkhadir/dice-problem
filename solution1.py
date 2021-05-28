@@ -25,8 +25,8 @@ class SolutionOne(Scene):
 
     def construct(self):
         numbers = [3, 2, 10, 4, "..."]
-        numbers = [Tex(f"{i}").scale(TEXT_SCALE) for i in numbers]
-        var_T = Tex("T").scale(TEXT_SCALE)
+        numbers = [tex_fn(f"{i}") for i in numbers]
+        var_T = tex_fn("T")
         desc_T = Text(": number of throws to get the first 6.").scale(TEXT_SCALE)
 
         vstack(numbers, LARGE_BUFF)
