@@ -24,6 +24,7 @@ tex_fn = lambda s: Tex(s, tex_to_color_map={"k": YELLOW})\
 class SolutionOne(Scene):
 
     def construct(self):
+        self.embed()
         numbers = [3, 2, 10, 4, "..."]
         numbers = [tex_fn(f"{i}") for i in numbers]
         var_T = tex_fn("T")
