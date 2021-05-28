@@ -255,7 +255,6 @@ class SolutionOne(Scene):
         one_sixth = generic_term[1][:2]
         self.play(one_sixth.animate.next_to(sigma, LEFT))
         self.wait()
-        return
 
 
 
