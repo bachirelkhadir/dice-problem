@@ -344,7 +344,7 @@ class SolutionOne(Scene):
 
 
 
-        # x = 5/6
+        # x = 5/6, 1-x = 1/6
         x_5_6 = tex_fn(r"x = \frac 56")
         one_minus_x_1_6 = tex_fn(r"1-x = \frac 16")
         x_5_6.to_corner(UR).shift(LEFT)
@@ -356,13 +356,14 @@ class SolutionOne(Scene):
         self.add(one_minus_x_1_6)
         self.wait()
 
-        return
-        # replace lhs
+        # replace x with 1/5 in lhs
         one_sixth = tex_fn(r"\frac 1 6").move_to(one_minus_x_left).shift(RIGHT/2)
         five_sixth = tex_fn(r"\left(\frac 5 6\right)").scale(.7).move_to(deriv_x_k[1]).shift(LEFT/8)
         self.play(Transform(deriv_x_k[1], five_sixth),
                   Transform(one_minus_x_left, one_sixth))
         self.wait()
+
+        return
 
         # replace rhs
         x = one_over_1_x[2][3]
