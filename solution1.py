@@ -141,6 +141,7 @@ class SolutionOne(Scene):
         self.add(five_sixth_2)
         self.wait()
 
+        return
         # 5/6 5/6 to (5/6)^2
         paren_pow_2 = Tex(r"\left({{\frac 1 6}}\right)^{2}").scale(TEXT_SCALE)
         paren_pow_2 = VGroup(paren_pow_2[0], paren_pow_2[2])
@@ -149,7 +150,6 @@ class SolutionOne(Scene):
             )
 
 
-        return
         self.play(Transform(one_sixth_2, paren_pow_2))
         self.wait()
 
