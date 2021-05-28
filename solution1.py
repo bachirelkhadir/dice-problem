@@ -27,7 +27,7 @@ class SolutionOne(Scene):
         numbers = [3, 2, 10, 4, "..."]
         numbers = [tex_fn(f"{i}") for i in numbers]
         var_T = tex_fn("T")
-        desc_T = Text(": number of throws to get the first 6.").scale(TEXT_SCALE)
+        desc_T = Text(": number of throws to get the first 6.").scale(0.8).scale(TEXT_SCALE)
 
         vstack(numbers, LARGE_BUFF)
         var_T.to_corner(LEFT)
