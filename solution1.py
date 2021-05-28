@@ -51,7 +51,7 @@ class SolutionOne(Scene):
         self.play(ShowCreation(VGroup(*numbers)))
 
         self.wait()
-        #self.add(desc_T)
+        return
 
         # make expectation appear
         var_T_save = var_T.copy()
