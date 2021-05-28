@@ -63,13 +63,17 @@ vslider:
 
 
 solution1:
-	manimgl solution1.py -n 12
+	manimgl solution1.py -n 28
+
+esolution1:
+
+	gnome-terminal -e "manimgl solution1.py -n 20" --title="gnome-terminal manim"
 
 isolution1:
 	manimgl solution1.py -ws
 
 vsolution1:
-	manimgl solution1.py -wt
+	manimgl solution1.py -wt && cd output/videos/ && bash mov_to_pngs.sh SolutionOne.mov
 
 
 pngs:

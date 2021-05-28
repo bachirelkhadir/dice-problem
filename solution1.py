@@ -18,7 +18,7 @@ def halign(objs):
         t.align_to(objs[0])
     return objs
 
-class Solution1(Scene):
+class SolutionOne(Scene):
 
     def construct(self):
         numbers = [3, 2, 10, 4, "..."]
@@ -50,6 +50,25 @@ class Solution1(Scene):
         self.wait()
         #self.add(desc_T)
 
+        # make expectation appear
+        var_T_save = var_T.copy()
+        exp_T = Tex(r"\mathbb E[T]").scale(TEXT_SCALE).move_to(var_T)
+        self.remove(*numbers)
+        self.remove(*arr_T_numbers)
+        self.play(Transform(var_T, exp_T))
+        self.wait()
+
+        self.play(Indicate(var_T))
+        self.wait()
+
+        # T = 1, 2, 3
+        one_two_etc = Tex(r" = 1, 2, 3, \ldots").scale(TEXT_SCALE)
+        one_two_etc.next_to(var_T_save, RIGHT)
+        self.play(Transform(var_T, var_T_save),
+                  ShowCreation(one_two_etc), run_time=0.01)
+        self.wait()
+        self.remove(one_two_etc)
+
         # P(T = k)
         probs = [
             Tex(("\\mathbb P(T = {{%s}})" % i)).scale(TEXT_SCALE)if i else Tex("{{\\ldots}}") for i in [1, 2, 3, "", "k"]
@@ -59,8 +78,6 @@ class Solution1(Scene):
                 p[1].set_color(YELLOW)
             p.move_to(n).shift(RIGHT)
         halign(probs)
-        self.remove(*numbers)
-        self.remove(*arr_T_numbers)
 
         # keep track of rhs so we can remove it later
         rhs_obj = []
@@ -71,10 +88,11 @@ class Solution1(Scene):
         five_sixth = Tex(r"\frac 5 6").scale(TEXT_SCALE)
         equal.next_to(probs[0], RIGHT)
         one_sixth.next_to(equal, RIGHT)
-        rhs_obj.extend([equal, one_sixth, five_sixth])
+        rhs_obj.extend([equal, one_sixth, ])
 
-        self.add(arr_T_numbers[0])
+        self.play(ShowCreation(arr_T_numbers[0]))
         self.add(probs[0])
+        self.wait()
         self.add(equal)
         self.add(one_sixth)
         self.wait()
@@ -88,10 +106,12 @@ class Solution1(Scene):
         five_sixth.next_to(one_sixth, RIGHT, MED_LARGE_BUFF)
         rhs_obj.extend([equal, one_sixth, five_sixth])
 
-        self.add(arr_T_numbers[1])
+        self.play(ShowCreation(arr_T_numbers[1]))
         self.add(probs[1])
+        self.wait()
         self.add(equal)
         self.add(one_sixth)
+        self.wait()
         self.add(five_sixth)
         self.wait()
 
@@ -107,11 +127,15 @@ class Solution1(Scene):
         five_sixth_2.next_to(five_sixth, RIGHT)
         rhs_obj.extend([equal, one_sixth, five_sixth, five_sixth_2])
 
-        self.add(arr_T_numbers[2])
+
+        self.play(ShowCreation(arr_T_numbers[2]))
         self.add(probs[2])
+        self.wait()
         self.add(equal)
         self.add(one_sixth)
+        self.wait()
         self.add(five_sixth)
+        self.wait()
         self.add(five_sixth_2)
         self.wait()
 
@@ -124,37 +148,45 @@ class Solution1(Scene):
 
 
         self.play(Transform(five_sixth_2, paren_pow_2))
+        self.wait()
 
         # P(T = k)
         equal = equal.copy()
         one_sixth = one_sixth.copy()
-        five_sixth_k = Tex(r"\left(\frac 5 6\right)^{k-1}").scale(TEXT_SCALE)
+        five_sixth_k = Tex(r"\left(\frac 5 6\right)^{\phantom{k}-1}").scale(TEXT_SCALE)
+        five_sixth_k_power = Tex(r"k", color=YELLOW).scale(.75).scale(TEXT_SCALE)
+        five_sixth_k_power.move_to(five_sixth_k.get_corner(UP)).shift(.09*DOWN+.22*RIGHT)
+        five_sixth_k = VGroup(five_sixth_k, five_sixth_k_power)
+
         equal.next_to(probs[-1], RIGHT)
         one_sixth.next_to(equal, RIGHT)
-        five_sixth_k.next_to(one_sixth, RIGHT, MED_LARGE_BUFF)
+        five_sixth_k.next_to(one_sixth, RIGHT, MED_SMALL_BUFF)
         rhs_obj.extend([equal, one_sixth, five_sixth_k])
+        prob_T_k = VGroup(one_sixth, five_sixth_k) # keep track of this bc we use it below
 
-        self.add(*arr_T_numbers[1:])
+        self.play(ShowCreation(VGroup(*arr_T_numbers[3:])))
+
         self.add(*probs[1:])
+        self.wait()
         self.add(equal)
         self.add(one_sixth)
         self.add(five_sixth_k)
         self.wait()
-
         # prepare for expectation
 
         # fade the rest and make expectation appear
-        exp_T = Tex(r"\mathbb E[T]").scale(TEXT_SCALE).move_to(var_T)
         self.play(FadeOut(VGroup(
             *rhs_obj,
             *arr_T_numbers)),
                 Transform(var_T, exp_T)
         )
+        self.wait()
 
         # multiply by numbers
         multipliers = [
             VGroup(p[1].copy(), p) for p in probs if len(p) > 1
         ]
+
         self.play(
             *[
                 n.animate.shift(p.get_width()*LEFT)
@@ -206,7 +238,83 @@ class Solution1(Scene):
         generic_term_target.next_to(sigma, RIGHT)
         self.add(sigma)
         self.play(Transform(generic_term, generic_term_target))
+        self.play(VGroup(var_T, eq).animate.shift(4.5*RIGHT))
         self.wait()
 
 
-        # P(T = k) ==>
+        # P(T = k) ==> 1/6 5/6^k
+        prob_T_k.move_to(generic_term[1]).shift(RIGHT/10.)
+        self.play(Transform(generic_term[1], prob_T_k))
+        self.wait()
+
+        # take 1/6 out
+        one_sixth = generic_term[1][:2]
+        one_sixth.shift(1.5*LEFT)
+        return
+
+
+
+        left_paren = Tex(r"\left(\phantom{\frac11}\right.")
+        right_paren = Tex(r"\left.\phantom{\frac11}\right)'")
+        tex_fn = lambda s: Tex(s, tex_to_color_map={"k": YELLOW})\
+                                     .scale(TEXT_SCALE)
+        buff = Line(stroke_opacity=0).scale(.2)
+        deriv_inf_series = VGroup(*hstack([tex_fn(r"1 + "),
+                                           sigma.copy(),
+                                           buff.copy().scale(.5),
+                                           tex_fn(r"x^k"),
+                                           buff,
+                                           tex_fn(r"="),
+                                           buff,
+                                           tex_fn(r"\frac{1}{1 - x}")
+                                           ],
+                                          SMALL_BUFF))
+        lhs = deriv_inf_series[:4] # 1 + sum x^k
+        x_k = lhs[-1] # x^k
+        rhs = deriv_inf_series[-1]
+        deriv_inf_series.shift(2*DOWN+LEFT)
+        self.add(deriv_inf_series)
+        self.wait()
+
+        # take derivatives
+
+        # lhs
+        left_paren_1 = left_paren.copy() .next_to(lhs, LEFT, 0*SMALL_BUFF)
+        right_paren_1 = right_paren.copy() .next_to(lhs, RIGHT, 0*SMALL_BUFF)
+        self.add(left_paren_1, right_paren_1)
+
+        # rhs
+        left_paren_2 = left_paren.copy() .next_to(rhs, LEFT, 0*SMALL_BUFF)
+        right_paren_2 = right_paren.copy() .next_to(rhs, RIGHT, 0*SMALL_BUFF)
+        self.add(left_paren_2, right_paren_2)
+
+
+        # take derivative rhs
+        deriv_1_over_1_x = tex_fn(r"\frac{1}{(1-x)^2}").move_to(rhs)
+        self.play(Transform(rhs, deriv_1_over_1_x),
+                  FadeOut(VGroup(left_paren_2, right_paren_2)))
+        self.wait()
+
+
+        # take derivatives inside
+        self.play(
+            FadeOut(lhs[0]), # 1' = 0
+            Transform(left_paren_1, left_paren_1.copy().scale(.5).next_to(x_k, LEFT, 0)),
+            Transform(right_paren_1, right_paren_1.scale(.5).next_to(x_k, RIGHT, 0)))
+        self.wait()
+
+        # derivative x^k
+        deriv_x_k = tex_fn(r"k \ x^{k-1}").move_to(x_k).shift(RIGHT/10)
+
+        self.play(Transform(x_k, deriv_x_k),
+                  FadeOut(VGroup(left_paren_1, right_paren_1)))
+        self.wait()
+
+
+
+
+        return
+
+        inf_series = VGroup(*hstack([sigma.copy(), Tex(r"\quad k\ x^{k-1} = \frac{1}{(1 - x)^2}", tex_to_color_map={"k": YELLOW}).scale(TEXT_SCALE)], SMALL_BUFF))
+        inf_series.shift(2*DOWN+LEFT)
+        self.add(inf_series)
