@@ -343,6 +343,7 @@ class SolutionOne(Scene):
         self.wait()
 
 
+        return
 
         # x = 5/6
         x_5_6 = tex_fn(r"x = \frac 56")
