@@ -127,7 +127,7 @@ class SolutionOne(Scene):
         five_sixth.next_to(equal, RIGHT)
         five_sixth_2.next_to(five_sixth, RIGHT)
 
-        one_sixth.next_to(five_sixth_2, RIGHT, MED_LARGE_BUFF)
+        one_sixth.next_to(five_sixth_2, RIGHT,)
         rhs_obj.extend([equal, one_sixth, five_sixth, five_sixth_2])
 
 
