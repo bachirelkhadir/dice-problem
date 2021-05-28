@@ -99,7 +99,6 @@ class SolutionOne(Scene):
         self.add(one_sixth)
         self.wait()
 
-        return
         # P(T = 2)
         equal = equal.copy()
         one_sixth = one_sixth.copy()
@@ -118,6 +117,7 @@ class SolutionOne(Scene):
         self.add(five_sixth)
         self.wait()
 
+        return
 
         # P(T = 3)
         equal = equal.copy()
