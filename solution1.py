@@ -229,7 +229,6 @@ class SolutionOne(Scene):
         self.wait()
 
         # sum_k=1 infinity k P(k)
-
         self.remove(*sum_rhs)
         # make the index k phantom so that we can create our own
         # because we want to replace its color freely
@@ -249,6 +248,7 @@ class SolutionOne(Scene):
         # P(T = k) ==> 1/6 5/6^k
         prob_T_k.move_to(generic_term[1]).shift(RIGHT/10.)
         self.play(Transform(generic_term[1], prob_T_k))
+        generic_term[1] = prob_T_k
         self.wait()
 
         # take 1/6 out
@@ -373,3 +373,6 @@ class SolutionOne(Scene):
         equal_6 = tex_fn("= 6").next_to(one_over_1_x[1])
         self.add(equal_6)
         self.play(ShowCreation(SurroundingRectangle(equal_6)))
+
+        # clean up
+        inf_sum_1 = [  ]
