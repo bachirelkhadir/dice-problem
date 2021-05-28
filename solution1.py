@@ -377,7 +377,8 @@ class SolutionOne(Scene):
         # equal 6
         equal_6 = tex_fn("{{=}} 6").next_to(one_over_1_x[1])
         self.add(equal_6)
-        self.play(ShowCreation(SurroundingRectangle(equal_6[1])))
+        six_rect = SurroundingRectangle(equal_6[1])
+        self.play(ShowCreation(six_rec))
         self.wait()
 
         # clean up
