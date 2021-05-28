@@ -176,7 +176,6 @@ class SolutionOne(Scene):
         self.add(five_sixth_k)
         self.wait()
 
-        return
         # prepare for expectation
 
         # fade the rest and make expectation appear
@@ -187,6 +186,7 @@ class SolutionOne(Scene):
         )
         self.wait()
 
+        return
         # multiply by numbers
         multipliers = [
             VGroup(p[1].copy(), p) for p in probs if len(p) > 1
