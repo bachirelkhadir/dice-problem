@@ -150,7 +150,7 @@ class SolutionOne(Scene):
             )
 
 
-        self.play(Transform(one_sixth_2, paren_pow_2))
+        self.play(Transform(five_sixth_2, paren_pow_2))
         self.wait()
 
         return
