@@ -162,8 +162,8 @@ class SolutionOne(Scene):
         five_sixth_k = VGroup(five_sixth_k, five_sixth_k_power)
 
         equal.next_to(probs[-1], RIGHT)
-        one_sixth.next_to(equal, RIGHT)
-        five_sixth_k.next_to(one_sixth, RIGHT, MED_SMALL_BUFF)
+        five_sixth_k.next_to(equal, RIGHT, MED_SMALL_BUFF)
+        one_sixth.next_to(five_sixth_k, RIGHT)
         rhs_obj.extend([equal, one_sixth, five_sixth_k])
         prob_T_k = VGroup(one_sixth, five_sixth_k) # keep track of this bc we use it below
 
