@@ -386,4 +386,9 @@ class SolutionOne(Scene):
         self.remove(*inf_sum_1)
         self.remove(*inf_sum_2)
         self.remove(equal_6[0])
-        self.play(six_with_rect.animate.next_to(var_T, RIGHT, LARGE_BUFF))
+
+        frame = self.camera.frame
+        self.add(frame)
+
+        self.play(six_with_rect.animate.next_to(var_T, RIGHT, LARGE_BUFF),
+                  frame.animate.set_height(8))
