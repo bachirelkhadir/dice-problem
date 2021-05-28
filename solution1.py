@@ -102,11 +102,11 @@ class SolutionOne(Scene):
         # P(T = 2)
         equal = equal.copy()
         five_sixth = five_sixth.copy()
-        one__sixth = one__sixth.copy()
+        one_sixth = one_sixth.copy()
         equal.next_to(probs[1], RIGHT)
         five_sixth.next_to(equal, RIGHT)
-        one__sixth.next_to(five_sixth, RIGHT, MED_LARGE_BUFF)
-        rhs_obj.extend([equal, five_sixth, one__sixth])
+        one_sixth.next_to(five_sixth, RIGHT, MED_LARGE_BUFF)
+        rhs_obj.extend([equal, five_sixth, one_sixth])
 
         self.play(ShowCreation(arr_T_numbers[1]))
         self.add(probs[1])
@@ -114,7 +114,7 @@ class SolutionOne(Scene):
         self.add(equal)
         self.add(five_sixth)
         self.wait()
-        self.add(one__sixth)
+        self.add(one_sixth)
         self.wait()
 
         return
