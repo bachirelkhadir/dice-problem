@@ -311,7 +311,7 @@ class SolutionOne(Scene):
         self.wait()
 
         # multiply by (1-x)
-        one_minus_x = Tex(r"(1-x)"")
+        one_minus_x = Tex(r"(1-x)")
 
 
         return
