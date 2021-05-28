@@ -383,3 +383,4 @@ class SolutionOne(Scene):
         # clean up
         self.remove(*inf_sum_1)
         self.remove(*inf_sum_2)
+        self.remove(equal_6[0])
