@@ -18,6 +18,9 @@ def halign(objs):
         t.align_to(objs[0])
     return objs
 
+tex_fn = lambda s: Tex(s, tex_to_color_map={"k": YELLOW})\
+                                .scale(TEXT_SCALE)
+
 class SolutionOne(Scene):
 
     def construct(self):
@@ -41,6 +44,7 @@ class SolutionOne(Scene):
         self.add(var_T)
         self.play(ShowCreation(desc_T))
         self.wait()
+        return
 
         # realizations of T
         self.remove(desc_T)
@@ -249,20 +253,20 @@ class SolutionOne(Scene):
 
         # take 1/6 out
         one_sixth = generic_term[1][:2]
-        one_sixth.shift(1.5*LEFT)
+        self.play(one_sixth.animate.shift(1.5*LEFT))
+        self.wait()
 
 
 
         # complicated formula
         left_paren = Tex(r"\left(\phantom{\frac11}\right.")
         right_paren = Tex(r"\left.\phantom{\frac11}\right)'")
-        tex_fn = lambda s: Tex(s, tex_to_color_map={"k": YELLOW})\
-                                     .scale(TEXT_SCALE)
         buff = Line(stroke_opacity=0).scale(.2)
         deriv_inf_series = VGroup(*hstack([tex_fn(r"1 + "),
                                            sigma.copy(),
                                            buff.copy().scale(.5),
                                            tex_fn(r"x^k"),
+                                           buff,
                                            buff,
                                            tex_fn(r"="),
                                            buff,
@@ -287,12 +291,21 @@ class SolutionOne(Scene):
         left_paren_2 = left_paren.copy() .next_to(rhs, LEFT, 0*SMALL_BUFF)
         right_paren_2 = right_paren.copy() .next_to(rhs, RIGHT, 0*SMALL_BUFF)
         self.add(left_paren_2, right_paren_2)
+        self.wait()
 
 
         # take derivative rhs
-        deriv_1_over_1_x = tex_fn(r"\frac{1}{(1-x)^2}").move_to(rhs)
+        num = tex_fn("1")
+        denum = tex_fn(r"({{1}}-{{x}})^{{2}}")
+        frac_line = Tex("\\over \\,")
+        frac_line.stretch_to_fit_width(denum.get_width())
+        frac_line.next_to(num, DOWN, SMALL_BUFF)
+        denum.next_to(frac_line, DOWN, SMALL_BUFF)
+        deriv_1_over_1_x  = VGroup(num, frac_line, denum)
+        deriv_1_over_1_x = deriv_1_over_1_x.move_to(rhs).shift(DOWN/10)
         self.play(Transform(rhs, deriv_1_over_1_x),
                   FadeOut(VGroup(left_paren_2, right_paren_2)))
+        deriv_1_over_1_x = rhs
         self.wait()
 
 
@@ -300,14 +313,15 @@ class SolutionOne(Scene):
         self.play(
             FadeOut(lhs[0]), # 1' = 0
             Transform(left_paren_1, left_paren_1.copy().scale(.5).next_to(x_k, LEFT, 0)),
-            Transform(right_paren_1, right_paren_1.scale(.5).next_to(x_k, RIGHT, 0)))
+            Transform(right_paren_1, right_paren_1.copy().scale(.5).next_to(x_k, RIGHT, 0)))
         self.wait()
 
         # derivative x^k
-        deriv_x_k = tex_fn(r"k \ x^{k-1}").move_to(x_k).shift(RIGHT/10)
+        deriv_x_k = tex_fn(r"k \quad x^{k-1}").move_to(x_k).shift(RIGHT/3)
 
         self.play(Transform(x_k, deriv_x_k),
                   FadeOut(VGroup(left_paren_1, right_paren_1)))
+        deriv_x_k = x_k
         self.wait()
 
         # multiply lhs by (1-x)
@@ -315,15 +329,47 @@ class SolutionOne(Scene):
         one_minus_x_right= one_minus_x_left.copy()
         one_minus_x_left.next_to(lhs, LEFT, 0*SMALL_BUFF)
         self.add(one_minus_x_left)
+        self.wait()
 
         # multiply rhs by (1-x)
 
-        1_over_1_x = tex_fn(r"\frac{1}{1-x}").move_to(deriv_1_over_1_x)
+        #one_over_1_x = tex_fn(r"\frac{1}{1-{{x}}}").move_to(deriv_1_over_1_x)
+        # remove the square
+        self.play(Transform(deriv_1_over_1_x[2][0], Tex("")),
+                  Transform(deriv_1_over_1_x[2][4:], Tex("")),
+                  )
+        one_over_1_x = deriv_1_over_1_x
+        self.wait()
 
 
 
-        return
+        # x = 5/6
+        x_5_6 = tex_fn(r"x = \frac 56")
+        one_minus_x_1_6 = tex_fn(r"1-x = \frac 16")
+        x_5_6.to_corner(UR).shift(LEFT)
+        one_minus_x_1_6.next_to(x_5_6, DOWN).align_to(x_5_6, RIGHT)
 
-        inf_series = VGroup(*hstack([sigma.copy(), Tex(r"\quad k\ x^{k-1} = \frac{1}{(1 - x)^2}", tex_to_color_map={"k": YELLOW}).scale(TEXT_SCALE)], SMALL_BUFF))
-        inf_series.shift(2*DOWN+LEFT)
-        self.add(inf_series)
+
+        self.add(x_5_6)
+        self.wait()
+        self.add(one_minus_x_1_6)
+        self.wait()
+
+        # replace lhs
+        one_sixth = tex_fn(r"\frac 1 6").move_to(one_minus_x_left).shift(RIGHT/2)
+        five_sixth = tex_fn(r"\left(\frac 5 6\right)").scale(.7).move_to(deriv_x_k[1]).shift(LEFT/8)
+        self.play(Transform(deriv_x_k[1], five_sixth),
+                  Transform(one_minus_x_left, one_sixth))
+        self.wait()
+
+        # replace rhs
+        x = one_over_1_x[2][3]
+        five_sixth = tex_fn(r"\frac 5 6").scale(.7).move_to(x).shift(DOWN/10)
+        self.play(Transform(x, five_sixth))
+        self.wait()
+
+
+        # equal 6
+        equal_6 = tex_fn("= 6").next_to(one_over_1_x[1])
+        self.add(equal_6)
+        self.play(ShowCreation(SurroundingRectangle(equal_6)))

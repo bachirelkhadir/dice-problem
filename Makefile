@@ -63,7 +63,7 @@ vslider:
 
 
 solution1:
-	manimgl solution1.py -n 28
+	manimgl solution1.py -n 50
 
 esolution1:
 
