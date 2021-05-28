@@ -365,7 +365,6 @@ class SolutionOne(Scene):
         self.wait()
 
         inf_sum_2.append(one_sixth)
-        return
 
         # replace rhs
         x = one_over_1_x[2][3]
