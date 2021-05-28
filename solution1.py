@@ -376,4 +376,4 @@ class SolutionOne(Scene):
 
         # clean up
         inf_sum_1 = [  ]
-        self.remove(*generic_terms)
+        self.remove(*generic_term)
