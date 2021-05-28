@@ -248,7 +248,6 @@ class SolutionOne(Scene):
         # P(T = k) ==> 1/6 5/6^k
         prob_T_k.move_to(generic_term[1]).shift(RIGHT/10.)
         self.play(Transform(generic_term[1], prob_T_k))
-        generic_term[1] = prob_T_k
         self.wait()
 
         # take 1/6 out
