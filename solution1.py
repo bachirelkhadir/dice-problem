@@ -152,27 +152,28 @@ class SolutionOne(Scene):
         self.play(Transform(one_sixth_2, paren_pow_2))
         self.wait()
 
+
         # P(T = k)
         equal = equal.copy()
-        five_sixth = five_sixth.copy()
+        one_sixth = one_sixth.copy()
         five_sixth_k = Tex(r"\left(\frac 5 6\right)^{\phantom{k}-1}").scale(TEXT_SCALE)
-        one_sixth_k_power = Tex(r"k", color=YELLOW).scale(.75).scale(TEXT_SCALE)
-        one_sixth_k_power.move_to(one_sixth_k.get_corner(UP)).shift(.09*DOWN+.22*RIGHT)
-        one_sixth_k = VGroup(one_sixth_k, one_sixth_k_power)
+        five_sixth_k_power = Tex(r"k", color=YELLOW).scale(.75).scale(TEXT_SCALE)
+        five_sixth_k_power.move_to(five_sixth_k.get_corner(UP)).shift(.09*DOWN+.22*RIGHT)
+        five_sixth_k = VGroup(five_sixth_k, five_sixth_k_power)
 
         equal.next_to(probs[-1], RIGHT)
-        five_sixth.next_to(equal, RIGHT)
-        one_sixth_k.next_to(five_sixth, RIGHT, MED_SMALL_BUFF)
-        rhs_obj.extend([equal, five_sixth, one_sixth_k])
-        prob_T_k = VGroup(five_sixth, one_sixth_k) # keep track of this bc we use it below
+        one_sixth.next_to(equal, RIGHT)
+        five_sixth_k.next_to(one_sixth, RIGHT, MED_SMALL_BUFF)
+        rhs_obj.extend([equal, one_sixth, five_sixth_k])
+        prob_T_k = VGroup(one_sixth, five_sixth_k) # keep track of this bc we use it below
 
         self.play(ShowCreation(VGroup(*arr_T_numbers[3:])))
 
         self.add(*probs[1:])
         self.wait()
         self.add(equal)
-        self.add(five_sixth)
-        self.add(one_sixth_k)
+        self.add(one_sixth)
+        self.add(five_sixth_k)
         self.wait()
 
         # prepare for expectation
