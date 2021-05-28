@@ -51,7 +51,6 @@ class SolutionOne(Scene):
         self.play(ShowCreation(VGroup(*numbers)))
 
         self.wait()
-        return
 
         # make expectation appear
         var_T_save = var_T.copy()
@@ -100,6 +99,7 @@ class SolutionOne(Scene):
         self.add(one_sixth)
         self.wait()
 
+        return
         # P(T = 2)
         equal = equal.copy()
         one_sixth = one_sixth.copy()
