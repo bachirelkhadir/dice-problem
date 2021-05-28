@@ -388,7 +388,8 @@ class SolutionOne(Scene):
         self.remove(equal_6[0])
 
         frame = self.camera.frame
-        self.add(frame)
+        #self.add(frame)
 
         self.play(six_with_rect.animate.next_to(var_T, RIGHT, LARGE_BUFF),
                   Transform(frame, frame.copy().set_height(4).shift(LEFT)))
+        self.wait()
