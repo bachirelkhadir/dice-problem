@@ -292,8 +292,8 @@ class SolutionThree(Scene):
         eq_6 = Tex(r"= 6").set_color(COLOR3).scale(2*tex_scale).move_to(approx_6)
 
         self.play(
-            LaggedStartMap(
-                FadeOut,
+
+            FadeOut(
                 VGroup(num_games, num_games2, one_sixth),
                 lambda m: (m, DOWN)),
             ET.animate.shift(6*LEFT),
