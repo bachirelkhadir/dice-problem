@@ -7,7 +7,7 @@ from dice_utils import make_dice_face
 from common import vstack, hstack, halign
 
 def hstack_fixed_width(obj, width, buff):
-    vstack(*obj[::width], buff)
+    vstack(obj[::width], buff)
     for i in range(len(obj) // width):
         hstack(obj[i*width:(i+1)*width], buff)
 
