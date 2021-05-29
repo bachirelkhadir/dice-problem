@@ -218,9 +218,11 @@ class SolutionThree(Scene):
         highlight_game(self, VGroup(*dice[5]))
         self.wait()
 
+
+        num_games = game_counter[1].copy()
         num_6 = Text(r"= # 6s").scale(tex_scale)
         one_sixth = Tex(r"\approx \frac 1 6").scale(tex_scale)
-        num_games = game_counter[1].copy()
+        num_throws = num_throws.copy()
 
         one_sixth.next_to(num_throws, DOWN).to_corner(RIGHT)
         num_games.next_to(one_sixth, RIGHT).shift(UP/20)
