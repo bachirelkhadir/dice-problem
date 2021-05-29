@@ -60,7 +60,7 @@ def place_dice_in_matrix(dice_matrix):
         vstack([*map(lambda row: VGroup(*row), dice_matrix_copy)], SMALL_BUFF )
         return dice_matrix_copy
 
-def highlight_game(game)
+def highlight_game(game):
         rect = Rectangle().surround(game)
         self.add(rect)
 
