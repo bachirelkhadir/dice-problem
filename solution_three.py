@@ -203,7 +203,7 @@ class SolutionThree(Scene):
         self.add(num_throws)
         self.wait()
 
-        tex_scale = 1.5
+        tex_scale = 3
         almost_eq = Tex(r"\approx").scale(tex_scale)
         almost_eq.next_to(num_throws, RIGHT)
         ET = Tex(r"\mathbb E[T]").scale(tex_scale).set_color(COLOR1)
