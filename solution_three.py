@@ -202,7 +202,7 @@ class SolutionThree(Scene):
         tex_scale = 1.3
         almost_eq = Tex(r"\approx").scale(tex_scale)
         almost_eq.next_to(num_throws, RIGHT)
-        ET = Tex(r"\mathbb E[T]").scale(tex_scale)
+        ET = Tex(r"\mathbb E[T]").scale(tex_scale).set_color(COLOR1)
         ET.next_to(almost_eq, RIGHT).shift(RIGHT)
 
         num_games = game_counter[1].copy()
