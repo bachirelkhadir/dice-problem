@@ -176,6 +176,7 @@ class SolutionThree(Scene):
         sixes = [d for d in dice_on_games if d.value == 6]
         self.play(Highlight(VGroup(*sixes)))
 
+
         one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
         num_games = game_counter[1].copy()
         one_sixth.next_to(num_throws, DOWN).to_corner(RIGHT)
