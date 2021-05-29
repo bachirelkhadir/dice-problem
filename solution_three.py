@@ -247,7 +247,6 @@ class SolutionThree(Scene):
         # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
         self.wait()
-        return
 
         # highlight all 6
         highlight_all_6s(self, dice_on_grid)
@@ -256,6 +255,7 @@ class SolutionThree(Scene):
         self.add(num_6)
         self.wait()
 
+        return
         self.add(one_sixth)
         self.wait()
 
