@@ -210,9 +210,6 @@ class SolutionThree(Scene):
         highlight_all_6s(self, dice_on_grid)
 
         self.wait()
-        return
-
-        return
 
 
         one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
