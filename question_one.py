@@ -6,6 +6,12 @@ import numpy as np
 from dice_utils import make_dice_face
 from common import vstack, hstack, halign
 
+def hstack_fixed_width(obj, width, buff):
+    vstack(*obj[::width], buff)
+    for i in range(len(obj) // width):
+        hstack(obj[i*width:(i+1)*width], buff)
+
+
 class QuestionOne(Scene):
     def construct(self):
         np.random.seed(0)
@@ -18,7 +24,7 @@ class QuestionOne(Scene):
         print("first 6:", first_6)
 
         dice = VGroup(*map(lambda i: make_dice_face(int(i)), game))
-        hstack(dice, SMALL_BUFF)
+        hstack_fixed_width(dice, 3 SMALL_BUFF)
 
         dice_until_6 = dice[:first_6+1]
         dice.to_edge(LEFT)
