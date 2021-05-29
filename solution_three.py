@@ -163,6 +163,7 @@ class SolutionThree(Scene):
         game_counter.add_updater(lambda m: m.align_to(frame, LEFT).shift(RIGHT))
         #always(game_counter.align_to, frame, LEFT)
 
+
         total_time = 2
         game_counter[1].curr_time = 0
         def game_counter_updater(m, dt):
@@ -179,6 +180,7 @@ class SolutionThree(Scene):
 
 
         self.wait()
+        return
 
         # put games on a matrix
         start, end = 0, 0
