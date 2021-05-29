@@ -32,8 +32,8 @@ class QuestionTwo(Scene):
         frame = self.camera.frame
         #frame.set_height(20)
 
-        np.random.seed(2)
-        games = np.random.randint(1, 7, num_throws)# burn in to make seq nice
+        np.random.seed(3)
+        games = np.random.randint(1, 7, num_throws)
         games = "".join(map(str, games)).split("6")
         dice = [
             string_to_dice(s+"6") for s in games
