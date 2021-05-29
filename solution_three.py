@@ -160,6 +160,7 @@ class SolutionThree(Scene):
         # zoom out and add rest of the games
         frame = self.camera.frame
         frame_target = frame.copy().set_height(camera_height).align_to(dice[0], UP).shift(UP)
+
         game_counter.add_updater(lambda m: m.align_to(frame, LEFT).shift(RIGHT))
         #always(game_counter.align_to, frame, LEFT)
 
