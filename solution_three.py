@@ -288,8 +288,8 @@ class SolutionThree(Scene):
             Transform(frame, frame_target))
         self.wait()
 
-        approx_6 = Tex(r"\\approx 6").set_color(COLOR3).move_to(ET)
-        #eq_6 = Tex(r"= 6").set_color(COLOR3).move_to(approx_6)
+        approx_6 = Tex(r"\approx 6").set_color(COLOR3).move_to(ET)
+        eq_6 = Tex(r"= 6").set_color(COLOR3).move_to(approx_6)
 
         self.play(
             LaggedStartMap(
