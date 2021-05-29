@@ -153,3 +153,6 @@ class SolutionThree(Scene):
         # lenght sequence
         num_throws.align_to(frame, DOWN).shift(3*UP)
         self.add(num_throws)
+
+        # num throws = E[T] * 100
+        ET = Tex("E[T]")
