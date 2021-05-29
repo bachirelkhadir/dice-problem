@@ -27,4 +27,4 @@ class QuestionTwo(Scene):
         even_games = [g for g in games if len(set(g) & set("135")) == 0]
         odd_games = [g for g in games if len(set(g) & set("135")) != 0]
         print("even:", even_games)
-        print("odd:", even_games)
+        print("odd:", odd_games)
