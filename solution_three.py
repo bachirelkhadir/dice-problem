@@ -174,7 +174,7 @@ class SolutionThree(Scene):
         # num throws / 6 = 100
         # highlight particular game that ends with 6
         particular_game = VGroup(*dice[5])
-        self.add(SurroundingRectangle(particular_game))
+        self.add(SurroundingRectangle(game_particular))
 
         # highlight all 6s
         #sixes = [d for d in dice_on_games if d.value == 6]
