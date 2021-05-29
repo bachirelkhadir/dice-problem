@@ -40,6 +40,7 @@ class QuestionTwo(Scene):
         ]
 
         vstack([ d for d in dice], SMALL_BUFF)
+        VGroup(*dice).to_edge(UP)
 
         even_games = [d for g, d in zip(games, dice)
                       if len(set(g) & set("135")) == 0]
@@ -48,3 +49,13 @@ class QuestionTwo(Scene):
                       if len(set(g) & set("135")) == 0]
 
         self.play(ShowIncreasingSubsets(VGroup(*dice)))
+        self.wait()
+
+        self.play(
+            LaggedStartMap(
+                FadeOut,
+                VGroup(*odd_game),
+                lambda m: (m, DOWN)),
+        )
+
+        self.wait()
