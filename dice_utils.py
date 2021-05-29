@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 from manimlib import *#
 
-def make_node(s, r=1.2):
-    if type(s) == str:
-        text = Text(s)
-    else:
-        text = s
-    rect = Circle().scale(r)
-    #rect.surround(text)
-    return VGroup(text, rect)
 
 def make_dice_face(i):
     dots = {
