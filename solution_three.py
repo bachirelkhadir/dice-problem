@@ -181,6 +181,10 @@ class SolutionThree(Scene):
 
 
         # lenght sequence
+
+        # #################
+        # Method 1
+        # #################
         # num throws = E[T] * 100
         num_throws = Text("# throws")
         num_throws.align_to(frame, DL).shift(3*UP)
@@ -205,7 +209,11 @@ class SolutionThree(Scene):
         self.add(ET)
         self.wait()
 
+        # #################
+        # Method 2
+        # #################
         # num throws / 6 = 100
+        #
         # highlight particular game that ends with 6
         highlight_game(self, VGroup(*dice[5]))
         self.wait()
