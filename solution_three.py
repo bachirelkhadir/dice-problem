@@ -255,8 +255,7 @@ class SolutionThree(Scene):
         self.add(num_6)
         self.wait()
 
-        return
-        self.add(one_sixth)
+        self.play(ReplacementTransform(num_6, one_sixth))
         self.wait()
 
         self.add(num_throws)
