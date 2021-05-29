@@ -29,3 +29,4 @@ class QuestionOne(Scene):
         dice_until_6 = dice[:first_6+1]
         dice.to_edge(LEFT)
         self.add(dice_until_6)
+        self.add(dice)
