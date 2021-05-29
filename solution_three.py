@@ -198,7 +198,7 @@ class SolutionThree(Scene):
         # Method 1
         # #################
         # num throws = E[T] * 100
-        num_throws = Text("# throws").set_color(COLOR2)
+        num_throws = Text("# throws").scale(tex_scale).set_color(COLOR2)
         num_throws.align_to(game_counter, LEFT).shift(5*DOWN)
         self.add(num_throws)
         self.wait()
