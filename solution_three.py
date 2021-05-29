@@ -241,14 +241,14 @@ class SolutionThree(Scene):
         one_sixth[1].set_color(COLOR3)
 
 
-        ET = Tex(r"\mathbb E[T]").scale(1.4*tex_scale).set_color(COLOR1).shift(DOWN/2)
+        ET = Tex(r"\mathbb E[T]").scale(1.4*tex_scale).set_color(COLOR1)
 
 
         hstack([num_games, num_6, num_throws], MED_SMALL_BUFF)
         one_sixth.move_to(num_6)
 
         num_games2 = num_games.copy().move_to(num_throws).shift(1.4*LEFT)
-        ET.next_to(num_games2, RIGHT)
+        ET.next_to(num_games2, RIGHT).shift(DOWN/10)
 
 
 
