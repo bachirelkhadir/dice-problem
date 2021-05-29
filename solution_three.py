@@ -160,7 +160,7 @@ class SolutionThree(Scene):
         ET = Tex(r"\mathbb E[T]").scale(1.3)
         num_games = game_counter[1].copy()
         ET.next_to(num_throws, DOWN).to_corner(LEFT)
-        num_games.next_to(ET, LEFT)
+        num_games.next_to(ET, LEFT).shift(UP/10)
 
         # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
