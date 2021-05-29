@@ -240,7 +240,7 @@ class SolutionThree(Scene):
         num_throws = num_throws.copy()
 
         approx2 = VGroup(num_games, num_6, one_sixth, num_throws)
-        hstack(approx2)
+        hstack(approx2, MED_SMALL_BUFF)
 
 
         # brin down 100
