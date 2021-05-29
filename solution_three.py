@@ -164,10 +164,9 @@ class SolutionThree(Scene):
 
         # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
-        self.add(ET)
-
-
-
         self.wait()
 
-        # num throws =
+        self.add(ET)
+        self.wait()
+
+        # num throws = N / 6
