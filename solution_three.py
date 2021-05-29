@@ -71,6 +71,9 @@ def highlight_game(scene, game):
         Transform(game, game_copy))
 
     scene.wait()
+    # highligh 6
+    scene.play(Indicate(game[-1]))
+    self.wait()
         #scene.add(rect)
 
 
