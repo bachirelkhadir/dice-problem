@@ -13,5 +13,7 @@ class QuestionOne(Scene):
         i = game.find("66")
         game = game[:i+2]
         first_six = game.find("6")
-        print(game)
-        self.add(make_dice_face(1))
+
+        dice = VGroup(*map(lambda i: make_dice_face(int(i)), game))
+        hstack(dice, SMALL_BUFF)
+        self.add(dice)
