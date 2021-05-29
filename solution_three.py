@@ -161,7 +161,7 @@ class SolutionThree(Scene):
         def game_counter_updater(m, dt):
             m.time_passed += dt
             m.set_value(6 + int((len(dice) - 6) * m.time_passed / total_time ))
-            print(  m.time_passed / total_time )
+            print( "time passed": m.time_passed )
         game_counter[1].add_updater(game_counter_updater)
         self.play(Transform(frame, frame_target),
                   ShowCreation(VGroup(dice[6:])),
