@@ -280,8 +280,7 @@ class SolutionThree(Scene):
         frame_target = frame.copy().set_height(10).move_to(one_sixth)
 
         self.play(
-                FadeOut(VGroup(*dice_on_games, *sixes, game_counter))
-                lambda m: (m, DOWN)),
+            FadeOut(VGroup(*dice_on_games, *sixes, game_counter)),
 
             Transform(frame, frame_target))
         self.wait()
