@@ -24,7 +24,7 @@ class QuestionTwo(Scene):
         np.random.seed(1)
         games = np.random.randint(1, 7, 1000)# burn in to make seq nice
         games = "".join(map(str, games)).split("6")
-        even_games = [g for g in games if len(set(g) & set("135")) == 0]
-        odd_games = [g for g in games if len(set(g) & set("135")) != 0]
+        even_games = [g+"6" for g in games if len(set(g) & set("135")) == 0]
+        odd_games = [g+"6" for g in games if len(set(g) & set("135")) != 0]
         print("even:", even_games)
         print("odd:", odd_games)
