@@ -225,7 +225,10 @@ class SolutionThree(Scene):
         num_throws = num_throws.copy()
 
         num_games.align_to(frame, DR)
-        hstack([num_games, num_6, one_sixth, num_throws])
+        approx2 = VGroup(num_games, num_6, one_sixth, num_throws)
+        hstack(approx2)
+        self.add(approx2)
+        return
 
         approx_1 = VGroup(one_sixth, num_games)
 
