@@ -22,6 +22,7 @@ class QuestionOne(Scene):
         first_6 = game.find("6")
         print("first 66:", first_66)
         print("first 6:", first_6)
+        print(game)
 
         dice = VGroup(*map(lambda i: make_dice_face(int(i)), game))
         hstack_fixed_width(dice, 10, SMALL_BUFF)
