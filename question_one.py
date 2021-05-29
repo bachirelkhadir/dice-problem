@@ -25,8 +25,8 @@ class QuestionOne(Scene):
         print(game)
 
         dice = VGroup(*map(lambda i: make_dice_face(int(i)), game))
-        #hstack_fixed_width(dice, 10, SMALL_BUFF)
-        hstack(dice)
+        hstack_fixed_width(dice, 10, SMALL_BUFF)
+        #hstack(dice)
 
         dice_until_6 = dice[:first_6+1]
         dice_after_6 = dice[first_6+1:]
