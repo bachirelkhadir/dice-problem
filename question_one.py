@@ -8,7 +8,7 @@ from common import vstack, hstack, halign
 
 class QuestionOne(Scene):
     def construct(self):
-        np.random.seed(0)
+        np.random.seed(1)
         game = np.random.randint(1, 7, 1000)
         game = "".join(map(str, game))
         i = game.find("66")
