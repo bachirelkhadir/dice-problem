@@ -155,5 +155,9 @@ class SolutionThree(Scene):
         self.add(num_throws)
         self.wait()
 
+
         # num throws = E[T] * 100
         ET = Tex("E[T]")
+        game_counter[1].copy()
+
+        # num throws =
