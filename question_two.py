@@ -54,8 +54,8 @@ class QuestionTwo(Scene):
         self.play(
             LaggedStartMap(
                 FadeOut,
-                VGroup(*odd_game),
-                lambda m: (m, DOWN)),
+                VGroup(*odd_games),
+                lambda m: (m, RIGHT)),
         )
 
         self.wait()
