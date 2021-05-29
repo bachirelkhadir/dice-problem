@@ -175,6 +175,7 @@ class SolutionThree(Scene):
         # highlight all 6s
         sixes = [d for d in dice_on_games if d.value == 6]
         self.play(Highlight(VGroup(*sixes)))
+        return
 
 
         one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
