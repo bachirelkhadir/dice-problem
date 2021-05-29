@@ -277,5 +277,12 @@ class SolutionThree(Scene):
 
         # zoom on and solve
         frame_target = frame.copy().set_height(10).move_to(one_sixth)
-        self.play(Transform(frame, frame_target ))
+
+        self.play(
+            LaggedStartMap(
+                FadeOut,
+                VGroup(*dice_on_grid),
+                lambda m: (m, DOWN)),
+
+            Transform(frame, frame_target ))
         self.wait()
