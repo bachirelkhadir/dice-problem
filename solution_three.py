@@ -66,8 +66,8 @@ def highlight_game(scene, game):
         rect.surround(game, stretch=True).scale(1.2*UP + 1.1*RIGHT)
         scene.bring_to_front(game)
 
-        self.play(ShowCreation(rect))
-        self.wait()
+        scene.play(ShowCreation(rect))
+        scene.wait()
         #scene.add(rect)
 
 
