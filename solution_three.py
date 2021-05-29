@@ -171,3 +171,12 @@ class SolutionThree(Scene):
         self.wait()
 
         # num throws = 100 / 6
+
+        one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
+        num_games = game_counter[1].copy()
+        ET.next_to(num_throws, DOWN).to_corner(LEFT)
+        num_games.next_to(ET, LEFT).shift(UP/20)
+
+        # brin down 100
+        self.play(TransformFromCopy(game_counter[1], num_games))
+        self.wait()
