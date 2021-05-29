@@ -20,7 +20,7 @@ def string_to_dice(game):
     game = map(int, game)
     game = map(make_dice_face, game)
     game = hstack([*game])
-    game = VGroup(*game)
+    game = VGroup(*game, SMALL_BUFF)
     return game
 
 
