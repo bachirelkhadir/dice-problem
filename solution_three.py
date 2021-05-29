@@ -288,11 +288,16 @@ class SolutionThree(Scene):
             Transform(frame, frame_target))
         self.wait()
 
-        self.play(
+        approx_6 = Tex(r"\\approx 6").set_color(COLOR3).move_to(ET)
+        eq_6 = Tex(r"= 6").set_color(COLOR3).move_to(approx_6)
 
+        self.play(
             LaggedStartMap(
                 FadeOut,
                 VGroup(num_games, num_games2, one_sixth),
                 lambda m: (m, DOWN)),
-            ET.animate.shift(3*LEFT)
+            ET.animate.shift(3*LEFT),
         )
+        self.add(approx_6)
+
+        self.play(ReplacementTransform(approx6, eq_6))
