@@ -227,8 +227,6 @@ class SolutionThree(Scene):
         num_games.align_to(frame, DOWN).shift(UP)
         approx2 = VGroup(num_games, num_6, one_sixth, num_throws)
         hstack(approx2)
-        self.add(approx2)
-        return
 
 
         # brin down 100
@@ -239,5 +237,11 @@ class SolutionThree(Scene):
         highlight_all_6s(self, dice_on_grid)
         self.wait()
 
+        self.add(num_6)
+        self.wait()
+
         self.add(one_sixth)
+        self.wait()
+
+        self.add(num_throws)
         self.wait()
