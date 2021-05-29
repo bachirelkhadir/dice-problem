@@ -63,6 +63,7 @@ def place_dice_in_matrix(dice_matrix):
 
 def highlight_game(scene, game):
     game_copy = game.copy().scale(1.2)
+    game_save = game.copy()
     rect = Rectangle(stroke_width=10, stroke_color=YELLOW_D, fill_color=BLACK, fill_opacity=.9)
     rect.surround(game_copy, stretch=True).scale(1.2*UP + 1.1*RIGHT)
 
@@ -74,6 +75,12 @@ def highlight_game(scene, game):
     # highligh 6
     scene.play(Indicate(game[-1]))
     scene.wait()
+
+    # cleanup
+    self.remove(rect)
+
+    scene.play(
+        Transform(game, game_save), run_time=.01)
         #scene.add(rect)
 
 
