@@ -28,10 +28,10 @@ class QuestionTwo(Scene):
 
     def construct(self):
 
+        num_throws = 100
         frame = self.camera.frame
-
         np.random.seed(1)
-        games = np.random.randint(1, 7, 1000)# burn in to make seq nice
+        games = np.random.randint(1, 7, num_throws)# burn in to make seq nice
         games = "".join(map(str, games)).split("6")
         dice = [
             string_to_dice(s+"6") for s in games
