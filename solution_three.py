@@ -10,7 +10,6 @@ from common import vstack, hstack, halign
 
 
 def put_dice_in_matrix(dice, num_cols):
-
         dice_matrix= sum(map(list, dice), [])
         len_row = len(dice_matrix)//num_cols
         dice_matrix = [ dice_matrix[num_cols * i: num_cols * (i+1)]
@@ -19,7 +18,6 @@ def put_dice_in_matrix(dice, num_cols):
 
 
 def place_dice_in_matrix(dice_matrix):
-
         # Copy matrix and position it correctly
         dice_matrix_copy = [
             [o.copy() for o in row]
