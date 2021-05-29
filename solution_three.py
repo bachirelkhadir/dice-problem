@@ -210,7 +210,7 @@ class SolutionThree(Scene):
         ET.next_to(almost_eq, RIGHT).shift(2*RIGHT)
 
         num_games = game_counter[1].copy().scale(tex_scale)
-        num_games.next_to(ET, LEFT).shift(UP/20)
+        num_games.next_to(ET, LEFT, MED_SMALL_BUFF).shift(UP/20)
 
         approx_1 = VGroup(ET, num_games)
         # brin down 100
