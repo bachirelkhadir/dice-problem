@@ -38,6 +38,7 @@ class QuestionOne(Scene):
         # show until 6
         frame.move_to(dice_until_6)
         self.play(ShowIncreasingSubsets(dice_until_6, ))
+        self.play(Indicate(dice_until_6[-1]))
         self.wait()
 
 
@@ -46,6 +47,8 @@ class QuestionOne(Scene):
         frame_copy = frame.copy().set_height(16).move_to(dice)
         self.play(ShowIncreasingSubsets(dice_after_6, ),
                   Transform(frame, frame_copy))
+
+        self.play(Indicate(dice_until_6[-2]))
         self.wait()
 
         #self.add(dice_after_6)
