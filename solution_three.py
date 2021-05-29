@@ -247,7 +247,7 @@ class SolutionThree(Scene):
         one_sixth.move_to(num_6)
 
         num_games2 = num_games.copy().move_to(num_throws)
-        ET.next_to(num_games, RIGHT)
+        ET.next_to(num_games2, RIGHT)
 
 
 
