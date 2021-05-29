@@ -211,14 +211,14 @@ class SolutionThree(Scene):
         self.wait()
 
 
-
-
+        num_6 = Text(r"# 6s")
         one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
         num_games = game_counter[1].copy()
         one_sixth.next_to(num_throws, DOWN).to_corner(RIGHT)
         num_games.next_to(one_sixth, RIGHT).shift(UP/20)
 
         approx_1 = VGroup(one_sixth, num_games)
+
         # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
         self.wait()
