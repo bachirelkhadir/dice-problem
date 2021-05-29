@@ -61,6 +61,8 @@ def place_dice_in_matrix(dice_matrix):
         return dice_matrix_copy
 
 
+
+
 def highlight_game(scene, game):
     game_copy = game.copy().scale(1.2)
     game_save = game.copy()
@@ -78,11 +80,16 @@ def highlight_game(scene, game):
 
     # cleanup
     scene.remove(rect)
-
     scene.play(
         Transform(game, game_save), run_time=.01)
         #scene.add(rect)
 
+
+def highlight_all_6s(scene, dice):
+    # highlight all 6s
+    sixes = [d for d in dice if d.value == 6]
+    self.play(Indicate(VGroup(*sixes)))
+    self.wait()
 
 class SolutionThree(Scene):
 
@@ -197,12 +204,11 @@ class SolutionThree(Scene):
         # num throws / 6 = 100
         # highlight particular game that ends with 6
         highlight_game(self, VGroup(*dice[5]))
-        self.remove(*dice_on_grid)
+
+
+        highlight_all_6s(self, dice_on_grid)
         return
 
-        # highlight all 6s
-        #sixes = [d for d in dice_on_games if d.value == 6]
-        #self.play(Indicate(VGroup(*sixes)))
         return
 
 
