@@ -157,7 +157,7 @@ class SolutionThree(Scene):
 
 
         # num throws = E[T] * 100
-        ET = Tex(r"\mathbb E[T]")
+        ET = Tex(r"\mathbb E[T]").scale(1.3)
         num_games = game_counter[1].copy()
         ET.next_to(num_throws, DOWN).to_corner(LEFT)
         num_games.next_to(ET, LEFT)
