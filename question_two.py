@@ -41,4 +41,5 @@ class QuestionTwo(Scene):
         even_dice = [
             string_to_dice(s) for s in even_games
         ]
+        vstack(even_dice)
         self.add(*even_dice)
