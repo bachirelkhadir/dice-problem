@@ -67,6 +67,7 @@ def highlight_game(scene, game):
         scene.bring_to_front(game)
 
         self.play(ShowCreation(rect))
+        self.wait()
         #scene.add(rect)
 
 
@@ -183,6 +184,7 @@ class SolutionThree(Scene):
         # num throws / 6 = 100
         # highlight particular game that ends with 6
         highlight_game(self, VGroup(*dice[5]))
+        return
 
         # highlight all 6s
         #sixes = [d for d in dice_on_games if d.value == 6]
