@@ -16,6 +16,9 @@ def hstack_fixed_width(obj, width, buff):
 
 class QuestionOne(Scene):
     def construct(self):
+
+        frame = self.camera.frame
+
         np.random.seed(0)
         game = np.random.randint(1, 7, 1000)[100:] # burn in to make seq nice
         game = "".join(map(str, game))
@@ -33,13 +36,13 @@ class QuestionOne(Scene):
         dice_after_6 = dice[first_6+1:]
 
         # show until 6
+        frame.move_to(dice_until_6)
         self.play(ShowIncreasingSubsets(dice_until_6, ))
         self.wait()
 
 
 
         # zoom out and show until 66
-        frame = self.camera.frame
         frame_copy = frame.copy().set_height(16).move_to(dice)
         self.play(ShowIncreasingSubsets(dice_after_6, ),
                   Transform(frame, frame_copy))
