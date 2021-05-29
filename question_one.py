@@ -28,15 +28,18 @@ class QuestionOne(Scene):
 
         dice = VGroup(*map(lambda i: make_dice_face(int(i)), game))
         hstack_fixed_width(dice, 10, SMALL_BUFF)
-        #hstack(dice)
 
         dice_until_6 = dice[:first_6+1]
         dice_after_6 = dice[first_6+1:]
-        #dice.to_edge(LEFT)
 
         self.play(ShowIncreasingSubsets(dice_until_6, ))
         self.wait()
 
         self.play(ShowIncreasingSubsets(dice_after_6, ))
         self.wait()
+
+        frame = self.camera.frame
+        frame_copy = frame.copy().set_height(12)
+        self.play(Transform(frame, frame_copy))
+
         #self.add(dice_after_6)
