@@ -13,7 +13,7 @@ class QuestionOne(Scene):
         game = "".join(map(str, game))
         first_66 = game.find("66")
         game = game[:first_66+2]
-        first_six = game.find("6")
+        first_6 = game.find("6")
         print("first 66:", first_66)
         print("first 6:", first_6)
 
