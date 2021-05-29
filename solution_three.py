@@ -190,7 +190,7 @@ class SolutionThree(Scene):
         # num throws / 6 = 100
         # highlight particular game that ends with 6
         highlight_game(self, VGroup(*dice[5]))
-        #self.remove(*dice)
+        self.remove(*dice_on_games)
         return
 
         # highlight all 6s
