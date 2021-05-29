@@ -23,6 +23,7 @@ def string_to_dice(game):
     game = VGroup(*game)
     return game
 
+
 class QuestionTwo(Scene):
 
     def construct(self):
