@@ -211,7 +211,7 @@ class SolutionThree(Scene):
         self.wait()
 
 
-        num_6 = Text(r"# 6s").scale(tex_scale)
+        num_6 = Text(r"\aprox # 6s").scale(tex_scale)
         one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
         num_games = game_counter[1].copy()
         one_sixth.next_to(num_throws, DOWN).to_corner(RIGHT)
