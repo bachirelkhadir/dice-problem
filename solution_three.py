@@ -172,9 +172,12 @@ class SolutionThree(Scene):
         self.wait()
 
         # num throws / 6 = 100
+        # highlight particular game that ends with 6
+        particular_game = games[0]
+
         # highlight all 6s
-        sixes = [d for d in dice_on_games if d.value == 6]
-        self.play(Indicate(VGroup(*sixes)))
+        #sixes = [d for d in dice_on_games if d.value == 6]
+        #self.play(Indicate(VGroup(*sixes)))
         return
 
 
