@@ -156,12 +156,10 @@ class SolutionThree(Scene):
         frame_target = frame.copy().set_height(camera_height).align_to(dice[0], UP).shift(UP)
         always(game_counter.align_to, frame, LEFT)
 
-        total_time = 10
-        game_counter[1].time_passed = 0
+        total_time = 2
         def game_counter_updater(m, dt):
-            m.time_passed += dt
-            m.set_value(6 + int((len(dice) - 6) * m.time_passed / total_time ))
-            print("time passed:", m.time_passed )
+            m.set_value(6 + int((len(dice) - 6) * dt / total_time ))
+
         game_counter[1].add_updater(game_counter_updater)
         self.play(Transform(frame, frame_target),
                   ShowCreation(VGroup(dice[6:])),
