@@ -208,7 +208,6 @@ class SolutionThree(Scene):
 
         self.add(ET)
         self.wait()
-        approx_1 = VGroup(one_sixth, num_games)
 
         # #################
         # Method 2
