@@ -173,7 +173,8 @@ class SolutionThree(Scene):
 
         # num throws / 6 = 100
         # highlight particular game that ends with 6
-        particular_game = games[0]
+        particular_game = games[5]
+        self.add(SurroundingRectangle(particular_game))
 
         # highlight all 6s
         #sixes = [d for d in dice_on_games if d.value == 6]
