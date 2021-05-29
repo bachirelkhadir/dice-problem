@@ -91,6 +91,11 @@ def highlight_all_6s(scene, dice):
     scene.play(Indicate(VGroup(*sixes), scale_factor=1), run_time=3)
     scene.wait()
 
+
+COLOR1 = YELLOW
+COLOR2 = RED_A
+COLOR3 = BLUE_A
+
 class SolutionThree(Scene):
 
     def generate_games(self, num_games):
@@ -114,7 +119,7 @@ class SolutionThree(Scene):
         camera_height = 20
 
 
-        game_counter = VGroup(*hstack([Text("# games = "), Integer(0)], MED_SMALL_BUFF))
+        game_counter = VGroup(*hstack([Text("# games = "), Integer(0, color=COLOR1)], MED_SMALL_BUFF))
         game_counter.to_corner(UL)
         self.add(game_counter)
 
