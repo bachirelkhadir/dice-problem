@@ -17,5 +17,5 @@ class QuestionOne(Scene):
 
         dice = VGroup(*map(lambda i: make_dice_face(int(i)), game))
         hstack(dice, SMALL_BUFF)
-        dice.to_corner(LEFT)
+        dice.to_edge(LEFT)
         self.add(dice)
