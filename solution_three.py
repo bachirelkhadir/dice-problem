@@ -62,7 +62,7 @@ def place_dice_in_matrix(dice_matrix):
 
 
 def highlight_game(scene, game):
-        rect = Rectangle().surround(game, stretch=True)
+        rect = Rectangle().surround(game, stretch=True).scale(1.1)
         scene.add(rect)
 
 
