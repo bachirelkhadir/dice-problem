@@ -122,6 +122,7 @@ class SolutionThree(Scene):
         game_counter = VGroup(*hstack([Text("# games = "), Integer(0)], MED_SMALL_BUFF))
         game_counter.to_corner(UL)
         self.add(game_counter)
+        return
 
         games = self.generate_games(num_games)
         dice = [
