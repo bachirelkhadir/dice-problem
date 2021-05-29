@@ -59,3 +59,9 @@ class QuestionTwo(Scene):
         )
 
         self.wait()
+
+        even_games_copy = [d.copy() for d in even_games]
+        hstack(even_games_copy)
+        self.play(
+            Transform(VGroup(even_game), VGroup(even_games_copy))
+        )
