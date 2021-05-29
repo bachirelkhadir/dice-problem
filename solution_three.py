@@ -60,9 +60,11 @@ def place_dice_in_matrix(dice_matrix):
         vstack([*map(lambda row: VGroup(*row), dice_matrix_copy)], SMALL_BUFF )
         return dice_matrix_copy
 
-def highlight_game(game):
+
+def highlight_game(scene, game):
         rect = Rectangle().surround(game)
-        self.add(rect)
+        scene.add(rect)
+
 
 class SolutionThree(Scene):
 
@@ -176,7 +178,7 @@ class SolutionThree(Scene):
 
         # num throws / 6 = 100
         # highlight particular game that ends with 6
-        highlight_game(VGroup(*dice[5]))
+        highlight_game(self, VGroup(*dice[5]))
 
         # highlight all 6s
         #sixes = [d for d in dice_on_games if d.value == 6]
