@@ -37,7 +37,7 @@ class QuestionTwo(Scene):
             string_to_dice(s+"6") for s in games
         ]
 
-        vstack(dice)
+        vstack(dice, SMALL_BUFF)
         even_games = [d for g, d in zip(games, dice)
                       if len(set(g) & set("135")) == 0]
 
