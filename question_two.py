@@ -25,6 +25,6 @@ class QuestionTwo(Scene):
         games = np.random.randint(1, 7, 1000)# burn in to make seq nice
         games = "".join(map(str, games)).split("6")
         even_games = [g for g in games if len(set(g) & set("135")) == 0]
-        odd_games = games - even_game
+        odd_games = games - even_games
         print("even:", even_games)
         print("odd:", even_games)
