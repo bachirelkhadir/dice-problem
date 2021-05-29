@@ -9,7 +9,7 @@ from common import vstack, hstack, halign
 class QuestionOne(Scene):
     def construct(self):
         np.random.seed(0)
-        game = np.random.randint(1, 7, 1000)
+        game = np.random.randint(1, 7, 1000)[2:]
         game = "".join(map(str, game))
         first_66 = game.find("66")
         game = game[:first_66+2]
