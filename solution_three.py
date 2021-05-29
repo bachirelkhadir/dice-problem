@@ -90,6 +90,7 @@ def highlight_all_6s(scene, dice):
     sixes = [d for d in dice if d.value == 6]
     scene.play(Indicate(VGroup(*sixes), scale_factor=1), run_time=3)
     scene.wait()
+    return sixes
 
 
 COLOR1 = YELLOW
@@ -256,7 +257,7 @@ class SolutionThree(Scene):
         self.wait()
 
         # highlight all 6
-        #highlight_all_6s(self, dice_on_grid)
+        sixes = highlight_all_6s(self, dice_on_grid)
         self.wait()
 
         self.add(num_6)
