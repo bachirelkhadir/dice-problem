@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from manimlib import *
-
 def vstack(objs, buff=LARGE_BUFF):
     for t1, t2 in zip(objs, objs[1:]):
         t2.next_to(t1, DOWN, buff)
