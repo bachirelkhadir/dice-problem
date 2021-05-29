@@ -301,5 +301,5 @@ class SolutionThree(Scene):
         self.add(approx_6)
         self.wait()
 
-        self.play(ReplacementTransform(approx6, eq_6))
+        self.play(ReplacementTransform(approx_6, eq_6))
         self.wait()
