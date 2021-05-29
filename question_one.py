@@ -28,7 +28,7 @@ class QuestionOne(Scene):
 
         dice_until_6 = dice[:first_6+1]
         dice_after_6 = dice[first_6+1:]
-        dice.to_edge(LEFT)
+        #dice.to_edge(LEFT)
 
         self.play(ShowIncreasingSubsets(dice_until_6, ))
         self.wait()
