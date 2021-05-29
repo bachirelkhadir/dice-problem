@@ -239,7 +239,6 @@ class SolutionThree(Scene):
         num_6 = Text(r"= #6s").scale(tex_scale)
         one_sixth = Tex(r"\approx {{\frac 1 6}}").scale(1.2*tex_scale)
         one_sixth[1].set_color(COLOR3)
-        num_throws = num_throws.copy()
 
         approx2 = VGroup(num_games, num_6, one_sixth, num_throws)
         hstack(approx2, MED_SMALL_BUFF)
