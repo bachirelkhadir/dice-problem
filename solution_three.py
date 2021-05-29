@@ -160,7 +160,7 @@ class SolutionThree(Scene):
         game_counter[1].curr_time = 0
         def game_counter_updater(m, dt):
             m.curr_time += dt
-            m.set_value(6 + int(100 - 6) * m.curr_time / total_time ))
+            m.set_value(6 + int((100 - 6) * m.curr_time / total_time ))
 
         game_counter[1].add_updater(game_counter_updater)
         self.play(Transform(frame, frame_target),
