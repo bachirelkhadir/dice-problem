@@ -119,7 +119,7 @@ class SolutionThree(Scene):
         camera_height = 20
 
 
-        game_counter = VGroup(*hstack([Text("# games = "), Integer(0).set_color(COLOR2,).set_opacity(.5)], MED_SMALL_BUFF))
+        game_counter = VGroup(*hstack([Text("# games = "), Integer(0)], MED_SMALL_BUFF))
         game_counter.to_corner(UL)
         self.add(game_counter)
 
