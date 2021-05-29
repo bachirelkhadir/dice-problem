@@ -20,9 +20,10 @@ rec:
 	manimgl recurrence.py
 
 vrec:
-	manimgl recurrence.py -ws
+	manimgl recurrence.py -tw && cd output/videos/ && bash mov_to_pngs.sh RecurrenceScene.mov
+
 irec:
-	gnome-terminal -e "manimgl recurrence.py" --title="gnome-terminal manim"
+	manimgl recurrence.py -ws
 
 vtext:
 	for i in $$(grep class make_text.py | cut -d' ' -f2 | cut -d'(' -f1); do manimgl make_text.py $$i -wt; done
@@ -63,7 +64,7 @@ vslider:
 
 
 solution1:
-	manimgl solution1.py -n 50
+	manimgl solution1.py -n 40
 
 esolution1:
 
@@ -76,8 +77,39 @@ vsolution1:
 	manimgl solution1.py -wt && cd output/videos/ && bash mov_to_pngs.sh SolutionOne.mov
 
 
+solutionthree:
+	manimgl solution_three.py
+
+isolutionthree:
+	manimgl solution_three.py -ws
+
+vsolutionthree:
+	manimgl solution_three.py -wt && cd output/videos/ && bash mov_to_pngs.sh SolutionThree.mov
+
+cointoss:
+	manimgl coin_toss.py CoinToss
+
+icointoss:
+	manimgl coin_toss.py  CoinToss -ws
+
+vcointoss:
+	manimgl coin_toss.py  CoinToss -wt  && cd output/videos/ && bash mov_to_pngs.sh CoinToss.mov
+
+
+distr:
+	manimgl distribution.py
+
+idistr:
+	manimgl distribution.py -ws
+
+vdistr:
+	manimgl distribution.py -wt  && cd output/videos/ && bash mov_to_pngs.sh Distribution.mov
 pngs:
 	cd output/videos/ && bash mov_to_pngs.sh
+
+
+remote:
+	bash remote_compile.sh
 
 stop:
 	echo "Stopped"
