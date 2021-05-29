@@ -73,7 +73,7 @@ def highlight_game(scene, game):
     scene.wait()
     # highligh 6
     scene.play(Indicate(game[-1]))
-    self.wait()
+    scene.wait()
         #scene.add(rect)
 
 
