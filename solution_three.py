@@ -110,7 +110,7 @@ class SolutionThree(Scene):
     def construct(self):
         face_scale = 0.8
         num_cols = 20
-        num_games = 60 # 30
+        num_games = 50 # 30
         camera_height = 20
 
 
