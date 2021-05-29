@@ -232,9 +232,9 @@ class SolutionThree(Scene):
 
 
         num_throws = Text("# throws").scale(tex_scale).set_color(COLOR2)
-        num_throws.align_to(game_counter, LEFT).shift(5*DOWN)
+
         num_games = game_counter[1].copy().scale(tex_scale)
-        num_games.align_to(num_throws, LEFT).shift(2*DOWN)
+        num_games.align_to(game_counter, LEFT).shift(2*DOWN)
 
         num_6 = Text(r"= #6s").scale(tex_scale)
         one_sixth = Tex(r"\approx {{\frac 1 6}}").scale(1.2*tex_scale)
