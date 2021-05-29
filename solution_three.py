@@ -241,7 +241,8 @@ class SolutionThree(Scene):
         one_sixth[1].set_color(COLOR3)
 
 
-        approx2 = VGroup(num_games, num_6, num_throws)
+        ET = Tex(r"\mathbb E[T]").scale(1.4*tex_scale).set_color(COLOR1)
+
 
         hstack([num_games, num_6, num_throws], MED_SMALL_BUFF)
         one_sixth.move_to(num_6)
@@ -263,4 +264,9 @@ class SolutionThree(Scene):
         self.wait()
 
         self.add(num_throws)
+        self.wait()
+
+        self.play(ReplacementTransform(num_games.copy(), num_throws))
+        self.wait()
+        self.add(ET)
         self.wait()
