@@ -161,7 +161,8 @@ class SolutionThree(Scene):
         num_games = game_counter[1].copy()
         ET.next_to(num_throws, DOWN).to_corner(LEFT)
         num_games.next_to(ET, RIGHT)
-        self.add(ET)
+
+        self.play(TransformFromCopy(game_counter[1], num_games))
         self.wait()
 
         # num throws =
