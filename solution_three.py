@@ -174,7 +174,7 @@ class SolutionThree(Scene):
         # num throws / 6 = 100
         # highlight all 6s
         sixes = [d for d in dice_on_games if d.value == 6]
-        self.play(Highlight(VGroup(*sixes)))
+        self.play(Indicate(VGroup(*sixes)))
         return
 
 
