@@ -160,7 +160,7 @@ class SolutionThree(Scene):
         tex_scale = 1.3
         ET = Tex(r"\mathbb E[T]").scale(tex_scale)
         num_games = game_counter[1].copy()
-        ET.next_to(num_throws, RIGHT)
+        ET.next_to(num_throws, RIGHT).shift(RIGHT)
         num_games.next_to(ET, LEFT).shift(UP/20)
 
         approx_1 = VGroup(ET, num_games)
