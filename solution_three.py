@@ -224,7 +224,7 @@ class SolutionThree(Scene):
         one_sixth = Tex(r"\approx \frac 1 6").scale(tex_scale)
         num_throws = num_throws.copy()
 
-        num_games.align_to(frame, DOWN)
+        num_games.align_to(frame, DOWN).shift(UP)
         approx2 = VGroup(num_games, num_6, one_sixth, num_throws)
         hstack(approx2)
         self.add(approx2)
