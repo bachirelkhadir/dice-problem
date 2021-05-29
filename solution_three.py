@@ -199,27 +199,27 @@ class SolutionThree(Scene):
         # #################
         # num throws = E[T] * 100
         tex_scale = 1.5
-        num_throws = Text("# throws").scale(tex_scale).set_color(COLOR2)
-        num_throws.align_to(game_counter, LEFT).shift(5*DOWN)
-        self.add(num_throws)
-        self.wait()
+        # num_throws = Text("# throws").scale(tex_scale).set_color(COLOR2)
+        # num_throws.align_to(game_counter, LEFT).shift(5*DOWN)
+        # self.add(num_throws)
+        # self.wait()
 
-        almost_eq = Tex(r"\approx").scale(tex_scale)
-        almost_eq.next_to(num_throws, RIGHT, MED_SMALL_BUFF)
-        ET = Tex(r"\mathbb E[T]").scale(1.4*tex_scale).set_color(COLOR1)
-        ET.next_to(almost_eq, RIGHT).shift(2*RIGHT)
+        # almost_eq = Tex(r"\approx").scale(tex_scale)
+        # almost_eq.next_to(num_throws, RIGHT, MED_SMALL_BUFF)
+        # ET = Tex(r"\mathbb E[T]").scale(1.4*tex_scale).set_color(COLOR1)
+        # ET.next_to(almost_eq, RIGHT).shift(2*RIGHT)
 
-        num_games = game_counter[1].copy().scale(tex_scale)
-        num_games.next_to(ET, LEFT, MED_SMALL_BUFF).shift(UP/20)
+        # num_games = game_counter[1].copy().scale(tex_scale)
+        # num_games.next_to(ET, LEFT, MED_SMALL_BUFF).shift(UP/20)
 
-        approx_1 = VGroup(ET, num_games)
-        # brin down 100
-        self.add(almost_eq)
-        self.play(TransformFromCopy(game_counter[1], num_games))
-        self.wait()
+        # approx_1 = VGroup(ET, num_games)
+        # # brin down 100
+        # self.add(almost_eq)
+        # self.play(TransformFromCopy(game_counter[1], num_games))
+        # self.wait()
 
-        self.add(ET)
-        self.wait()
+        # self.add(ET)
+        # self.wait()
 
         # #################
         # Method 2
