@@ -25,3 +25,4 @@ class QuestionTwo(Scene):
         games = np.random.randint(1, 7, 1000)# burn in to make seq nice
         games = "".join(map(str, games)).split("6")
         print(games)
+        print("666".split("6"))
