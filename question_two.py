@@ -48,7 +48,7 @@ class QuestionTwo(Scene):
         odd_games = [d for g, d in zip(games, dice)
                       if len(set(g) & set("135")) != 0]
 
-        self.play(ShowIncreasingSubsets(VGroup(*dice)))
+        self.play(ShowIncreasingSubsets(VGroup(*dice)), run_time=4)
         self.wait()
 
         self.play(
