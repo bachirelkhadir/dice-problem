@@ -24,7 +24,7 @@ class QuestionOne(Scene):
         print("first 6:", first_6)
 
         dice = VGroup(*map(lambda i: make_dice_face(int(i)), game))
-        hstack_fixed_width(dice, 3 SMALL_BUFF)
+        hstack_fixed_width(dice, 3, SMALL_BUFF)
 
         dice_until_6 = dice[:first_6+1]
         dice.to_edge(LEFT)
