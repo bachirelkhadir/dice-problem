@@ -231,8 +231,8 @@ class SolutionThree(Scene):
         self.wait()
 
 
-        num_games = num_games.copy()
-        num_games.align_to(num_throws, LEFT).shift(2*UP)
+        num_games = game_counter[1].copy().scale(tex_scale)
+        num_games.align_to(num_throws, LEFT).shift(2*DOWN)
 
         num_6 = Text(r"= #6s").scale(tex_scale)
         one_sixth = Tex(r"\approx {{\frac 1 6}}").scale(1.2*tex_scale)
