@@ -65,3 +65,4 @@ class QuestionTwo(Scene):
         self.play(
             Transform(VGroup(*even_games), VGroup(*even_games_stacked))
         )
+        return
