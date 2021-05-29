@@ -176,7 +176,7 @@ class SolutionThree(Scene):
         one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
         num_games = game_counter[1].copy()
         one_sixth.next_to(num_throws, DOWN).to_corner(RIGHT)
-        num_games.next_to(one_sixth, LEFT).shift(UP/20)
+        num_games.next_to(one_sixth, RIGHT).shift(UP/20)
 
         approx_1 = VGroup(one_sixth, num_games)
         # brin down 100
