@@ -256,7 +256,7 @@ class SolutionThree(Scene):
         self.wait()
 
         # highlight all 6
-        highlight_all_6s(self, dice_on_grid)
+        #highlight_all_6s(self, dice_on_grid)
         self.wait()
 
         self.add(num_6)
