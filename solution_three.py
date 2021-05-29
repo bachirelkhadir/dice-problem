@@ -242,7 +242,7 @@ class SolutionThree(Scene):
         one_sixth[1].set_color(COLOR3)
 
 
-        approx2 = VGroup(num_games, num_6, one_sixth, num_throws)
+        approx2 = VGroup(num_games, num_6,num_throws)
         #hstack(approx2, MED_SMALL_BUFF)
 
 
