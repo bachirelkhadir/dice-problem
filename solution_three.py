@@ -207,9 +207,6 @@ class SolutionThree(Scene):
         self.wait()
 
 
-        highlight_all_6s(self, dice_on_grid)
-
-        self.wait()
 
 
         one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
@@ -220,5 +217,11 @@ class SolutionThree(Scene):
         approx_1 = VGroup(one_sixth, num_games)
         # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
+        self.wait()
+
+        # highlight all 6
+        highlight_all_6s(self, dice_on_grid)
+        self.wait()
+
         self.add(one_sixth)
         self.wait()
