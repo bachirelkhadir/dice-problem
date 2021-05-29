@@ -31,6 +31,7 @@ class QuestionTwo(Scene):
         num_throws = 100
         frame = self.camera.frame
         frame.set_height(20)
+
         np.random.seed(1)
         games = np.random.randint(1, 7, num_throws)# burn in to make seq nice
         games = "".join(map(str, games)).split("6")
@@ -45,5 +46,4 @@ class QuestionTwo(Scene):
 
         odd_games = [d for g, d in zip(games, dice)
                       if len(set(g) & set("135")) == 0]
-
-        self.add(*dice)
+        self.play(ShowIncreasingSubsets(dice))
