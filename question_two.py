@@ -16,7 +16,11 @@ def hstack_fixed_width(obj, width, buff):
 
     hstack(obj[(i+1)*width:], buff)
 
+def string_to_dice(game):
+    return VGroup(*hstack(map(lambda s: make_dice_face(int(i)), game)))
+
 class QuestionTwo(Scene):
+
     def construct(self):
 
         frame = self.camera.frame
@@ -28,3 +32,8 @@ class QuestionTwo(Scene):
         odd_games = [g+"6" for g in games if len(set(g) & set("135")) != 0]
         print("even:", even_games)
         print("odd:", odd_games)
+
+        even_dice = [
+            string_to_dice(s) for s in even_games
+        ]
+        self.add(*even_dice)
