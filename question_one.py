@@ -27,6 +27,8 @@ class QuestionOne(Scene):
         hstack_fixed_width(dice, 10, SMALL_BUFF)
 
         dice_until_6 = dice[:first_6+1]
+        dice_after_6 = dice[first_6+1:]
         dice.to_edge(LEFT)
+
         self.add(dice_until_6)
-        self.add(dice)
+        self.add(dice_after_6)
