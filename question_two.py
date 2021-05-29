@@ -60,8 +60,8 @@ class QuestionTwo(Scene):
 
         self.wait()
 
-        even_games_copy = [d.copy() for d in even_games]
-        hstack(even_games_copy)
+        even_games_stacked = [d.stacked() for d in even_games]
+        vstack(even_games_stacked)
         self.play(
-            Transform(VGroup(*even_games), VGroup(*even_games_copy))
+            Transform(VGroup(*even_games), VGroup(*even_games_stacked))
         )
