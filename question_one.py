@@ -7,4 +7,4 @@ import numpy as np
 
 class QuestionOne(Scene):
     def construct(self):
-        self.add(Tex("Q1"))
+        self.add(make_dice_face("1"))
