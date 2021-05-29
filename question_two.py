@@ -28,7 +28,7 @@ class QuestionTwo(Scene):
 
     def construct(self):
 
-        num_throws = 100
+        num_throws = 300
         frame = self.camera.frame
         #frame.set_height(20)
 
