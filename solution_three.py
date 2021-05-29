@@ -158,6 +158,7 @@ class SolutionThree(Scene):
 
         total_time = 2
         def game_counter_updater(m, dt):
+            print(dt)
             m.set_value(6 + int((len(dice) - 6) * dt / total_time ))
 
         game_counter[1].add_updater(game_counter_updater)
