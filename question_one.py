@@ -8,4 +8,4 @@ import numpy as np
 class QuestionOne(Scene):
     def construct(self):
         #np.random.randi
-        self.add(make_dice_face("1"))
+        self.add(make_dice_face(1))
