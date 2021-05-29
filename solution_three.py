@@ -160,7 +160,7 @@ class SolutionThree(Scene):
         ET = Tex(r"\mathbb E[T]")
         num_games = game_counter[1].copy()
         ET.next_to(num_throws, DOWN).to_corner(LEFT)
-        num_game.next_to(ET, RIGHT)
+        num_games.next_to(ET, RIGHT)
         self.add(ET)
         self.wait()
 
