@@ -21,5 +21,6 @@ class QuestionTwo(Scene):
 
         frame = self.camera.frame
 
-        np.random.seed(0)
+        np.random.seed(1)
         games = np.random.randint(1, 7, 1000)# burn in to make seq nice
+        print(games)
