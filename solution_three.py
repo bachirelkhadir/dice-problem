@@ -231,6 +231,8 @@ class SolutionThree(Scene):
         self.wait()
 
 
+        num_throws = Text("# throws").scale(tex_scale).set_color(COLOR2)
+        num_throws.align_to(game_counter, LEFT).shift(5*DOWN)
         num_games = game_counter[1].copy().scale(tex_scale)
         num_games.align_to(num_throws, LEFT).shift(2*DOWN)
 
