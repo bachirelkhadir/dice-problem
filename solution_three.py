@@ -235,7 +235,6 @@ class SolutionThree(Scene):
 
         num_games = game_counter[1].copy().scale(tex_scale)
         num_games.align_to(game_counter, LEFT).shift(2*DOWN)
-
         num_6 = Text(r"= #6s").scale(tex_scale)
         one_sixth = Tex(r"\approx {{\frac 1 6}}").scale(1.2*tex_scale)
         one_sixth[1].set_color(COLOR3)
@@ -246,6 +245,9 @@ class SolutionThree(Scene):
 
         hstack([num_games, num_6, num_throws], MED_SMALL_BUFF)
         one_sixth.move_to(num_6)
+
+        num_games2 = num_games.copy().move_to(num_throws)
+        ET.next_to(num_games, RIGHT)
 
 
 
@@ -266,7 +268,8 @@ class SolutionThree(Scene):
         self.add(num_throws)
         self.wait()
 
-        self.play(ReplacementTransform(num_games.copy(), num_throws))
+
+        self.play(ReplacementTransform(num_throws, num_games2))
         self.wait()
         self.add(ET)
         self.wait()
