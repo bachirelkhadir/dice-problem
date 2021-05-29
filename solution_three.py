@@ -113,7 +113,6 @@ class SolutionThree(Scene):
         num_games = 10 # 30
         camera_height = 20
 
-        num_throws = Text("# throws")
 
         game_counter = VGroup(*hstack([Text("# games = "), Integer(0)], MED_SMALL_BUFF))
         game_counter.to_corner(UL)
@@ -181,6 +180,7 @@ class SolutionThree(Scene):
             start = end
 
         # lenght sequence
+        num_throws = Text("# throws")
         num_throws.align_to(frame, DOWN).shift(3*UP)
         self.add(num_throws)
         self.wait()
@@ -188,13 +188,18 @@ class SolutionThree(Scene):
 
         # num throws = E[T] * 100
         tex_scale = 1.3
+
+        almost_eq = Tex(r"\approx").scale(tex_scale)
+        almost_eq.next_to(num_throws, RIGHT)
         ET = Tex(r"\mathbb E[T]").scale(tex_scale)
+        ET.next_to(almost_eq, RIGHT).shift(RIGHT)
+
         num_games = game_counter[1].copy()
-        ET.next_to(num_throws, RIGHT).shift(RIGHT)
         num_games.next_to(ET, LEFT).shift(UP/20)
 
         approx_1 = VGroup(ET, num_games)
         # brin down 100
+        self.add(almost_eq)
         self.play(TransformFromCopy(game_counter[1], num_games))
         self.wait()
 
