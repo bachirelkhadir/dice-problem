@@ -235,7 +235,7 @@ class SolutionThree(Scene):
         num_games.align_to(num_throws, LEFT).shift(4*DOWN)
 
         num_6 = Text(r"= #6s").scale(tex_scale)
-        one_sixth = Tex(r"\approx {{\frac 1 6}}").scale(tex_scale)
+        one_sixth = Tex(r"\approx {{\frac 1 6}}").scale(1.2*tex_scale)
         one_sixth[1].set_color(COLOR3)
         num_throws = num_throws.copy()
 
