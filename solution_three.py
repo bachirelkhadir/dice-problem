@@ -271,5 +271,10 @@ class SolutionThree(Scene):
 
         self.play(ReplacementTransform(num_throws, num_games2))
         self.wait()
+
         self.add(ET)
         self.wait()
+
+        # zoom on and solve
+        frame_target = frame.copy().set_height(10).move_to(one_sixth)
+        self.play(Transform(frame, frame_target ))
