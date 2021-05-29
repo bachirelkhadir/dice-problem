@@ -278,3 +278,4 @@ class SolutionThree(Scene):
         # zoom on and solve
         frame_target = frame.copy().set_height(10).move_to(one_sixth)
         self.play(Transform(frame, frame_target ))
+        self.wa
