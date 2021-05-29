@@ -163,6 +163,7 @@ class SolutionThree(Scene):
         ET.next_to(num_throws, DOWN).to_corner(LEFT)
         num_games.next_to(ET, LEFT).shift(UP/20)
 
+        approx_1 = VGroup(ET, num_games)
         # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
         self.wait()
@@ -174,9 +175,11 @@ class SolutionThree(Scene):
 
         one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
         num_games = game_counter[1].copy()
-        ET.next_to(num_throws, DOWN).to_corner(LEFT)
+        one_sixth.next_to(num_throws, DOWN).to_corner(RIGHT)
         num_games.next_to(ET, LEFT).shift(UP/20)
 
+        approx_1 = VGroup(one_sixth, num_games)
         # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
+        self.add(one_sixth)
         self.wait()
