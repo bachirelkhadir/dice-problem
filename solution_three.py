@@ -156,7 +156,7 @@ class SolutionThree(Scene):
         frame_target = frame.copy().set_height(camera_height).align_to(dice[0], UP).shift(UP)
         always(game_counter.align_to, frame, LEFT)
 
-        total_time = 2
+        total_time = 10
         game_counter[1].time_passed = 0
         def game_counter_updater(m, dt):
             m.time_passed += dt
