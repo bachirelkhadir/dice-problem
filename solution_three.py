@@ -170,4 +170,4 @@ class SolutionThree(Scene):
         self.add(ET)
         self.wait()
 
-        # num throws = N / 6
+        # num throws = 100 / 6
