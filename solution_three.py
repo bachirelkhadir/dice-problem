@@ -88,8 +88,8 @@ def highlight_game(scene, game):
 def highlight_all_6s(scene, dice):
     # highlight all 6s
     sixes = [d for d in dice if d.value == 6]
-    self.play(Indicate(VGroup(*sixes)))
-    self.wait()
+    scene.play(Indicate(VGroup(*sixes)))
+    scene.wait()
 
 class SolutionThree(Scene):
 
