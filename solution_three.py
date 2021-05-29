@@ -198,12 +198,12 @@ class SolutionThree(Scene):
         # Method 1
         # #################
         # num throws = E[T] * 100
+        tex_scale = 3
         num_throws = Text("# throws").scale(tex_scale).set_color(COLOR2)
         num_throws.align_to(game_counter, LEFT).shift(5*DOWN)
         self.add(num_throws)
         self.wait()
 
-        tex_scale = 3
         almost_eq = Tex(r"\approx").scale(tex_scale)
         almost_eq.next_to(num_throws, RIGHT)
         ET = Tex(r"\mathbb E[T]").scale(tex_scale).set_color(COLOR1)
