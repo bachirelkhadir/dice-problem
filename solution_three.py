@@ -181,7 +181,6 @@ class SolutionThree(Scene):
 
 
         self.wait()
-        return
 
         # put games on a matrix
         start, end = 0, 0
