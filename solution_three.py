@@ -179,14 +179,14 @@ class SolutionThree(Scene):
                                 run_time=4./num_games))
             start = end
 
+
         # lenght sequence
+        # num throws = E[T] * 100
         num_throws = Text("# throws")
-        num_throws.align_to(frame, DOWN).shift(3*UP)
+        num_throws.align_to(frame, DL).shift(3*UP)
         self.add(num_throws)
         self.wait()
 
-
-        # num throws = E[T] * 100
         tex_scale = 1.3
         almost_eq = Tex(r"\approx").scale(tex_scale)
         almost_eq.next_to(num_throws, RIGHT)
@@ -211,9 +211,11 @@ class SolutionThree(Scene):
         self.wait()
 
 
-        num_6 = Text(r"\aprox # 6s").scale(tex_scale)
-        one_sixth = Tex(r"\frac 1 6").scale(tex_scale)
+        num_6 = Text(r"\approx # 6s").scale(tex_scale)
+        one_sixth = Tex(r"\approx \frac 1 6").scale(tex_scale)
         num_games = game_counter[1].copy()
+
+        num_6
         one_sixth.next_to(num_throws, DOWN).to_corner(RIGHT)
         num_games.next_to(one_sixth, RIGHT).shift(UP/20)
 
