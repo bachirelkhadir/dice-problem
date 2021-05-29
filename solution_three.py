@@ -280,9 +280,7 @@ class SolutionThree(Scene):
         frame_target = frame.copy().set_height(10).move_to(one_sixth)
 
         self.play(
-            LaggedStartMap(
-                FadeOut,
-                VGroup(*dice_on_games, *sixes, game_counter),
+                FadeOut(VGroup(*dice_on_games, *sixes, game_counter))
                 lambda m: (m, DOWN)),
 
             Transform(frame, frame_target))
