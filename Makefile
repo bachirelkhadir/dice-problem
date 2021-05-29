@@ -23,7 +23,7 @@ vrec:
 	manimgl recurrence.py -tw && cd output/videos/ && bash mov_to_pngs.sh RecurrenceScene.mov
 
 irec:
-	manimgl recurrence.py -ws
+	manimgl recurrence.py -ws -n 10,11
 
 vtext:
 	for i in $$(grep class make_text.py | cut -d' ' -f2 | cut -d'(' -f1); do manimgl make_text.py $$i -wt; done
@@ -78,10 +78,10 @@ vsolution1:
 
 
 solutionthree:
-	manimgl solution_three.py
+	manimgl solution_three.py -n 27
 
 isolutionthree:
-	manimgl solution_three.py -ws
+	manimgl solution_three.py -ws -n 4,5
 
 vsolutionthree:
 	manimgl solution_three.py -wt && cd output/videos/ && bash mov_to_pngs.sh SolutionThree.mov
@@ -104,6 +104,15 @@ idistr:
 
 vdistr:
 	manimgl distribution.py -wt  && cd output/videos/ && bash mov_to_pngs.sh Distribution.mov
+
+
+
+q1:
+	manimgl question_one.py
+
+iq1:
+	manimgl question_one.py -ws
+
 pngs:
 	cd output/videos/ && bash mov_to_pngs.sh
 

@@ -32,5 +32,5 @@ tex:
   intermediate_filetype: xdv
   template_file: ctex_template.tex
   text_to_replace: '[tex_expression]'
-universal_import_line: from manimlib import *
+universal_import_line: 'import sys; sys.path.append("/home/bachir/Dropbox/Youtube/Probability/"); print("Path updated succesfully.")'
 window_position: UR
