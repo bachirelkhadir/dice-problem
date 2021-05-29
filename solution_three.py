@@ -294,4 +294,5 @@ class SolutionThree(Scene):
                 FadeOut,
                 VGroup(num_games, num_games2, one_sixth),
                 lambda m: (m, DOWN)),
+            ET.animate.shift(3*LEFT)
         )
