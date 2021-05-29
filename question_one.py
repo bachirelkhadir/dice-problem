@@ -39,7 +39,7 @@ class QuestionOne(Scene):
         self.wait()
 
         frame = self.camera.frame
-        frame_copy = frame.copy().set_height(12)
+        frame_copy = frame.copy().set_height(16)
         self.play(Transform(frame, frame_copy))
 
         #self.add(dice_after_6)
