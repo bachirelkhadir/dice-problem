@@ -282,7 +282,7 @@ class SolutionThree(Scene):
         self.play(
             LaggedStartMap(
                 FadeOut,
-                VGroup(*dice_on_games, *sixes),
+                VGroup(*dice_on_games, *sixes, game_counter),
                 lambda m: (m, DOWN)),
 
             Transform(frame, frame_target))
