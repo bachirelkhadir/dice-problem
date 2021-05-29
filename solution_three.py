@@ -208,6 +208,7 @@ class SolutionThree(Scene):
 
         self.add(ET)
         self.wait()
+        approx_1 = VGroup(one_sixth, num_games)
 
         # #################
         # Method 2
@@ -224,13 +225,12 @@ class SolutionThree(Scene):
         one_sixth = Tex(r"\approx \frac 1 6").scale(tex_scale)
         num_throws = num_throws.copy()
 
-        num_games.align_to(frame, DR)
+        num_games.align_to(frame, DOWN)
         approx2 = VGroup(num_games, num_6, one_sixth, num_throws)
         hstack(approx2)
         self.add(approx2)
         return
 
-        approx_1 = VGroup(one_sixth, num_games)
 
         # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
