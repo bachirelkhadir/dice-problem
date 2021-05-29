@@ -296,7 +296,7 @@ class SolutionThree(Scene):
                 FadeOut,
                 VGroup(num_games, num_games2, one_sixth),
                 lambda m: (m, DOWN)),
-            ET.animate.shift(3*LEFT),
+            ET.animate.shift(6*LEFT),
         )
         self.add(approx_6)
         self.wait()
