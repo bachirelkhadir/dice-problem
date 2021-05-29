@@ -246,7 +246,7 @@ class SolutionThree(Scene):
         hstack([num_games, num_6, num_throws], MED_SMALL_BUFF)
         one_sixth.move_to(num_6)
 
-        num_games2 = num_games.copy().move_to(num_throws).shift(LEFT)
+        num_games2 = num_games.copy().move_to(num_throws).shift(1.4*LEFT)
         ET.next_to(num_games2, RIGHT)
 
 
