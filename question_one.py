@@ -32,14 +32,18 @@ class QuestionOne(Scene):
         dice_until_6 = dice[:first_6+1]
         dice_after_6 = dice[first_6+1:]
 
+        # show until 6
         self.play(ShowIncreasingSubsets(dice_until_6, ))
         self.wait()
 
-        self.play(ShowIncreasingSubsets(dice_after_6, ))
-        self.wait()
 
+
+        # zoom out and show until 66
         frame = self.camera.frame
         frame_copy = frame.copy().set_height(16).move_to(dice)
+        self.play(ShowIncreasingSubsets(dice_after_6, ))
+        self.wait()
         self.play(Transform(frame, frame_copy))
+        self.wait()
 
         #self.add(dice_after_6)
