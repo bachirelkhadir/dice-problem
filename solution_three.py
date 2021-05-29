@@ -65,7 +65,7 @@ def highlight_game(scene, game):
         rect = Rectangle(fill_color=YELLOW, fill_opacity=.7)
         rect.surround(game, stretch=True).scale(1.1)
         scene.add(rect)
-        scene.bring_to_back(rect)
+        scene.bring_to_back(game)
 
 
 class SolutionThree(Scene):
