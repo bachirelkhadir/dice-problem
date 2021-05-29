@@ -8,9 +8,11 @@ from common import vstack, hstack, halign
 
 def hstack_fixed_width(obj, width, buff):
     vstack(obj[::width], buff)
+
     for i in range(len(obj) // width):
         hstack(obj[i*width:(i+1)*width], buff)
 
+    hstack(obj[(i+1)*width:], buff)
 
 class QuestionOne(Scene):
     def construct(self):
