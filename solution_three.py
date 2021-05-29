@@ -135,6 +135,7 @@ class SolutionThree(Scene):
         # flatten
         dice_on_grid = sum(dice_matrix_copy, [])
         dice_on_games= sum(dice_matrix, [])
+        print(len(dice_on_games), "dice")
 
 
         # Add games on after the other
