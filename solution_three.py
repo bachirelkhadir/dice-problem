@@ -162,7 +162,12 @@ class SolutionThree(Scene):
         ET.next_to(num_throws, DOWN).to_corner(LEFT)
         num_games.next_to(ET, RIGHT)
 
+        # brin down 100
         self.play(TransformFromCopy(game_counter[1], num_games))
+        self.add(ET)
+
+
+
         self.wait()
 
         # num throws =
