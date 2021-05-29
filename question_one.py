@@ -30,5 +30,5 @@ class QuestionOne(Scene):
         dice_after_6 = dice[first_6+1:]
         dice.to_edge(LEFT)
 
-        self.play(ShowCreation(dice_until_6, lag_ratio=0.1))
+        self.play(Write(dice_until_6, lag_ratio=0.1))
         #self.add(dice_after_6)
