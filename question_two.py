@@ -30,7 +30,7 @@ class QuestionTwo(Scene):
 
         num_throws = 100
         frame = self.camera.frame
-        frame.set_height(20)
+        #frame.set_height(20)
 
         np.random.seed(1)
         games = np.random.randint(1, 7, num_throws)# burn in to make seq nice
@@ -40,7 +40,7 @@ class QuestionTwo(Scene):
         ]
 
         vstack([ d for d in dice], SMALL_BUFF)
-        VGroup(*dice).to_edge(UP)
+        VGroup(*dice).scale(.6).to_edge(UP)
 
         even_games = [d for g, d in zip(games, dice)
                       if len(set(g) & set("135")) == 0]
