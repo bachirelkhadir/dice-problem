@@ -41,9 +41,8 @@ class QuestionOne(Scene):
         # zoom out and show until 66
         frame = self.camera.frame
         frame_copy = frame.copy().set_height(16).move_to(dice)
-        self.play(ShowIncreasingSubsets(dice_after_6, ))
-        self.wait()
-        self.play(Transform(frame, frame_copy))
+        self.play(ShowIncreasingSubsets(dice_after_6, ),
+                  Transform(frame, frame_copy))
         self.wait()
 
         #self.add(dice_after_6)
