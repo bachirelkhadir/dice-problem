@@ -77,7 +77,7 @@ def highlight_game(scene, game):
     scene.wait()
 
     # cleanup
-    self.remove(rect)
+    scene.remove(rect)
 
     scene.play(
         Transform(game, game_save), run_time=.01)
