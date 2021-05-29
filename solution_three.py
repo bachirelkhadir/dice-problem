@@ -160,7 +160,7 @@ class SolutionThree(Scene):
         # zoom out and add rest of the games
         frame = self.camera.frame
         frame_target = frame.copy().set_height(camera_height).align_to(dice[0], UP).shift(UP)
-        always(game_counter.align_to, frame, LEFT)
+        always(game_counter.next_to, frame, LEFT)
 
         total_time = 2
         game_counter[1].curr_time = 0
