@@ -204,9 +204,12 @@ class SolutionThree(Scene):
         # num throws / 6 = 100
         # highlight particular game that ends with 6
         highlight_game(self, VGroup(*dice[5]))
+        self.wait()
 
 
         highlight_all_6s(self, dice_on_grid)
+
+        self.wait()
         return
 
         return
