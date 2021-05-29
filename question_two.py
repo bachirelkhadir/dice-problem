@@ -19,8 +19,8 @@ def hstack_fixed_width(obj, width, buff):
 def string_to_dice(game):
     game = map(int, game)
     game = map(make_dice_face, game)
-    game = hstack([*game])
-    game = VGroup(*game, SMALL_BUFF)
+    game = hstack([*game], SMALL_BUFF)
+    game = VGroup(*game, )
     return game
 
 
