@@ -243,8 +243,8 @@ class SolutionThree(Scene):
 
         approx2 = VGroup(num_games, num_6, num_throws)
 
+        hstack([num_games, num_6, num_throws], MED_SMALL_BUFF)
         one_sixth.move_to(num_6)
-        #hstack(approx2, MED_SMALL_BUFF)
 
 
 
