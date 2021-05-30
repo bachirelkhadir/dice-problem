@@ -305,6 +305,9 @@ class SolutionOne(Scene):
         denum.next_to(frac_line, DOWN, SMALL_BUFF)
         deriv_1_over_1_x  = VGroup(num, frac_line, denum)
         deriv_1_over_1_x = deriv_1_over_1_x.move_to(rhs).shift(DOWN/10)
+
+        highlight_rect = Rectangle(fill_opacity=.7, fill_color=BLACK)
+        self.add(highlight_rect)
         self.play(Transform(rhs, deriv_1_over_1_x),
                   FadeOut(VGroup(left_paren_2, right_paren_2)))
         deriv_1_over_1_x = rhs
