@@ -72,8 +72,10 @@ class Conditional(TextScene):
             *hstack([
                 Tex(r"\mathbb E[ T"),
                 Tex(r" | "),
-                make_dice_face(1).scale(0.3),
-                Tex(r"\in {2, 4, 6}]")],
+                Text("every throw"),
+                Tex(r"\in"),
+                hstack(*[make_dice_face(i).scale(0.3) for i in (2,4,6)]),
+                ]
                     MED_SMALL_BUFF)
         )
         text.to_edge(LEFT)
