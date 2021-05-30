@@ -21,7 +21,7 @@ class LawLargeNumbers(Scene):
                                               colors)]
         Xis.insert(-1, Tex("..."))
         # centering
-        VGroup(*hstack(Xis)).move_to(0).shift(LEFT)
+        VGroup(*hstack(Xis)).move_to(0).shift(LEFT+DOWN)
         self.play(LaggedStart(*[TransformFromCopy(X, Xi) for Xi in Xis]))
         self.wait()
 
