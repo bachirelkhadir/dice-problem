@@ -314,7 +314,6 @@ class SolutionOne(Scene):
                   FadeOut(VGroup(left_paren_2, right_paren_2)))
         deriv_1_over_1_x = rhs
         self.wait()
-        return
 
 
         # take derivatives inside
@@ -326,12 +325,14 @@ class SolutionOne(Scene):
 
         # derivative x^k
         deriv_x_k = tex_fn(r"k \quad x^{k-1}").move_to(x_k).shift(RIGHT/3)
+        highlight_rect.move_to(deriv_x_k)
 
         self.play(Transform(x_k, deriv_x_k),
                   FadeOut(VGroup(left_paren_1, right_paren_1)))
         deriv_x_k = x_k
         self.wait()
 
+        return
         # multiply lhs by (1-x)
         one_minus_x_left = tex_fn(r"(1-x)")
         one_minus_x_right= one_minus_x_left.copy()
