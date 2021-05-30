@@ -68,7 +68,7 @@ class Conditional(TextScene):
                "average": RED_A}
         self.text = text = VGroup(
             Tex("\mathbb E[ T"))
-        text[2].shift(2*DOWN)
+        #text[2].shift(2*DOWN)
 
         for t in text:
             self.play(self.animate(t))
