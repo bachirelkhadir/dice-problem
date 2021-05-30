@@ -77,3 +77,17 @@ class LLNWithCoins(Scene):
                   *[coin.animate.rotate(TAU, RIGHT) for coin in tails],
                   )
         self.wait()
+
+
+        # push head to the left and tail to the right
+        heads_target = [coin.copy() for coin in heads]
+        heads_target[0].move_to(coins[0])
+        hstack_fixed_width(heads_target, width // 2, SMALL_BUFF)
+
+
+
+        tails_target = [coin.copy() for coin in tails]
+        tails_target[0].move_to(coins[0])
+        hstack_fixed_width(tails_target, width // 2, SMALL_BUFF)
+
+        self.add(*heads_target, tails_target)
