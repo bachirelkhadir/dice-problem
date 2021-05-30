@@ -33,7 +33,7 @@ class LawLargeNumbers(Scene):
         frac.shift(DOWN/3)
         denom.next_to(denom, DOWN/3)
         self.add(frac)
-        self.add(n)
+        self.add(denom)
         self.wait()
 
         # E[X]
