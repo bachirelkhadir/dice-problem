@@ -44,7 +44,7 @@ class LawLargeNumbers(Scene):
 
 class LLNWithCoins(Scene):
     def construct(self):
-        num_coins = 100
+        num_coins = 10
         width = 20
 
         coin1 = Coin().shift(UP)
