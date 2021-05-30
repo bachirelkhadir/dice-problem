@@ -23,7 +23,7 @@ class LawLargeNumbers(Scene):
         self.wait()
 
         # take average
-        plus = [Tex("+").next_to(Xi, RIGHT) for Xi in Xis[:]]
+        plus = [Tex("+").next_to(Xi, RIGHT) for Xi in Xis[:-1]]
         self.add(*plus)
         self.wait()
 
