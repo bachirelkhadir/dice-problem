@@ -75,6 +75,7 @@ class Conditional(TextScene):
                 make_dice_face(1).scale(0.3),
                 Tex(r"\in {2, 4, 6}")])
         )
+        text.to_edge(LEFT)
         #text[2].shift(2*DOWN)
 
         for t in text:
