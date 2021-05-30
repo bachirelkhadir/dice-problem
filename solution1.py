@@ -338,6 +338,7 @@ class SolutionOne(Scene):
         one_minus_x_left = tex_fn(r"(1-x)")
         one_minus_x_right= one_minus_x_left.copy()
         one_minus_x_left.next_to(lhs, LEFT, 0*SMALL_BUFF)
+        self.remove(highlight_rect)
         self.add(one_minus_x_left)
         self.wait()
 
