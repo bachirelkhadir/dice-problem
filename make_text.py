@@ -75,7 +75,7 @@ class Conditional(TextScene):
             *hstack([
                 Tex(r"\mathbb E[ T"),
                 Tex(r" | "),
-                Text("every throw"),
+                Text("every throw").scale(.7),
                 Tex(r"\in "),
                 lbrace,
                 dice_2, Tex(r",").shift(DOWN),
