@@ -14,6 +14,6 @@ class LawLargeNumbers(Scene):
         X.shift(UP)
         self.add(X)
 
-        Xis = [Tex(rf"X_{i}") for i in [1, 2, 3, 4, "..."]]
+        Xis = [Tex(rf"X_{{i}}") for i in [1, 2, 3, 4, "..."]]
         hstack(Xis)
         self.add(*Xis)
