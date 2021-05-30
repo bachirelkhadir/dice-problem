@@ -45,7 +45,7 @@ class ThirdWayQuestion(TextScene):
             self.wait()
 
 
-class ThirdWayQuestion(TextScene):
+class TwoSixes(TextScene):
     def construct(self):
         t2c = {"throws": YELLOW,
                "6": BLUE_A,
@@ -54,6 +54,22 @@ class ThirdWayQuestion(TextScene):
             Text("How many throws does it take,", t2c=t2c),
             Text("on average,", t2c=t2c),
             Text("to get a two 6s in a row?", t2c=t2c))
+        text[1].shift(DOWN)
+        text[2].shift(2*DOWN)
+
+        for t in text:
+            self.play(self.animate(t))
+            self.wait()
+
+class ConditionalThrow(TextScene):
+    def construct(self):
+        t2c = {"throws": YELLOW,
+               "6": BLUE_A,
+               "average": RED_A}
+        self.text = text = VGroup(
+            Text("How many throws does it take,", t2c=t2c),
+            Text("on average,", t2c=t2c),
+            Text("to get 6 conditioned on the event that all throws give even numbers?", t2c=t2c))
         text[1].shift(DOWN)
         text[2].shift(2*DOWN)
 
