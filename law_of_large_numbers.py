@@ -51,4 +51,4 @@ class LLNWithCoins(Scene):
         coins = VGroup(*[Coin() for _ in range(6)])
         hstack(coins)
         coins.to_edge(LEFT)
-        self.add(*coins)
+        self.add(coins)
