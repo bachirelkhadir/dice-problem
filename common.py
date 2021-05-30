@@ -16,3 +16,12 @@ def halign(objs):
     for t in objs[1:]:
         t.align_to(objs[0])
     return objs
+
+
+def hstack_fixed_width(obj, width, buff):
+    vstack(obj[::width], buff)
+
+    for i in range(len(obj) // width):
+        hstack(obj[i*width:(i+1)*width], buff)
+
+    hstack(obj[(i+1)*width:], buff)
