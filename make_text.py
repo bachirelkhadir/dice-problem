@@ -83,7 +83,7 @@ class Conditional(TextScene):
                 dice_6,
                 rbrace,
                 Tex(r"\right]"),
-                Tex(r"?").scale(1.2),
+                Tex(r"?").scale(1.5),
                 ],
                 MED_SMALL_BUFF)
         )
