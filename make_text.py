@@ -69,15 +69,20 @@ class Conditional(TextScene):
                "6": BLUE_A,
                "average": RED_A}
         dice_2, dice_4, dice_6 =  [make_dice_face(i).scale(0.3) for i in (2,4,6)]
+        lbrace =  Tex(r"\{ %}")
+        rbrace =  lbrace.copy().rotate(PI/2)
         self.text = text = VGroup(
             *hstack([
                 Tex(r"\mathbb E[ T"),
                 Tex(r" | "),
                 Text("every throw"),
-                Tex(r"\in \{ %}"),
+                Tex(r"\in "),
+                lbrace,
                 dice_2, Tex(r","),
                 dice_4, Tex(r","),
-                dice_6, Tex(r"\}]"),
+                dice_6,
+                rbrace,
+                Tex(r"]"),
                 ],
                 MED_SMALL_BUFF)
         )
