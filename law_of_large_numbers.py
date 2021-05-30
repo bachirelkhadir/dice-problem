@@ -52,3 +52,5 @@ class LLNWithCoins(Scene):
         coins[0].to_edge(LEFT)
         hstack(coins)
         self.add(*coins)
+
+        self.play(*[coin.animate.flip() for coin in coins])
