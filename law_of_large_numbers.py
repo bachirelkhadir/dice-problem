@@ -50,8 +50,8 @@ class LLNWithCoins(Scene):
         coin1 = Coin().shift(UP)
         np.random.seed(0)
 
-
-        coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(num_coins)]
+        coin_template = Coin().scale(.1*OUT+UR).scale(.2)
+        coins = [coin_template.copy() for _ in range(num_coins)]
         heads = [coin for coin in coins if np.random.randn() >= 0]
         tails = [coin for coin in coins if coin not in heads]
 
