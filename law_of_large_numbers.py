@@ -44,14 +44,16 @@ class LawLargeNumbers(Scene):
 
 class LLNWithCoins(Scene):
     def construct(self):
+        num_coins = 20 # 50
+        width = 5 # 10
         coin1 = Coin().shift(UP)
 
         self.add(coin1)
 
-        coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(50)]
+        coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(num_coins)]
         coins[0].to_edge(LEFT).shift(DOWN)
         #hstack(coins, SMALL_BUFF)
-        hstack_fixed_width(coins, 10, SMALL_BUFF)
+        hstack_fixed_width(coins, width, SMALL_BUFF)
         self.add(*coins)
 
         self.play(*[coin.animate.flip() for coin in coins])
