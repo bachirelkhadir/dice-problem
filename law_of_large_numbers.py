@@ -11,6 +11,9 @@ from common import vstack, hstack, halign
 class LawLargeNumbers(Scene):
     def construct(self):
         X = Tex("X")
+        X.shift(UP)
         self.add(X)
 
-        pass
+        Xis = [Tex(f"X_{i}" for i in [1, 2, 3, 4, "..."])]
+        hstack(Xis)
+        self.add(*Xis)
