@@ -53,10 +53,15 @@ class LLNWithCoins(Scene):
 
         coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(num_coins)]
         heads = [coin for coin in coins if np.random.randn() >= 0]
+        tails = [coin for coin in coins if coin not in heads]
+
         print(f"heads: {len(heads)}({len(coins)})")
         coins[0].to_edge(LEFT).shift(DOWN)
         #hstack(coins, SMALL_BUFF)
         hstack_fixed_width(coins, width, SMALL_BUFF)
         self.add(*coins)
 
-        self.play(*[coin.animate.flip() for coin in coins])
+        coin1.flip
+        self.play(*[coin.animate.flip() for coin in heads],
+                  *[coin.animate.rotate(TAU, RIGHT) for coin in tails],
+                  )
