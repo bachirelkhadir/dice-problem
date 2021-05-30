@@ -113,6 +113,37 @@ q1:
 iq1:
 	manimgl question_one.py -ws
 
+vq1:
+	manimgl question_one.py -wt && cd output/videos/ && bash mov_to_pngs.sh QuestionOne.mov
+
+q1text:
+	manimgl make_text.py TwoSixes
+
+iq1text:
+	manimgl make_text.py TwoSixes -ws
+
+vq1text:
+	manimgl make_text.py TwoSixes -wt && cd output/videos/ && bash mov_to_pngs.sh TwoSixes
+
+q2:
+	manimgl question_two.py
+
+iq2:
+	manimgl question_two.py -ws
+
+vq2:
+	manimgl question_two.py -wt && cd output/videos/ && bash mov_to_pngs.sh QuestionTwo.mov
+
+
+q2text:
+	manimgl make_text.py Conditional
+
+iq2text:
+	manimgl make_text.py Conditional -ws
+
+vq2text:
+	manimgl make_text.py Conditional -wt && cd output/videos/ && bash mov_to_pngs.sh Conditional
+
 pngs:
 	cd output/videos/ && bash mov_to_pngs.sh
 
