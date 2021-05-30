@@ -319,6 +319,7 @@ class SolutionOne(Scene):
         # take derivatives inside
 
         highlight_rect.move_to(lhs).scale(UP+2*RIGHT)
+        self.bring_to_back(highlight_rect)
         self.play(
             FadeOut(lhs[0]), # 1' = 0
             Transform(left_paren_1, left_paren_1.copy().scale(.5).next_to(x_k, LEFT, 0)),
