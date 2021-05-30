@@ -73,7 +73,7 @@ class Conditional(TextScene):
         rbrace =  lbrace.copy().rotate(PI)
         self.text = text = VGroup(
             *hstack([
-                Tex(r"\mathbb E[\quad T"),
+                Tex(r"\mathbb E\left[\quad T"),
                 Tex(r" | "),
                 Text("every throw").scale(.7),
                 Tex(r"\in "),
