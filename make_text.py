@@ -65,8 +65,8 @@ class TwoSixes(TextScene):
 
 class Conditional(TextScene):
     def construct(self):
-        t2c = {"throw": YELLOW,
-               "T": RED_B,}
+        t2c = {"throw": RED_A,
+               "T": YELLOW,}
         dice_2, dice_4, dice_6 =  [make_dice_face(i).scale(0.3) for i in (2,4,6)]
         lbrace =  Tex(r"\{ %}")
         rbrace =  lbrace.copy().rotate(PI)
