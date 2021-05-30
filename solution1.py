@@ -307,7 +307,7 @@ class SolutionOne(Scene):
         deriv_1_over_1_x = deriv_1_over_1_x.move_to(rhs).shift(DOWN/10)
 
         highlight_rect = Rectangle(stroke_opacity=.3,
-                                   fill_opacity=.5, fill_color=BLACK, width=2, height=1.2)
+                                   fill_opacity=.5, fill_color=BLACK, width=2, height=1.3)
         highlight_rect.move_to(rhs)
         self.add(highlight_rect)
         self.play(Transform(rhs, deriv_1_over_1_x),
