@@ -78,7 +78,7 @@ class Conditional(TextScene):
                 dice_2, Tex(r","),
                 dice_4, Tex(r","),
                 dice_6, Tex(r"]"),
-                ]
+                ],
                 MED_SMALL_BUFF)
         )
         text.to_edge(LEFT)
