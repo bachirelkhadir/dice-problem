@@ -61,7 +61,7 @@ class TwoSixes(TextScene):
             self.play(self.animate(t))
             self.wait()
 
-class ConditionalThrow(TextScene):
+class Conditional(TextScene):
     def construct(self):
         t2c = {"throws": YELLOW,
                "6": BLUE_A,
