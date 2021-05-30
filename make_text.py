@@ -87,7 +87,7 @@ class Conditional(TextScene):
                 ],
                 MED_SMALL_BUFF)
         )
-        commas = VGroup(text[7], text[9]).shift(DOWN/2)
+        commas = VGroup(text[7], text[9]).shift(DOWN/5)
 
         part1 = text[:2]
         part2 = text[2:4]
