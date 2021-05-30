@@ -56,7 +56,8 @@ class LLNWithCoins(Scene):
         tails = [coin for coin in coins if coin not in heads]
 
         print(f"heads: {len(heads)}({len(coins)})")
-        coins[0].shift(DOWN)
+
+        coins[0].to_edge(LEFT).shift(3*RIGHT).shift(DOWN)
         #hstack(coins, SMALL_BUFF)
         hstack_fixed_width(coins, width, SMALL_BUFF)
 
