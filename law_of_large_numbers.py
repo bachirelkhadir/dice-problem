@@ -12,7 +12,7 @@ class LawLargeNumbers(Scene):
     def construct(self):
         X = Tex("X")
         X.shift(UP)
-        self.play(ShowCreation(X))
+        self.play(Write(X))
         self.wait()
 
         # X1, X2, X3, X4, ..., X_n
