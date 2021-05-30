@@ -70,7 +70,7 @@ class Conditional(TextScene):
                "average": RED_A}
         dice_2, dice_4, dice_6 =  [make_dice_face(i).scale(0.3) for i in (2,4,6)]
         lbrace =  Tex(r"\{ %}")
-        rbrace =  lbrace.copy().rotate(PI/2)
+        rbrace =  lbrace.copy().rotate(PI)
         self.text = text = VGroup(
             *hstack([
                 Tex(r"\mathbb E[ T"),
