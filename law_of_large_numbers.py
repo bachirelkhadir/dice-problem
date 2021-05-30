@@ -6,6 +6,7 @@ exec(get_custom_config()["universal_import_line"])
 import numpy as np
 from dice_utils import make_dice_face
 from common import vstack, hstack, halign
+from coin_utils import Coin
 
 
 class LawLargeNumbers(Scene):
@@ -40,3 +41,7 @@ class LawLargeNumbers(Scene):
 
         self.play(ShowCreation(VGroup(*plus, frac, denom, exp_X)))
         self.wait()
+
+class LLNWithCoins(Scene):
+    def construct(self):
+        self.add(Coin())
