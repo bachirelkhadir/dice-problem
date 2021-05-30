@@ -47,10 +47,12 @@ class LLNWithCoins(Scene):
         num_coins = 20 # 50
         width = 5 # 10
         coin1 = Coin().shift(UP)
+        np.random.seed(0)
 
         self.add(coin1)
 
         coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(num_coins)]
+        heads = np.random.choice(coins, num_coins//2)
         coins[0].to_edge(LEFT).shift(DOWN)
         #hstack(coins, SMALL_BUFF)
         hstack_fixed_width(coins, width, SMALL_BUFF)
