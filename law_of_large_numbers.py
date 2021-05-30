@@ -5,7 +5,7 @@ from manimlib import *
 exec(get_custom_config()["universal_import_line"])
 import numpy as np
 from dice_utils import make_dice_face
-from common import vstack, hstack, halign
+from common import vstack, hstack, halign, hstack_fixed_width
 from coin_utils import Coin
 
 
@@ -51,6 +51,7 @@ class LLNWithCoins(Scene):
         coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(50)]
         coins[0].to_edge(LEFT).shift(DOWN)
         hstack(coins, SMALL_BUFF)
+        hstack_fixed_width(coins, 10)
         self.add(*coins)
 
         self.play(*[coin.animate.flip() for coin in coins])
