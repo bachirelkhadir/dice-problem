@@ -46,6 +46,8 @@ class LLNWithCoins(Scene):
     def construct(self):
         coin1 = Coin().shift(UP)
 
+        self.add(coin1)
 
-
-        self.add(Coin())
+        coins = [Coin() for _ in range(6)]
+        hstack(coins)
+        self.add(coins)
