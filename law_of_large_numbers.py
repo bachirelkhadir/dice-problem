@@ -22,9 +22,14 @@ class LawLargeNumbers(Scene):
         self.play(LaggedStart(*[TransformFromCopy(X, Xi) for Xi in Xis]))
         self.wait()
 
-        # take average
+        # take sum
         plus = [Tex("+").next_to(Xi, RIGHT) for Xi in Xis[:-1]]
         self.add(*plus)
+        self.wait()
+
+        # divide by n
+        frac = Line().surround(VGroup(*Xis))
+        self.add(frac)
         self.wait()
 
         # E[X]
