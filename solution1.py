@@ -317,6 +317,8 @@ class SolutionOne(Scene):
 
 
         # take derivatives inside
+
+        highlight_rect.move_to(lhs)
         self.play(
             FadeOut(lhs[0]), # 1' = 0
             Transform(left_paren_1, left_paren_1.copy().scale(.5).next_to(x_k, LEFT, 0)),
@@ -325,7 +327,6 @@ class SolutionOne(Scene):
 
         # derivative x^k
         deriv_x_k = tex_fn(r"k \quad x^{k-1}").move_to(x_k).shift(RIGHT/3)
-        highlight_rect.move_to(deriv_x_k)
 
         self.play(Transform(x_k, deriv_x_k),
                   FadeOut(VGroup(left_paren_1, right_paren_1)))
