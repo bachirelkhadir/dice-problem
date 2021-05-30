@@ -16,4 +16,5 @@ class LawLargeNumbers(Scene):
 
         Xis = [Tex("X_{%s}" % i) for i in [1, 2, 3, 4, "k"]]
         VGroup(*hstack(Xis)).to_edge(LEFT)
-        self.add(*Xis)
+
+        self.play(*[CopyTransform(X, Xi) for Xi in X])
