@@ -70,7 +70,7 @@ class LLNWithCoins(Scene):
         self.wait()
 
         self.play(LaggedStart(*[TransformFromCopy(coin1, coin) for  coin in coins],
-                              run_time=2))
+                              run_time=1))
         self.wait()
 
         self.play(*[coin.animate.flip() for coin in heads],
