@@ -72,7 +72,6 @@ class Conditional(TextScene):
             Tex(r" | "),
             make_dice_face(1),
             Tex(" \in {2, 4, 6}")
-
         )
         #text[2].shift(2*DOWN)
 
