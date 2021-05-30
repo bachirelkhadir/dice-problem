@@ -50,4 +50,4 @@ class LLNWithCoins(Scene):
 
         coins = [Coin() for _ in range(6)]
         hstack(coins)
-        self.add(coins)
+        self.add(*coins)
