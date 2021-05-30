@@ -48,7 +48,7 @@ class LLNWithCoins(Scene):
         width = 20
 
         coin1 = Coin().shift(UP)
-        np.random.seed(5)
+        np.random.seed(10)
 
         coin_template = Coin().scale(.1*OUT+UR).scale(.2)
         coins = [coin_template.copy() for _ in range(num_coins)]
