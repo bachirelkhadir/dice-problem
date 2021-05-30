@@ -50,7 +50,6 @@ class LLNWithCoins(Scene):
         coin1 = Coin().shift(UP)
         np.random.seed(0)
 
-        self.add(coin1)
 
         coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(num_coins)]
         heads = [coin for coin in coins if np.random.randn() >= 0]
@@ -60,7 +59,18 @@ class LLNWithCoins(Scene):
         coins[0].to_edge(LEFT).shift(DOWN)
         #hstack(coins, SMALL_BUFF)
         hstack_fixed_width(coins, width, SMALL_BUFF)
-        self.add(*coins)
+
+
+
+        self.add(coin1)
+        self.wait()
+        self.play(coin1.animate().flip())
+        self.wait()
+        self.play(coin1.animate().flip())
+        self.wait()
+
+        self.play(LaggedStart(*[TransformFromCopy(coin1, coin) for  coin in coins]))
+        self.wait()
 
         self.play(*[coin.animate.flip() for coin in heads],
                   *[coin.animate.rotate(TAU, RIGHT) for coin in tails],
