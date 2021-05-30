@@ -58,7 +58,7 @@ class LLNWithCoins(Scene):
         print(f"heads: {len(heads)}({len(coins)})")
 
         # center
-        coins[0].shift( .1 * len(coins)/2 * coin_template.get_width() * LEFT )
+        coins[0].to_edge(LEFT).shift(1.5*RIGHT).shift(DOWN)
         hstack_fixed_width(coins, width, SMALL_BUFF)
 
 
