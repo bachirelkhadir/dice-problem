@@ -33,12 +33,10 @@ class LawLargeNumbers(Scene):
         denom = Tex("n")
         frac.shift(DOWN/3)
         denom.next_to(frac, DOWN)
-        self.play(ShowCreation(VGroup(*plus, frac, denom)))
-        self.wait()
 
         # E[X]
         exp_X = Tex(r"\longrightarrow \mathbb E[X]")
         exp_X.next_to(frac, RIGHT)
-        self.add(exp_X)
 
+        self.play(ShowCreation(VGroup(*plus, frac, denom, exp_X)))
         self.wait()
