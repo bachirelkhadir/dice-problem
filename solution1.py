@@ -334,7 +334,6 @@ class SolutionOne(Scene):
         deriv_x_k = x_k
         self.wait()
 
-        return
         # multiply lhs by (1-x)
         one_minus_x_left = tex_fn(r"(1-x)")
         one_minus_x_right= one_minus_x_left.copy()
