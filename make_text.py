@@ -74,7 +74,7 @@ class Conditional(TextScene):
                 Tex(r" | "),
                 make_dice_face(1).scale(0.3),
                 Tex(r"\in {2, 4, 6}]")],
-                    SMALL_BUFF)
+                    MED_SMALL_BUFF)
         )
         text.to_edge(LEFT)
         #text[2].shift(2*DOWN)
