@@ -19,6 +19,11 @@ class LawLargeNumbers(Scene):
         Xis.insert(-1, Tex("..."))
         # centering
         VGroup(*hstack(Xis)).move_to(0)
-
         self.play(LaggedStart(*[TransformFromCopy(X, Xi) for Xi in Xis]))
+
+
+        # E[X]
+        exp_X = Tex(r"\mathbb E[X]")
+        self.add(exp_X)
+
         self.wait()
