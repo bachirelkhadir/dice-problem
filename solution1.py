@@ -307,7 +307,7 @@ class SolutionOne(Scene):
         deriv_1_over_1_x = deriv_1_over_1_x.move_to(rhs).shift(DOWN/10)
 
         highlight_rect = Rectangle(fill_opacity=.7, fill_color=BLACK).scale(.5)
-        highlight_rect.move_to(rhs)
+        highlight_rect.move_to(rhs).shift(DOWN/2)
         self.add(highlight_rect)
         self.play(Transform(rhs, deriv_1_over_1_x),
                   FadeOut(VGroup(left_paren_2, right_paren_2)))
