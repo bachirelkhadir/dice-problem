@@ -309,6 +309,7 @@ class SolutionOne(Scene):
                   FadeOut(VGroup(left_paren_2, right_paren_2)))
         deriv_1_over_1_x = rhs
         self.wait()
+        return
 
 
         # take derivatives inside
