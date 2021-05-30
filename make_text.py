@@ -74,9 +74,9 @@ class Conditional(TextScene):
                 Tex(r" | "),
                 Text("every throw"),
                 Tex(r"\in"),
-                hstack(*[make_dice_face(i).scale(0.3) for i in (2,4,6)]),
+                hstack([make_dice_face(i).scale(0.3) for i in (2,4,6)]),
                 ],
-                    MED_SMALL_BUFF)
+                MED_SMALL_BUFF)
         )
         text.to_edge(LEFT)
         #text[2].shift(2*DOWN)
