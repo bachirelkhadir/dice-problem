@@ -38,7 +38,7 @@ class LawLargeNumbers(Scene):
 
         # E[X]
         exp_X = Tex(r"\longrightarrow \mathbb E[X]")
-        exp_X.next_to(Xis[-1], RIGHT)
+        exp_X.next_to(frac, RIGHT)
         self.add(exp_X)
 
         self.wait()
