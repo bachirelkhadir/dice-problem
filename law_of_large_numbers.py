@@ -44,8 +44,8 @@ class LawLargeNumbers(Scene):
 
 class LLNWithCoins(Scene):
     def construct(self):
-        num_coins = 50
-        width =  10
+        num_coins = 100
+        width = 20
         coin1 = Coin().shift(UP)
         np.random.seed(0)
 
