@@ -90,4 +90,7 @@ class LLNWithCoins(Scene):
         tails_target[0].move_to(coins[width//2])
         hstack_fixed_width(tails_target, width // 2, SMALL_BUFF)
 
-        self.add(*heads_target, *tails_target)
+        self.play(
+            *[Transform(coin, coin_target) for
+            coin, coin_target in zip(heads+tails, heads_target+tails_target)])
+        self.wait()
