@@ -12,7 +12,8 @@ class LawLargeNumbers(Scene):
     def construct(self):
         X = Tex("X")
         X.shift(UP)
-        self.add(X)
+        self.play(ShowCreation(X))
+        self.wait()
 
         # X1, X2, X3, X4, ..., X_n
         colors = [BLUE_A, YELLOW, GOLD_A, MAROON_A, PURPLE_A]
@@ -26,15 +27,13 @@ class LawLargeNumbers(Scene):
 
         # take sum
         plus = [Tex("+").next_to(Xi, RIGHT) for Xi in Xis[:-1]]
-        self.add(*plus)
-        self.wait()
 
         # divide by n
         frac = Line().surround(VGroup(*Xis))
         denom = Tex("n")
         frac.shift(DOWN/3)
         denom.next_to(frac, DOWN)
-        self.play(ShowCreation(VGroup(frac, denom)))
+        self.play(ShowCreation(VGroup(*plus, frac, denom)))
         self.wait()
 
         # E[X]
