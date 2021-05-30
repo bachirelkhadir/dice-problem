@@ -5,7 +5,7 @@ class Coin(Group):
     CONFIG = {
         "disk_resolution": (60, 60),
         "height": 1,
-        "depth": 0.1,
+        "depth": 0.01,
         "color": GOLD_D,
         "tails_color": RED,
         "include_labels": True,
