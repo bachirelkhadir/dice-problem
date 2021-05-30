@@ -10,5 +10,7 @@ from common import vstack, hstack, halign
 
 class LawLargeNumbers(Scene):
     def construct(self):
+        X = Tex("X")
+        self.add(X)
 
         pass
