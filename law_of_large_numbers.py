@@ -34,8 +34,7 @@ class LawLargeNumbers(Scene):
         denom = Tex("n")
         frac.shift(DOWN/3)
         denom.next_to(frac, DOWN)
-        self.add(frac)
-        self.add(denom)
+        self.play(ShowCreation(VGroup(frac, denom)))
         self.wait()
 
         # E[X]
