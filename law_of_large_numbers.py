@@ -9,5 +9,5 @@ from common import vstack, hstack, halign
 
 
 class LawLargeNumbers(Scene):
-    def construct(self)
+    def construct(self):
     pass
