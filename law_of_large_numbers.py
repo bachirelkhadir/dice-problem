@@ -9,3 +9,4 @@ from common import vstack, hstack, halign
 
 
 class LawLargeNumbers(Scene):
+    pass
