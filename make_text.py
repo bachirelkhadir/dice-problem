@@ -86,10 +86,13 @@ class Conditional(TextScene):
                 ],
                 MED_SMALL_BUFF)
         )
-        text.to_edge(LEFT)
-        #text[2].shift(2*DOWN)
 
-        for t in text:
+        part1 = text[:2]
+        part2 = text[2:4]
+        part3 = text[4:]
+        text.to_edge(LEFT)
+
+        for t in (part1, part2, part3)[:1]:
             self.play(self.animate(t))
             self.wait()
 
