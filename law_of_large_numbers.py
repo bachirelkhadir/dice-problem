@@ -52,7 +52,7 @@ class LLNWithCoins(Scene):
         self.add(coin1)
 
         coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(num_coins)]
-        heads = [coin for coins in coins if np.random.randn() >= 0]
+        heads = [coin for coin in coins if np.random.randn() >= 0]
         print(f"heads: {len(heads)}({len(coins)})")
         coins[0].to_edge(LEFT).shift(DOWN)
         #hstack(coins, SMALL_BUFF)
