@@ -18,3 +18,4 @@ class LawLargeNumbers(Scene):
         VGroup(*hstack(Xis)).to_edge(LEFT)
 
         self.play(*[TransformFromCopy(X, Xi) for Xi in X])
+        self.wait()
