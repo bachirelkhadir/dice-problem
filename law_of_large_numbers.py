@@ -29,7 +29,7 @@ class LawLargeNumbers(Scene):
 
         # divide by n
         frac = Line().surround(VGroup(*Xis))
-        frac.shift(DOWN)
+        frac.shift(DOWN/3)
         self.add(frac)
         self.wait()
 
