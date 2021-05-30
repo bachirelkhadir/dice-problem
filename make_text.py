@@ -67,10 +67,7 @@ class Conditional(TextScene):
                "6": BLUE_A,
                "average": RED_A}
         self.text = text = VGroup(
-            Text("How many throws does it take,", t2c=t2c),
-            Text("on average,", t2c=t2c),
-            Text("to get 6 conditioned on the event that all throws give even numbers?", t2c=t2c))
-        text[1].shift(DOWN)
+            Tex("\mathbb E[ T"))
         text[2].shift(2*DOWN)
 
         for t in text:
