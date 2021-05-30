@@ -74,10 +74,10 @@ class Conditional(TextScene):
                 Tex(r"\mathbb E[ T"),
                 Tex(r" | "),
                 Text("every throw"),
-                Tex(r"\in \{ \."),
+                Tex(r"\in \{ %}"),
                 dice_2, Tex(r","),
                 dice_4, Tex(r","),
-                dice_6, Tex(r"\.\}]"),
+                dice_6, Tex(r"]"),
                 ],
                 MED_SMALL_BUFF)
         )
