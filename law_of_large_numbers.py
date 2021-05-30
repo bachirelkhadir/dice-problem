@@ -59,7 +59,7 @@ class LLNWithCoins(Scene):
 
         # center
         self.add(NumberPlane())
-        coins[0].to_edge(LEFT).shift(1.6*RIGHT).shift(DOWN)
+        coins[0].to_edge(LEFT).shift(1.7*RIGHT).shift(DOWN)
         hstack_fixed_width(coins, width, SMALL_BUFF)
 
 
