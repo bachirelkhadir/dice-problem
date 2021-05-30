@@ -2,7 +2,8 @@
 
 
 from manimlib import *
-
+exec(get_custom_config()["universal_import_line"])
+from dice_utils import make_dice_face
 
 class TextScene(Scene):
     animate = Write
@@ -67,7 +68,12 @@ class Conditional(TextScene):
                "6": BLUE_A,
                "average": RED_A}
         self.text = text = VGroup(
-            Tex("\mathbb E[ T"))
+            Tex(r"\mathbb E[ T"),
+            Tex(r" | "),
+            make_dice_face(1),
+            Tex(" \in {2, 4, 6}")
+
+        )
         #text[2].shift(2*DOWN)
 
         for t in text:
