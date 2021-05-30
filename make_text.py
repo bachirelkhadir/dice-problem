@@ -92,7 +92,7 @@ class Conditional(TextScene):
         part3 = text[4:]
         text.to_edge(LEFT)
 
-        for t in (part1, part2, part3)[:1]:
+        for t in (part1, part2, part3)[:2]:
             self.play(self.animate(t))
             self.wait()
 
