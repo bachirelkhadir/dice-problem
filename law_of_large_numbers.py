@@ -29,8 +29,11 @@ class LawLargeNumbers(Scene):
 
         # divide by n
         frac = Line().surround(VGroup(*Xis))
+        denom = Tex("n")
         frac.shift(DOWN/3)
+        denom.next_to(denom, DOWN/3)
         self.add(frac)
+        self.add(n)
         self.wait()
 
         # E[X]
