@@ -31,7 +31,7 @@ class LawLargeNumbers(Scene):
         frac = Line().surround(VGroup(*Xis))
         denom = Tex("n")
         frac.shift(DOWN/3)
-        denom.next_to(denom, DOWN/3)
+        denom.next_to(denom, DOWN)
         self.add(frac)
         self.add(denom)
         self.wait()
