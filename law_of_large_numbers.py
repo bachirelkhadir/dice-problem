@@ -20,7 +20,12 @@ class LawLargeNumbers(Scene):
         # centering
         VGroup(*hstack(Xis)).move_to(0)
         self.play(LaggedStart(*[TransformFromCopy(X, Xi) for Xi in Xis]))
+        self.wait()
 
+        # take average
+        plus = [Tex("+").next_to(Xi, RIGHT) for Xi in Xis[:]]
+        self.add(*plus)
+        self.wait()
 
         # E[X]
         exp_X = Tex(r"\longrightarrow \mathbb E[X]")
