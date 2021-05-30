@@ -68,10 +68,11 @@ class Conditional(TextScene):
                "6": BLUE_A,
                "average": RED_A}
         self.text = text = VGroup(
+            *hstack([
             Tex(r"\mathbb E[ T"),
             Tex(r" | "),
             make_dice_face(1),
-            Tex(r"\in {2, 4, 6}")
+                Tex(r"\in {2, 4, 6}")])
         )
         #text[2].shift(2*DOWN)
 
