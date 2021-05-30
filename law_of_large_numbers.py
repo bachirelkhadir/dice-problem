@@ -50,8 +50,8 @@ class LLNWithCoins(Scene):
 
         coins = [Coin().scale(.1*OUT+UR).scale(.2) for _ in range(50)]
         coins[0].to_edge(LEFT).shift(DOWN)
-        hstack(coins, SMALL_BUFF)
-        hstack_fixed_width(coins, 10)
+        #hstack(coins, SMALL_BUFF)
+        hstack_fixed_width(coins, 10, SMALL_BUFF)
         self.add(*coins)
 
         self.play(*[coin.animate.flip() for coin in coins])
