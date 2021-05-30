@@ -44,7 +44,7 @@ class LawLargeNumbers(Scene):
 
 class LLNWithCoins(Scene):
     def construct(self):
-        num_coins = 50 # 50
+        num_coins = 10 # 50
         width = 5 # 10
         coin1 = Coin().shift(UP)
         np.random.seed(0)
@@ -61,7 +61,6 @@ class LLNWithCoins(Scene):
         hstack_fixed_width(coins, width, SMALL_BUFF)
         self.add(*coins)
 
-        coin1.flip
         self.play(*[coin.animate.flip() for coin in heads],
                   *[coin.animate.rotate(TAU, RIGHT) for coin in tails],
                   )
