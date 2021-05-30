@@ -78,8 +78,8 @@ class Conditional(TextScene):
                 Text("every throw", t2c=t2c).scale(.7),
                 Tex(r"\in "),
                 lbrace,
-                dice_2, Tex(r",").shift(DOWN),
-                dice_4, Tex(r",").shift(DOWN),
+                dice_2, Tex(r","),
+                dice_4, Tex(r","),
                 dice_6,
                 rbrace,
                 Tex(r"\right]"),
@@ -87,6 +87,7 @@ class Conditional(TextScene):
                 ],
                 MED_SMALL_BUFF)
         )
+        commas = VGroup(text[3], text[5]).shift(DOWN)
 
         part1 = text[:2]
         part2 = text[2:4]
