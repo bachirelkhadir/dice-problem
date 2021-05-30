@@ -15,7 +15,9 @@ class LawLargeNumbers(Scene):
         self.add(X)
 
         # X1, X2, X3, X4, ..., X_n
-        Xis = [Tex("X_{%s}" % i) for i in [1, 2, 3, 4, "n"]]
+        colors = [BLUE_A, YELLOW, GOLD_A, MAROON_A, PURPLE_A]
+        Xis = [Tex("X_{%s}" % i).set_color(c) for i, c in zip([1, 2, 3, 4, "n"],
+                                              colors)]
         Xis.insert(-1, Tex("..."))
         # centering
         VGroup(*hstack(Xis)).move_to(0)
