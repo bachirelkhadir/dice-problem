@@ -30,18 +30,19 @@ class Not6Then6(Scene):
     CONFIG = {
         "stroke_color": YELLOW_D,
         "stroke_width": 10,
+        "num_not_six": 2,
     }
 
     def construct(self):
-        dice1 = make_dice_face(6)
-        dice2 = dice1.copy()
-        hstack([dice1, dice2])
-        not_six = VGroup(Cross(dice1,), dice1)
-        not_six[0].set_stroke(self.stroke_color, self.stroke_width)
+        dice = [make_dice_face(6) for _ in range(self.num_not_six+1)]
+        hstack(dice)
 
-        self.add(dice1)
-        self.play(FadeIn(not_six[0]))
-        self.wait()
+        for i in range(self.num_not_six):
+            not_six = VGroup(Cross(dice[i],), dice[i])
+            not_six[0].set_stroke(self.stroke_color, self.stroke_width)
 
-        self.add(dice2)
-        self.play(FadeIn(not_six[0]))
+            self.add(dice[i])
+            self.play(FadeIn(not_six[0]))
+            self.wait()
+
+        self.add(dice[-1])
