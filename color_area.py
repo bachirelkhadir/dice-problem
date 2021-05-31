@@ -4,8 +4,8 @@ from manimlib import *
 import numpy as np
 
 
-COLOR_BAR = YELLOW
-COLOR_K = YELLOW
+COLOR_GRAPH = RED
+COLOR_AREA= YELLOW
 
 
 def get_norm(vect):
@@ -20,7 +20,7 @@ def get_area_under_graph(ax, graph, x_range, dx):
         rect = Rectangle(width=dx, height=height,
                          stroke_opacity=0,
                          fill_opacity=0.5,
-                         fill_color=COLOR_BAR)
+                         fill_color=COLOR_AREA)
         rect.move_to(ax.c2p(sample, 0), DL)
         rects.append(rect)
 
@@ -36,7 +36,7 @@ class ColorArea(Scene):
 
         graph = axes.get_graph(
             lambda x: np.exp(-x*x/2),
-            color=BLUE_E,
+            color=COLOR_GRAPH
         )
         #label = axes.get_graph_label(graph, "\\sin(x)")
 
