@@ -2,6 +2,9 @@
 
 from manimlib import *
 
+COLOR_BAR = BLUE_A
+COLOR_K = YELLOW
+
 
 class ColorArea(Scene):
     def construct(self):
