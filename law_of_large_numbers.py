@@ -111,7 +111,7 @@ class LLNWithCoins(Scene):
 class ApproximationGetsBetter(Scene):
     def construct(self):
         angle = PI/3
-        num_games = Text("# games").shift(4*RIGHT)
+        num_games = Text("# games").shift(3*RIGHT)
         inc = Arrow().scale(.7).rotate(angle)
         goes_to_infty = Tex(r"\infty")
         hstack([num_games, inc], MED_LARGE_BUFF)
