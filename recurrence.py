@@ -147,7 +147,6 @@ class RecurrenceScene(Scene):
         full_tree = [left_node, start, s_t, s_s, end]
         self.play(Indicate(VGroup(*full_tree)))
         self.wait()
-        return
 
 
         # write expectation
