@@ -14,7 +14,7 @@ def get_norm(vect):
 def get_area_under_graph(ax, graph, x_range, dx):
     rects = []
     for sample in np.arange(*x_range, dx):
-        height =  get_norm(
+        height =  0.99*get_norm(
             ax.i2gp(sample, graph) - ax.c2p(sample, 0)
         )
         rect = Rectangle(width=dx, height=height,
