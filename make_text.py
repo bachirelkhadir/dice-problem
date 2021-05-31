@@ -112,6 +112,10 @@ class Sumkxk(TextScene):
         self.play(Write(VGroup(sigma, summand)))
         self.wait()
 
+
+class CaptionLLN(TextScene):
+    self.text = Text("Law of Large Numbers")
+
     
 class Current(ThirdWayQuestion):
     pass
