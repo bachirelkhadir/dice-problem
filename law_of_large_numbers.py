@@ -104,5 +104,5 @@ class LLNWithCoins(Scene):
         fifty = Tex(r"\sim 50\%").next_to(brace1, DOWN)
         brace1 = VGroup(brace1, fifty)
         self.add(brace1)
-        brace2 = brace1.copy().shift(brace1.get_center()[0]*RIGHT)
+        brace2 = brace1.copy().shift(-brace1.get_center()[0]*RIGHT)
         self.add(brace2)
