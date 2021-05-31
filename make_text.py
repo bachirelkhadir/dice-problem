@@ -101,8 +101,8 @@ class Conditional(TextScene):
 class Sumkxk(TextScene):
     def construct(self):
 
-        sigma = Tex(r"\sum_{\phantom{k}=1}^\infty").scale(TEXT_SCALE)
-        sigma_idx = Tex(r"k", color=YELLOW).scale(.7).scale(TEXT_SCALE)
+        sigma = Tex(r"\sum_{\phantom{k}=1}^\infty")
+        sigma_idx = Tex(r"k", color=YELLOW).scale(.7)
         sigma_idx.move_to(sigma.get_corner(DOWN)).shift(UP/10+.19*LEFT)
         sigma = VGroup(sigma, sigma_idx)
         self.add(sigma)
