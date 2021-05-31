@@ -97,4 +97,4 @@ class LLNWithCoins(Scene):
         self.wait()
 
         # add brace with 50 %
-        self.add(Brace(VGroup(sum(heads))))
+        self.add(Brace(VGroup(sum(heads, []))))
