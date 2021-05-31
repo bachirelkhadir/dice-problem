@@ -116,6 +116,21 @@ class Sumkxk(TextScene):
 class CaptionLLN(TextScene):
     text = Text("Law of Large Numbers", t2c={"Large": YELLOW})
 
-    
+class WhatIsMedia(TextScene):
+    def construct(self):
+        t2c = {"throws": YELLOW,
+               "6": BLUE_A,
+               "median": RED_A}
+        self.text = text = VGroup(
+            Text("What is the median number of throws", t2c=t2c),
+            Text("required to get the first 6?", t2c=t2c),
+            )
+        text[1].shift(DOWN)
+
+        for t in text:
+            self.play(self.animate(t))
+            self.wait()
+
+
 class Current(ThirdWayQuestion):
     pass
