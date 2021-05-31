@@ -7,6 +7,9 @@ import numpy as np
 COLOR_BAR = BLUE_A
 COLOR_K = YELLOW
 
+def get_area_under_graph(ax, graph):
+    return Rectangle()
+
 
 class ColorArea(Scene):
     def construct(self):
@@ -20,6 +23,9 @@ class ColorArea(Scene):
             color=BLUE,
         )
         label = axes.get_graph_label(graph, "\\sin(x)")
+
+                #self.i2gp(sample, graph) - self.c2p(sample, 0)
+        print(axes.i2gp(0.5, graph), axes.c2p(0.5, 0))
         #print(axes.get_riemann_rectangles(label,dx=0.5))
 
         self.play(
