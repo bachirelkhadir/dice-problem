@@ -25,3 +25,9 @@ class EquallyLikely(Scene):
             VGroup(*probs,),
             lambda m: (m, DOWN)
         ))
+
+class Not6Then6(Scene):
+
+    def construct(self):
+        dice = make_dice_face(6)
+        not_six = dice
