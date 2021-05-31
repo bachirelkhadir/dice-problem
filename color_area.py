@@ -7,25 +7,43 @@ COLOR_K = YELLOW
 
 
 class ColorArea(Scene):
-    CONFIG = {
-            "x_min" : 0,
-            "x_max" : 5,
-            "y_min" : 0,
-            "y_max" : 6,
-            "y_tick_frequency" : 1,
-            "x_tick_frequency" : 1,
-            "x_labeled_nums" : [0,2,3]
-        }
     def construct(self):
-        self.setup_axes(animate=False)
-        curve1 = self.get_graph(lambda x : 4*x-x**2, x_min=0,x_max=4)
-        curve2 = self.get_graph(lambda x : 0.8*x**2-3*x+4, x_min=0,x_max=4)
-        line1 = self.get_vertical_line_to_graph(2,curve1,DashedLine,color=YELLOW)
-        line2 = self.get_vertical_line_to_graph(3,curve1,DashedLine,color=YELLOW)
+        axes = Axes((-3, 10), (-1, 8))
+        axes.add_coordinate_labels()
 
-        area = self.get_area(curve2,2,3,bounded=curve1)
+        self.play(Write(axes, lag_ratio=0.01, run_time=1))
 
-        self.play(ShowCreation(curve1), ShowCreation(curve2),
-            ShowCreation(line1), ShowCreation(line2))
-        self.play(ShowCreation(area))
-        self.wait()
+        # Axes.get_graph will return the graph of a function
+        sin_graph = axes.get_graph(
+            lambda x: 2 * math.sin(x),
+            color=BLUE,
+        )
+        # By default, it draws it so as to somewhat smoothly interpolate
+        # between sampled points (x, f(x)).  If the graph is meant to have
+        # a corner, though, you can set use_smoothing to False
+        relu_graph = axes.get_graph(
+            lambda x: max(x, 0),
+            use_smoothing=False,
+            color=YELLOW,
+        )
+        # For discontinuous functions, you can specify the point of
+        # discontinuity so that it does not try to draw over the gap.
+        step_graph = axes.get_graph(
+            lambda x: 2.0 if x > 3 else 1.0,
+            discontinuities=[3],
+            color=GREEN,
+        )
+
+        # Axes.get_graph_label takes in either a string or a mobject.
+        # If it's a string, it treats it as a LaTeX expression.  By default
+        # it places the label next to the graph near the right side, and
+        # has it match the color of the graph
+        sin_label = axes.get_graph_label(sin_graph, "\\sin(x)")
+        relu_label = axes.get_graph_label(relu_graph, Text("ReLU"))
+        step_label = axes.get_graph_label(step_graph, Text("Step"), x=4)
+
+        self.play(
+            ShowCreation(sin_graph),
+            FadeIn(sin_label, RIGHT),
+        )
+        self.wait(2)
