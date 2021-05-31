@@ -111,7 +111,12 @@ class LLNWithCoins(Scene):
 class ApproximationGetsBetter(Scene):
     def construct(self):
         num_games = Text("# games").to_edge(LEFT)
-        increases = Arrow().scale(.7).rotate(PI/6)
-        hstack([num_games, increases], MED_SMALL_BUFF)
-        self.add(num_games, increases)
+        inc = Arrow().scale(.7).rotate(PI/6)
+        hstack([num_games, inc], MED_SMALL_BUFF)
+        self.add(num_games, inc)
+
+        approx = Text("Approximation error")
+        dec = inc.copy().flip()
+        hstack([approx, dec])
+        self.add(approx, dec)
         pass
