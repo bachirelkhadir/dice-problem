@@ -115,7 +115,7 @@ class ApproximationGetsBetter(Scene):
         inc = Arrow().scale(.7).rotate(angle)
         goes_to_infty = Tex(r"\longrightarrow \infty")
         hstack([num_games, inc], MED_SMALL_BUFF)
-        goes_to_infty.move_to(inc).shift(LEFT/2)
+        goes_to_infty.move_to(inc).shift(RIGHT/2)
         self.add(num_games, inc)
         self.wait()
 
@@ -124,7 +124,7 @@ class ApproximationGetsBetter(Scene):
         dec.rotate(-2*angle)
         goes_to_0 = Tex(r"\longrightarrow 0")
         hstack([approx, dec], MED_SMALL_BUFF)
-        goes_to_0.move_to(dec).shift(LEFT/2)
+        goes_to_0.move_to(dec).shift(RIGHT/2)
         self.add(approx, dec)
 
         self.wait()
