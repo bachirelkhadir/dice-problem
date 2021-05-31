@@ -46,6 +46,7 @@ class Not6Then6(Scene):
             self.wait()
 
         self.add(dice[-1])
+        self.wait()
 
 class Not6Not6Then6(Not6Then6):
     CONFIG = {
