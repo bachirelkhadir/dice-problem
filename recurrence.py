@@ -145,8 +145,7 @@ class RecurrenceScene(Scene):
 
         # highlight root
         full_tree = [left_node, start, s_t, s_s, end]
-        self.remove(*full_tree)
-        self.play(Indicate(start))
+        self.play(Indicate(VGroup(*full_tree)))
         self.wait()
         return
 
