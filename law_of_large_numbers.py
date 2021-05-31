@@ -107,3 +107,7 @@ class LLNWithCoins(Scene):
 
         self.play(FadeIn(VGroup(brace1, brace2)))
         self.wait()
+
+class ApproximationGetsBetter(Scene):
+    def construct(self):
+        pass
