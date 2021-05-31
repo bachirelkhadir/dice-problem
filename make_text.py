@@ -106,7 +106,7 @@ class Sumkxk(TextScene):
         sigma_idx.move_to(sigma.get_corner(DOWN)).shift(UP/10+.25*LEFT)
         sigma = VGroup(sigma, sigma_idx)
 
-        summand = Tex(r" {{k}} \ x^{k-1}", tex_to_color_map={"k": YELLOW})
+        summand = Tex(r" {{k}} \ x^{k-1} = \frac 1 {(1-x)^2}", tex_to_color_map={"k": YELLOW})
         hstack([sigma, summand], MED_SMALL_BUFF)
 
         self.add(sigma, summand)
