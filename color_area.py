@@ -16,7 +16,7 @@ class ColorArea(Scene):
         self.play(Write(axes, lag_ratio=0.01, run_time=1))
 
         sin_graph = axes.get_graph(
-            lambda x: np.exp(-x*x/2),
+            lambda x: np.exp(-x*x/2)+2,
             color=BLUE,
         )
         # By default, it draws it so as to somewhat smoothly interpolate
