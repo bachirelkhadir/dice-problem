@@ -103,8 +103,10 @@ class Sumkxk(TextScene):
 
         sigma = Tex(r"\sum_{\phantom{k}=1}^\infty")
         sigma_idx = Tex(r"k", color=YELLOW).scale(.7)
-        sigma_idx.move_to(sigma.get_corner(DOWN)).shift(UP/10+.19*LEFT)
+        sigma_idx.move_to(sigma.get_corner(DOWN)).shift(UP/10+.21*LEFT)
         sigma = VGroup(sigma, sigma_idx)
+
+
         self.add(sigma)
 
     
