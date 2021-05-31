@@ -9,7 +9,6 @@ COLOR_K = YELLOW
 
 
 class ColorArea(Axes):
-#class GraphSceneTest(GraphScene):
     CONFIG = {
         "x_axis_label": "",
         "y_axis_label": "",
