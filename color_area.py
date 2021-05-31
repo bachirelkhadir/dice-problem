@@ -8,7 +8,7 @@ COLOR_BAR = BLUE_A
 COLOR_K = YELLOW
 
 
-class ColorArea(Scene):
+class ColorArea(Axes):
 #class GraphSceneTest(GraphScene):
     CONFIG = {
         "x_axis_label": "",
