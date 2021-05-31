@@ -19,5 +19,9 @@ class EquallyLikely(Scene):
             Tex(r"\frac 1 6").next_to(d, UP)
             for d in dice
         ]
-        self.add(*dice)
-        self.add(*probs)
+        self.play(Write(VGroup(*dice), lagged_start=0.01), run_time=1)
+        self.play(LaggedStartMap(
+            FadeIn,
+            VGroup(*probs,),
+            lambda m: (m, DOWN)
+        ))
