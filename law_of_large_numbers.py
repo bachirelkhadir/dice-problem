@@ -95,3 +95,6 @@ class LLNWithCoins(Scene):
             *[Transform(coin, coin_target) for
             coin, coin_target in zip(heads+tails, heads_target+tails_target)])
         self.wait()
+
+        # add brace with 50 %
+        self.add(Brace(VGroup(*heads)))
