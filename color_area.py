@@ -7,13 +7,21 @@ import numpy as np
 COLOR_BAR = BLUE_A
 COLOR_K = YELLOW
 
+
+def get_norm(vect):
+    return sum([x**2 for x in vect])**0.5
+
 def get_area_under_graph(ax, graph, x_range, dx):
     rects = []
-    for x in np.linspace(*x_range, dx):
+    for sample in np.linspace(*x_range, dx):
+        height = get_norm(
+            self.i2gp(sample, graph) - self.c2p(sample, 0)
+        )
+        rect = Rectangle(width=x1 - x0, height=height)
+        rect.move_to(axes.c2p(x0, 0), DL)
+        rects.append(rect)
 
-        axes.i2gp(x, graph) axes.c2p(x, 0)
-        rect = Rectangle()
-
+    return VGroup(*rects)
 
 class ColorArea(Scene):
     def construct(self):
