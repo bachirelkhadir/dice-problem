@@ -28,7 +28,7 @@ class EquallyLikely(Scene):
 
 class Not6Then6(Scene):
     CONFIG = {
-        "stroke_color": YELLOW,
+        "stroke_color": YELLOW_E,
         "stroke_width": 10,
 
 
