@@ -17,6 +17,7 @@ def get_area_under_graph(ax, graph, x_range, dx):
         height =  get_norm(
             ax.i2gp(sample, graph) - ax.c2p(sample, 0)
         ) - .005*graph.stroke_width
+        height = max(0, height)
         rect = Rectangle(width=dx, height=height,
                          stroke_opacity=0,
                          fill_opacity=0.5,
