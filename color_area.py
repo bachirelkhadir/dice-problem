@@ -15,7 +15,7 @@ def get_area_under_graph(ax, graph, x_range, dx):
     rects = []
     for sample in np.arange(*x_range, dx):
         height = get_norm(
-            self.i2gp(sample, graph) - self.c2p(sample, 0)
+            axes.i2gp(sample, graph) - axes.c2p(sample, 0)
         )
         rect = Rectangle(width=x1 - x0, height=height)
         rect.move_to(axes.c2p(x0, 0), DL)
