@@ -17,6 +17,8 @@ def get_area_under_graph(ax, graph, x_range, dx):
         height = get_norm(
             ax.i2gp(sample, graph) - ax.c2p(sample, 0)
         )
+        x0 = sample
+        x1 = x0 + dx
         rect = Rectangle(width=x1 - x0, height=height)
         rect.move_to(axes.c2p(x0, 0), DL)
         rects.append(rect)
