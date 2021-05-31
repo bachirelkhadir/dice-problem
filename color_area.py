@@ -18,7 +18,7 @@ def get_area_under_graph(ax, graph, x_range, dx):
             ax.i2gp(sample, graph) - ax.c2p(sample, 0)
         )
         rect = Rectangle(width=dx, height=height)
-        rect.move_to(axes.c2p(sample, 0), DL)
+        rect.move_to(ax.c2p(sample, 0), DL)
         rects.append(rect)
 
     return VGroup(*rects)
