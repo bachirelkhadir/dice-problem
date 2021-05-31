@@ -228,11 +228,9 @@ class SolutionThree(Scene):
         self.wait()
 
         # highlight all 6
+        self.add(num_6)
         sixes = highlight_all_6s(self, dice_on_grid)
         self.wait()
-
-        self.add(num_6)
-        return
         self.wait()
 
         self.play(ReplacementTransform(num_6, one_sixth))
