@@ -36,7 +36,7 @@ class ColorArea(Scene):
 
         graph = axes.get_graph(
             lambda x: np.exp(-x*x/2),
-            color=BLUE,
+            color=BLUE_E,
         )
         #label = axes.get_graph_label(graph, "\\sin(x)")
 
