@@ -32,4 +32,4 @@ class Not6Then6(Scene):
         dice1 = make_dice_face(6)
         dice2 = dice1.copy()
         not_six = VGroup(Cross(dice1, stroke_color=YELLOW, stroke_width=10), dice1)
-        self.add(not_six)
+        self.play(Write(not_six))
