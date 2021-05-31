@@ -13,7 +13,7 @@ def get_norm(vect):
 
 def get_area_under_graph(ax, graph, x_range, dx):
     rects = []
-    for sample in np.linspace(*x_range, dx):
+    for sample in np.arange(*x_range, dx):
         height = get_norm(
             self.i2gp(sample, graph) - self.c2p(sample, 0)
         )
