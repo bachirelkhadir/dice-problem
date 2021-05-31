@@ -146,6 +146,7 @@ class RecurrenceScene(Scene):
         # highlight root
         self.play(Indicate(start))
         self.wait()
+        return
 
 
         # write expectation
