@@ -117,7 +117,7 @@ class ApproximationGetsBetter(Scene):
         hstack([num_games, inc], MED_LARGE_BUFF)
         goes_to_infty.next_to(inc, RIGHT).shift(RIGHT/2)
         self.add(num_games, inc)
-        VGroup(num_games, inc, goes_to_infty).set_color(GOLD)
+        VGroup(num_games, inc, goes_to_infty).set_color(MAROON_A)
         self.wait()
 
         approx = Text("approximation error").shift(2*RIGHT)
