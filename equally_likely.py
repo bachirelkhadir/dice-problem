@@ -27,11 +27,17 @@ class EquallyLikely(Scene):
         ))
 
 class Not6Then6(Scene):
+    CONFIG = {
+        "stroke_color": YELLOW,
+        "stroke_width": 10,
+
+
+    }
 
     def construct(self):
         dice1 = make_dice_face(6)
         dice2 = dice1.copy()
         not_six = VGroup(Cross(dice1,), dice1)
-        not_six[0].set_stroke(YELLOW, 10)
+        not_six[0].set_stroke(self.stroke_color, self.stroke_width)
         self.add(dice2)
         self.play(FadeIn(not_six[0]))
