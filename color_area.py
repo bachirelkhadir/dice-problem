@@ -28,7 +28,7 @@ class ColorArea(Scene):
         # it places the label next to the graph near the right side, and
         # has it match the color of the graph
         sin_label = axes.get_graph_label(sin_graph, "\\sin(x)")
-        self.get_area(sin_label, 0.3, 0.6, dx_scaling=10, area_color=BLUE)
+        axes.get_area(sin_label, 0.3, 0.6, dx_scaling=10, area_color=BLUE)
 
         self.play(
             ShowCreation(sin_graph),
