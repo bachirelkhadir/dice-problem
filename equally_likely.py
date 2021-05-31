@@ -15,6 +15,8 @@ class EquallyLikely(Scene):
         ]
         hstack(dice)
         probs = [
-            Tex(r"\frac 1 6")
+            Tex(r"\frac 1 6").next_to(d, UP)
+            for d in dice
         ]
         self.add(*dice)
+        self.add(*probs)
