@@ -74,8 +74,8 @@ class LLNWithCoins(Scene):
                               run_time=1))
         self.wait()
 
-        self.play(*[coin.animate.flip() for coin in coins],)
-        self.play(*[coin.animate.flip() for coin in heads],)
+        self.play(*[coin.animate.flip() for coin in tails],)
+        #self.play(*[coin.animate.flip() for coin in heads],)
 
         self.wait()
 
