@@ -36,12 +36,9 @@ class ColorArea(Scene):
         )
         label = axes.get_graph_label(graph, "\\sin(x)")
 
-                #self.i2gp(sample, graph) - self.c2p(sample, 0)
-        print(axes.i2gp(0.5, graph), axes.c2p(0.5, 0))
-        #print(axes.get_riemann_rectangles(label,dx=0.5))
-
         self.play(
             ShowCreation(graph),
             FadeIn(label, RIGHT),
         )
+        self.add(get_area_under_graph(axes, graph))
         self.wait(2)
