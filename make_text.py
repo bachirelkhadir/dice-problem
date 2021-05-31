@@ -25,7 +25,7 @@ class LetsPlay(TextScene):
 
 
 class NotTheMostExciting(TextScene):
-    text = Text("not the most exciting game")
+    text = Text("not the most exciting game", t2c={"exciting": GOLD})
 
 class OneThrowOneDollar(TextScene):
     text = Text("1 Throw = $1")
