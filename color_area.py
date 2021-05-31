@@ -44,6 +44,6 @@ class ColorArea(Scene):
             ShowCreation(graph),
             #FadeIn(label, RIGHT),
         )
-        self.wait()
+        #self.wait()
         self.play(Write(get_area_under_graph(axes, graph, x_range, .01), lag_ratio=0.01, run_time=1))
         self.wait()
