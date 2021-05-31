@@ -45,4 +45,4 @@ class ColorArea(Scene):
             #FadeIn(label, RIGHT),
         )
         self.add(get_area_under_graph(axes, graph, x_range, .01))
-        self.wait(2)
+        self.wait()
