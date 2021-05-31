@@ -3,7 +3,7 @@ from manimlib import *
 
 class Coin(Group):
     CONFIG = {
-        "disk_resolution": (2, 60),
+        "disk_resolution": (2, 25),
         "height": 1,
         "depth": 0.01,
         "color": GOLD_D,
