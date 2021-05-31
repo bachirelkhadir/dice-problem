@@ -28,8 +28,6 @@ class ColorArea(Scene):
         # it places the label next to the graph near the right side, and
         # has it match the color of the graph
         sin_label = axes.get_graph_label(sin_graph, "\\sin(x)")
-        relu_label = axes.get_graph_label(relu_graph, Text("ReLU"))
-        step_label = axes.get_graph_label(step_graph, Text("Step"), x=4)
 
         self.play(
             ShowCreation(sin_graph),
