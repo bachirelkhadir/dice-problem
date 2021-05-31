@@ -126,6 +126,8 @@ class ApproximationGetsBetter(Scene):
         goes_to_0 = Tex(r"0")
         hstack([approx, dec], MED_LARGE_BUFF)
         goes_to_0.next_to(dec, RIGHT).shift(RIGHT/2)
+
+        VGroup(approx, dec, goes_to_0).set_color(RED_A)
         self.add(approx, dec)
 
         self.wait()
