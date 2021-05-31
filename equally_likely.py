@@ -31,6 +31,7 @@ class Not6Then6(Scene):
     def construct(self):
         dice1 = make_dice_face(6)
         dice2 = dice1.copy()
-        not_six = VGroup(Cross(dice1, stroke_color=YELLOW, stroke_width=10), dice1)
+        not_six = VGroup(Cross(dice1,), dice1)
+        not_six[0].set_stroke(YELLOW< 10)
         self.add(dice2)
         self.play(FadeIn(not_six[0]))
