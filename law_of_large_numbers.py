@@ -113,12 +113,23 @@ class ApproximationGetsBetter(Scene):
         angle = PI/3
         num_games = Text("# games").to_edge(LEFT)
         inc = Arrow().scale(.7).rotate(angle)
+        goes_to_infty = Tex(r"\rightarrow \infty")
         hstack([num_games, inc], MED_SMALL_BUFF)
+        goes_to_infty.move_to(inc)
         self.add(num_games, inc)
+        self.wait()
 
         approx = Text("approximation error")
         dec = inc.copy()
         dec.rotate(-2*angle)
+        goes_to_0 = Tex(r"\rightarrow 0")
         hstack([approx, dec], MED_SMALL_BUFF)
+        goes_to_0.move_to(dec)
         self.add(approx, dec)
-        pass
+
+        self.wait()
+
+        self.play(Transform(inc, goes_to_infty))
+        self.wait()
+        self.play(Transform(dec, goes_to_0))
+        self.wait()
