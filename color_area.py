@@ -5,7 +5,7 @@ import numpy as np
 
 
 COLOR_GRAPH = RED
-COLOR_AREA= GOLD_A
+COLOR_AREA= RED_A
 
 
 def get_norm(vect):
