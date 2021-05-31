@@ -106,8 +106,10 @@ class Sumkxk(TextScene):
         sigma_idx.move_to(sigma.get_corner(DOWN)).shift(UP/10+.25*LEFT)
         sigma = VGroup(sigma, sigma_idx)
 
+        summand = Tex(r" {{k}} x^{{k}}", t2c={"k": YELLOW})
+        hstack(sigma, summand, SMALL_BUFF)
 
-        self.add(sigma)
+        self.add(sigma, summand)
 
     
 class Current(ThirdWayQuestion):
