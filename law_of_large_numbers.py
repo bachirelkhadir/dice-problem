@@ -110,4 +110,7 @@ class LLNWithCoins(Scene):
 
 class ApproximationGetsBetter(Scene):
     def construct(self):
+        num_games = Text("# games")
+        increases = Arrow().rotate(PI/6)
+        self.add(num_games, increases)
         pass
