@@ -10,7 +10,7 @@ COLOR_K = YELLOW
 
 class ColorArea(Scene):
     def construct(self):
-        axes = Axes((-4, 4), (-1, 8))
+        axes = Axes((-4, 4), (-.1, 1))
         axes.add_coordinate_labels()
 
         self.play(Write(axes, lag_ratio=0.01, run_time=1))
