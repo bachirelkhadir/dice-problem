@@ -8,30 +8,47 @@ COLOR_BAR = BLUE_A
 COLOR_K = YELLOW
 
 
-class ColorArea(Scene):
+class ColorArea(GraphScene):
+    CONFIG = {
+        "x_axis_label": "",
+        "y_axis_label": "",
+        "x_min": 0,
+        "x_max": 15,
+
+        "x_axis_width": 12,
+        "y_min": 0,
+        "y_max": 0.5,
+        "y_axis_height": 6,
+        "y_tick_frequency": 0.125,
+
+        "graph_origin": 2.5 * DOWN + 5.5 * LEFT,
+    }
+
     def construct(self):
-        axes = Axes((-4, 4), (-.1, 1))
-        axes.add_coordinate_labels()
-
-        self.play(Write(axes, lag_ratio=0.01, run_time=1))
-
-        sin_graph = axes.get_graph(
-            lambda x: np.exp(-x*x/2)+2,
-            color=BLUE,
+        self.setup_axes()
+        self.y_axis.add_numbers(
+            0.25, 0.5, 0.75, 1,
+            number_config={
+                "num_decimal_places": 2,
+            },
+            direction=LEFT,
         )
-        # By default, it draws it so as to somewhat smoothly interpolate
-        # between sampled points (x, f(x)).  If the graph is meant to have
-        # a corner, though, you can set use_smoothing to False
+        self.x_axis.add_numbers(*range(1, 15))
 
-        # Axes.get_graph_label takes in either a string or a mobject.
-        # If it's a string, it treats it as a LaTeX expression.  By default
-        # it places the label next to the graph near the right side, and
-        # has it match the color of the graph
-        sin_label = axes.get_graph_label(sin_graph, "\\sin(x)")
-        print(axes.get_riemann_rectangles(sin_label,dx=0.5))
+        graph = self.get_prior_graph()
+        self.play(ShowCreation(graph), run_time=3)
+        self.wait()
 
-        self.play(
-            ShowCreation(sin_graph),
-            FadeIn(sin_label, RIGHT),
-        )
-        self.wait(2)
+        #riemann rectangle
+        rect = self.get_riemann_rectangles(graph, dx=0.2)
+        rect.set_color(YELLOW_D)
+        rect.set_stroke(WHITE, 1)
+
+        self.play(ShowCreation(rect), run_time=5)
+        self.wait()
+
+    def get_prior_graph(self):
+        def prior(x):
+            return ((x ** 3 / 6) * np.exp(-x))
+
+        return self.get_graph(prior)
