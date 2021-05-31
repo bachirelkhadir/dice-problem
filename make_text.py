@@ -114,7 +114,7 @@ class Sumkxk(TextScene):
 
 
 class CaptionLLN(TextScene):
-    self.text = Text("Law of Large Numbers")
+    text = Text("Law of Large Numbers")
 
     
 class Current(ThirdWayQuestion):
