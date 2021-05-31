@@ -38,12 +38,12 @@ class ColorArea(Scene):
             lambda x: np.exp(-x*x/2),
             color=BLUE,
         )
-        label = axes.get_graph_label(graph, "\\sin(x)")
+        #label = axes.get_graph_label(graph, "\\sin(x)")
 
         self.add(graph)
         self.play(
             ShowCreation(graph),
-            FadeIn(label, RIGHT),
+            #FadeIn(label, RIGHT),
         )
         self.add(get_area_under_graph(axes, graph, x_range, .01))
         self.wait(2)
