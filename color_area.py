@@ -36,6 +36,7 @@ class ColorArea(Scene):
         )
         label = axes.get_graph_label(graph, "\\sin(x)")
 
+        self.add(graph)
         self.play(
             ShowCreation(graph),
             FadeIn(label, RIGHT),
