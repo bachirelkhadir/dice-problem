@@ -116,7 +116,7 @@ class Sumkxk(TextScene):
 class CaptionLLN(TextScene):
     text = Text("Law of Large Numbers", t2c={"Large": YELLOW})
 
-class WhatIsMedia(TextScene):
+class WhatIsMedian(TextScene):
     def construct(self):
         t2c = {"throws": YELLOW,
                "6": BLUE_A,
