@@ -20,7 +20,7 @@ class ColorArea(Scene):
             color=BLUE,
         )
         label = axes.get_graph_label(graph, "\\sin(x)")
-        print(axes.get_riemann_rectangles(label,dx=0.5))
+        #print(axes.get_riemann_rectangles(label,dx=0.5))
 
         self.play(
             ShowCreation(graph),
