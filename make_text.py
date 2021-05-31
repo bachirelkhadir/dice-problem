@@ -107,7 +107,7 @@ class Sumkxk(TextScene):
         sigma = VGroup(sigma, sigma_idx)
 
         summand = Tex(r" {{k}} x^{{k}}", tex_to_color_map={"k": YELLOW})
-        hstack([sigma, summand], SMALL_BUFF)
+        hstack([sigma, summand], MED_SMALL_BUFF)
 
         self.add(sigma, summand)
 
