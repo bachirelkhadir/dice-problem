@@ -101,6 +101,6 @@ class LLNWithCoins(Scene):
         for coin in heads[1:]:
             heads_group.add(coin)
         brace1 = Brace(heads_group)
-        fifty = Tex(r"\approx 50%").next_to(brace1, DOWN)
+        fifty = Tex(r"\approx 50\%").next_to(brace1, DOWN)
         brace1 = VGroup(brace1, fifty)
         self.add(brace1)
