@@ -25,7 +25,8 @@ def get_area_under_graph(ax, graph, x_range, dx):
 
 class ColorArea(Scene):
     def construct(self):
-        axes = Axes((-4, 4), (-.1, 1))
+        x_range = (-4, 4)
+        axes = Axes(x_range, (-.1, 1))
         axes.add_coordinate_labels()
 
         self.play(Write(axes, lag_ratio=0.01, run_time=1))
@@ -41,5 +42,5 @@ class ColorArea(Scene):
             ShowCreation(graph),
             FadeIn(label, RIGHT),
         )
-        self.add(get_area_under_graph(axes, graph, (-1, 1), .01))
+        self.add(get_area_under_graph(axes, graph, x_range, .01))
         self.wait(2)
