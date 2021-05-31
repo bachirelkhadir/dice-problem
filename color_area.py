@@ -4,7 +4,7 @@ from manimlib import *
 import numpy as np
 
 
-COLOR_BAR = BLUE_A
+COLOR_BAR = YELLOW
 COLOR_K = YELLOW
 
 
