@@ -119,7 +119,7 @@ class ApproximationGetsBetter(Scene):
         self.add(num_games, inc)
         self.wait()
 
-        approx = Text("approximation error")
+        approx = Text("approximation error").shift(RIGHT)
         dec = inc.copy()
         dec.rotate(-2*angle)
         goes_to_0 = Tex(r"\longrightarrow 0")
