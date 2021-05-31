@@ -105,3 +105,4 @@ class LLNWithCoins(Scene):
         brace1 = VGroup(brace1, fifty)
         self.add(brace1)
         brace2 = brace1.copy().shift(brace1.get_center()[0]*RIGHT)
+        self.add(brace2)
