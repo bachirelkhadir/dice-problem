@@ -116,7 +116,8 @@ class ApproximationGetsBetter(Scene):
         self.add(num_games, inc)
 
         approx = Text("Approximation error")
-        dec = inc.copy().flip()
+        dec = inc.copy()
+        dec.flip()
         hstack([approx, dec])
         self.add(approx, dec)
         pass
