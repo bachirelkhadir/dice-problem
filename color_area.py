@@ -7,8 +7,12 @@ import numpy as np
 COLOR_BAR = BLUE_A
 COLOR_K = YELLOW
 
-def get_area_under_graph(ax, graph):
-    return Rectangle()
+def get_area_under_graph(ax, graph, x_range, dx):
+    rects = []
+    for x in np.linspace(*x_range, dx):
+
+        axes.i2gp(x, graph) axes.c2p(x, 0)
+        rect = Rectangle()
 
 
 class ColorArea(Scene):
