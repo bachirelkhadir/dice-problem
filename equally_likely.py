@@ -13,4 +13,8 @@ class EquallyLikely(Scene):
         dice =[
             make_dice_face(i) for i in range(1, 7)
         ]
+        hstack(dice)
+        probs = [
+            Tex(r"\frac 1 6")
+        ]
         self.add(*dice)
