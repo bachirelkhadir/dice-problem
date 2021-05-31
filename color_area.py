@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 from manimlib import *
+import numpy as np
+
 
 COLOR_BAR = BLUE_A
 COLOR_K = YELLOW
@@ -8,7 +10,7 @@ COLOR_K = YELLOW
 
 class ColorArea(Scene):
     def construct(self):
-        axes = Axes((-3, 10), (-1, 8))
+        axes = Axes((-4, 4), (-1, 8))
         axes.add_coordinate_labels()
 
         self.play(Write(axes, lag_ratio=0.01, run_time=1))
