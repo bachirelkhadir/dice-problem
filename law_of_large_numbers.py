@@ -110,7 +110,7 @@ class LLNWithCoins(Scene):
 
 class ApproximationGetsBetter(Scene):
     def construct(self):
-        angle = PI/6
+        angle = PI/3
         num_games = Text("# games").to_edge(LEFT)
         inc = Arrow().scale(.7).rotate(angle)
         hstack([num_games, inc], MED_SMALL_BUFF)
