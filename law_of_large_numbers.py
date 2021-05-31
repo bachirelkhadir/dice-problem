@@ -111,16 +111,15 @@ class LLNWithCoins(Scene):
 class ApproximationGetsBetter(Scene):
     def construct(self):
         angle = PI/3
-        num_games = Text("# games").to_edge(LEFT)
+        num_games = Text("# games").shift(2*RIGHT)
         inc = Arrow().scale(.7).rotate(angle)
         goes_to_infty = Tex(r"\infty")
         hstack([num_games, inc], MED_LARGE_BUFF)
         goes_to_infty.next_to(inc, RIGHT).shift(RIGHT/2)
-        self.add(num_games, inc)
         VGroup(num_games, inc, goes_to_infty).set_color(WHITE)
-        self.wait()
 
-        approx = Text("approximation error").shift(2*RIGHT)
+
+        approx = Text("approximation error").to_edge(LEFT)
         dec = inc.copy()
         dec.rotate(-2*angle)
         goes_to_0 = Tex(r"0")
@@ -128,14 +127,17 @@ class ApproximationGetsBetter(Scene):
         goes_to_0.next_to(dec, RIGHT).shift(RIGHT/2)
 
         VGroup(approx, dec, goes_to_0).set_color(BLUE_A)
-        self.add(approx, dec)
 
+        self.add(approx, dec)
+        self.wait()
+        self.add(num_games, inc)
         self.wait()
 
+
+        self.play(dec.animate.rotate(angle),
+                  Write(goes_to_0))
+        self.wait()
         self.play(
             inc.animate.rotate(-angle),
             Write(goes_to_infty))
-        self.wait()
-        self.play(dec.animate.rotate(angle),
-                  Write(goes_to_0))
         self.wait()
