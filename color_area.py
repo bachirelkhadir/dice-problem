@@ -31,7 +31,7 @@ class ColorArea(Scene):
         self.play(Write(axes, lag_ratio=0.01, run_time=1))
 
         graph = axes.get_graph(
-            lambda x: np.exp(-x*x/2)+2,
+            lambda x: np.exp(-x*x/2),
             color=BLUE,
         )
         label = axes.get_graph_label(graph, "\\sin(x)")
