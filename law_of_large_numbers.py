@@ -112,5 +112,6 @@ class ApproximationGetsBetter(Scene):
     def construct(self):
         num_games = Text("# games")
         increases = Arrow().rotate(PI/6)
+        hstack([num_games, increases])
         self.add(num_games, increases)
         pass
