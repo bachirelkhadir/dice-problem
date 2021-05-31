@@ -117,7 +117,7 @@ class ApproximationGetsBetter(Scene):
 
         approx = Text("Approximation error")
         dec = inc.copy()
-        dec.rotate(PI/2)
+        dec.rotate(PI)
         hstack([approx, dec])
         self.add(approx, dec)
         pass
