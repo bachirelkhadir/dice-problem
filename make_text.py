@@ -98,5 +98,15 @@ class Conditional(TextScene):
             self.play(self.animate(t))
             self.wait()
 
+class Sumkxk(TextScene):
+    def construct(self):
+
+        sigma = Tex(r"\sum_{\phantom{k}=1}^\infty").scale(TEXT_SCALE)
+        sigma_idx = Tex(r"k", color=YELLOW).scale(.7).scale(TEXT_SCALE)
+        sigma_idx.move_to(sigma.get_corner(DOWN)).shift(UP/10+.19*LEFT)
+        sigma = VGroup(sigma, sigma_idx)
+        self.add(sigma)
+
+    
 class Current(ThirdWayQuestion):
     pass
