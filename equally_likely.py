@@ -30,7 +30,7 @@ class Not6Then6(Scene):
     CONFIG = {
         "stroke_color": YELLOW_D,
         "stroke_width": 10,
-        "num_not_six": 2,
+        "num_not_six": 1,
     }
 
     def construct(self):
