@@ -30,4 +30,4 @@ class Not6Then6(Scene):
 
     def construct(self):
         dice = make_dice_face(6)
-        self.add(Cross())
+        self.add(Cross(dice))
