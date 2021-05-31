@@ -110,6 +110,7 @@ class Sumkxk(TextScene):
         hstack([sigma, summand], MED_SMALL_BUFF)
 
         self.play(Write(VGroup(sigma, summand)))
+        self.wait()
 
     
 class Current(ThirdWayQuestion):
