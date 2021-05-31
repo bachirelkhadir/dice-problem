@@ -117,7 +117,7 @@ class ApproximationGetsBetter(Scene):
         hstack([num_games, inc], MED_LARGE_BUFF)
         goes_to_infty.next_to(inc, RIGHT).shift(RIGHT/2)
         self.add(num_games, inc)
-        VGroup(num_games, inc, goes_to_infty).set_color(MAROON_A)
+        VGroup(num_games, inc, goes_to_infty).set_color(WHITE)
         self.wait()
 
         approx = Text("approximation error").shift(2*RIGHT)
@@ -127,7 +127,7 @@ class ApproximationGetsBetter(Scene):
         hstack([approx, dec], MED_LARGE_BUFF)
         goes_to_0.next_to(dec, RIGHT).shift(RIGHT/2)
 
-        VGroup(approx, dec, goes_to_0).set_color(YELLOW_A)
+        VGroup(approx, dec, goes_to_0).set_color(BLUE_A)
         self.add(approx, dec)
 
         self.wait()
