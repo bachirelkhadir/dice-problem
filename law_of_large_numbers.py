@@ -105,5 +105,5 @@ class LLNWithCoins(Scene):
         brace1 = VGroup(brace1, fifty)
         brace2 = brace1.copy().shift(-2*brace1.get_center()[0]*RIGHT)
 
-        self.play(FradeIn(VGroup(brace1, brace2)))
+        self.play(FadeIn(VGroup(brace1, brace2)))
         self.wait()
