@@ -13,6 +13,7 @@ class EquallyLikely(Scene):
         dice =[
             make_dice_face(i) for i in range(1, 7)
         ]
+        dice[0].to_edge(LEFT)
         hstack(dice)
         probs = [
             Tex(r"\frac 1 6").next_to(d, UP)
