@@ -55,7 +55,7 @@ class TwoSixes(TextScene):
         self.text = text = VGroup(
             Text("How many throws does it take,", t2c=t2c),
             Text("on average,", t2c=t2c),
-            Text("to get a two 6s in a row?", t2c=t2c))
+            Text("to get two 6s in a row?", t2c=t2c))
         text[1].shift(DOWN)
         text[2].shift(2*DOWN)
 
