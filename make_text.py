@@ -136,7 +136,7 @@ class UnexpectedConsequence(TextScene):
     text = Text("unexpected consequence")
 
 class Thankyou(TextScene):
-    text = Text("Thanks for watching\\Share you answers in the comments")
+    text = Text(r"Thanks for watching\\Share you answers in the comments")
 
 class Current(ThirdWayQuestion):
     pass
