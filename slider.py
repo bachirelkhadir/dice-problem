@@ -91,6 +91,6 @@ class BouncingSolution(Slider):
         dt = 1. / 60
         sol.velocity = 0*UP
         sol.acceleration = 10*DOWN
-        sol.add_updater(bounce_update)
         self.play(FadeOut(VGroup(three_sol[0], three_sol[-1])))
+        sol.add_updater(bounce_update)
         self.wait(3)
