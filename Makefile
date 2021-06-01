@@ -1,17 +1,9 @@
-##
-# Makefile
+# Each section below contains the command for
+# (i) generating an animation as a transparent .mov file with manim
+# (ii) Converting the .mov file to a list of trasparent pngs
 #
-# @file
-# @version 0.1
 
 
-
-run:
-	gnome-terminal -e "manimgl main.py" --title="gnome-terminal manim"
-
-
-idice:
-	gnome-terminal -e "manimgl dice.py" --title="gnome-terminal manim"
 
 
 vrec:
@@ -108,13 +100,7 @@ captions:
 
 unexpected:
 	manimgl make_text.py UnexpectedConsequence -wt && cd output/videos/ && bash mov_to_pngs.sh UnexpectedConsequence
+
 thanks:
 	manimgl make_text.py Thankyou -wt && cd output/videos/ && bash mov_to_pngs.sh Thankyou
 
-remote:
-	bash remote_compile.sh
-
-stop:
-	echo "Stopped"
-
-# end
