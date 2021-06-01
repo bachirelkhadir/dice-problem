@@ -90,3 +90,4 @@ class BouncingSolution(Slider):
         sol.velocity = 0*UP
         sol.add_updater(bounce_update)
         self.wait()
+        self.wait()
