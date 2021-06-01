@@ -73,7 +73,7 @@ def bounce_update(ball, dt, floor=0, eps=0.6):
 
     #Bounce off ground and roof
     if ball.get_bottom()[1] <= floor:
-        ball.shift(-get_bottom())
+        ball.shift(-ball.get_bottom())
         ball.velocity[1] = -(eps*ball.velocity[1])
 
 class BouncingSolution(Slider):
