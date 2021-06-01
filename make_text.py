@@ -137,7 +137,7 @@ class UnexpectedConsequence(TextScene):
 
 class Thankyou(TextScene):
     text = VGroup(*vstack([Text(r"Thanks for watching",)
-                        Text("Share you answers in the comments")])
+                        Text("Share you answers in the comments")]))
 
 class Current(ThirdWayQuestion):
     pass
