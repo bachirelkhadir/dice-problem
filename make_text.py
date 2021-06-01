@@ -133,6 +133,6 @@ class WhatIsMedian(TextScene):
 
 
 class UnexpectedConsequence(TextScene):
-    text = Text("As an unexpected consequence")
+    text = Text(" unexpected consequence")
 class Current(ThirdWayQuestion):
     pass
