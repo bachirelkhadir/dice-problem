@@ -84,7 +84,7 @@ class BouncingSolution(Slider):
     def construct(self):
         t2c = {
             "3": COLOR1,
-            idx_sol: WHITE, # hack to isolate
+            str(self.idx_sol): WHITE, # hack to isolate
             "1": COLOR1,
             "2": COLOR2
         }
