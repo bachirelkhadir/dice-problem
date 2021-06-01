@@ -105,6 +105,6 @@ class BouncingSolution(Slider):
         sol.add_updater(bounce_update)
         self.wait(3)
 
-        idx = Tex(str(self.idx_sol)).next_to(sol)
+        idx = Tex(str(self.idx_sol)).scale(SCALE).next_to(sol).set_color(COLOR1)
         self.play(FadeIn(idx))
         self.wait()
