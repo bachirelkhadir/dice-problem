@@ -132,5 +132,7 @@ class WhatIsMedian(TextScene):
             self.wait()
 
 
+class UnexpectedConsequence(TextScene):
+    text = Text("As an unexpected consequence")
 class Current(ThirdWayQuestion):
     pass
