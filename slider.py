@@ -72,7 +72,6 @@ def bounce_update(ball, dt):
     ball.velocity = ball.velocity + ball.acceleration * dt
     ball.shift(ball.velocity * dt)
     #Bounce off ground and roof
-    print(ball.get_bottom())
     if ball.get_bottom()[1] <= 0:
         ball.velocity[1] =- ball.velocity[1]
 
