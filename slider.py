@@ -67,13 +67,13 @@ class Slider(Scene):
         self.wait()
 
 
-def bounce_update(ball, dt):
+def bounce_update(ball, dt, eps=0.6):
     ball.acceleration = np.array((0, -5, 0))
     ball.velocity = ball.velocity + ball.acceleration * dt
     ball.shift(ball.velocity * dt)
     #Bounce off ground and roof
     if ball.get_bottom()[1] <= 0:
-        ball.velocity[1] = -ball.velocity[1]
+        ball.velocity[1] = -eps*ball.velocity[1]
 
 class BouncingSolution(Slider):
     def construct(self):
