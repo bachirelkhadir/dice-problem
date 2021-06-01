@@ -65,3 +65,18 @@ class Slider(Scene):
         self.add(elegant)
 
         self.wait()
+
+
+class BouncingSolution(Slider):
+    def construct(self):
+        t2c = {
+            "3": COLOR1
+        }
+        three_sol = Text("3 Solutions", t2c=t2c).scale(SCALE).to_corner(UP)
+
+        computational = Text("Straightforward,\ncomputational", color=COLOR2).scale(.6)
+        elegant = Text("Elegant", color=COLOR3).scale(.6)
+
+
+        self.add(three_sol)
+        self.wait()
