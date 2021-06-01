@@ -75,9 +75,6 @@ class BouncingSolution(Slider):
         }
         three_sol = Text("3 Solutions", t2c=t2c).scale(SCALE).to_corner(UP)
 
-        computational = Text("Straightforward,\ncomputational", color=COLOR2).scale(.6)
-        elegant = Text("Elegant", color=COLOR3).scale(.6)
-
-
-        self.add(three_sol[1:-1])
+        sol = three_sol[1:-1])
+        self.add(sol)
         self.wait()
