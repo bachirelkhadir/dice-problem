@@ -142,8 +142,8 @@ class Thankyou(TextScene):
             "Thanks": YELLOW,
             "comments": BLUE_A,
         }
-        text =vstack([Text(r"Thanks for watching"),
-                        Text("Share you answers in the comments!")])
+        text =vstack([Text(r"Thanks for watching", t2c=t2c),
+                        Text("Share you answers in the comments!", t2c=t2c)])
         for t in text:
             self.add(t)
             self.wait()
