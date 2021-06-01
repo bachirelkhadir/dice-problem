@@ -75,7 +75,42 @@ def bounce_update(ball, dt, floor=0, eps=0.6):
         ball.shift(-ball.get_bottom()[1]*UP)
         ball.velocity[1] = -(eps*ball.velocity[1])
 
-class BouncingSolution(Slider):
+class BouncingLabel(Scene):
+    CONFIG = {
+        "show_sol_3": True,
+        "idx_sol": 1,
+        "label": "Solution"
+    }
+    def construct(self):
+        t2c = {
+            "3": COLOR1,
+            str(self.idx_sol): WHITE, # hack to isolate
+            "1": COLOR1,
+            "2": COLOR2
+        }
+        three_sol = Text(f"3 {self.label}s", t2c=t2c).scale(SCALE).to_corner(UP)
+        three_sol = VGroup(*three_sol)
+        sol = VGroup(*three_sol[1:-1]).copy()
+
+        if self.show_sol_3:
+            self.add(*three_sol)
+        self.add(sol)
+        #self.add(sol)
+        #self.wait()
+
+        dt = 1. / 60
+        sol.velocity = 0*UP
+        sol.acceleration = 10*DOWN
+        self.play(FadeOut(three_sol), run_time=.5)
+        sol.add_updater(bounce_update)
+        self.wait(3)
+
+        idx = Text(str(self.idx_sol)).scale(SCALE).next_to(sol).set_color(COLOR1)
+        self.play(FadeIn(idx))
+        self.wait()
+
+
+class BouncingSolution1(BouncingLabel):
     CONFIG = {
         "show_sol_3": True,
         "idx_sol": 1,
