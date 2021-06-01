@@ -78,3 +78,12 @@ class BouncingSolution(Slider):
         sol = three_sol[1:-1]
         self.add(sol)
         self.wait()
+        dt =self.frame_duration / number_of_computations_per_frame
+        ball =self.ball
+        box =self.box
+        for i inrange(0,number_of_computations_per_frame):#Update ball
+            ball.acceleration = np.array((0, -5, 0))
+            ball.velocity = ball.velocity + ball.acceleration * dt                ball.shift(ball.velocity * dt)
+            #Bounce off ground and roof
+            if ball.get_bottom() <= box.bottom or ball.get_top() >=box.top:
+                ball.velocity[1] =- ball.velocity[1]
