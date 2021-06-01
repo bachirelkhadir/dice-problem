@@ -138,8 +138,12 @@ class UnexpectedConsequence(TextScene):
 class Thankyou(TextScene):
 
     def construct(self):
+        t2c = {
+            "Thanks": YELLOW,
+            "comments": BLUE_A,
+        }
         text =vstack([Text(r"Thanks for watching"),
-                        Text("Share you answers in the comments")])
+                        Text("Share you answers in the comments!")])
         for t in text:
             self.add(t)
             self.wait()
