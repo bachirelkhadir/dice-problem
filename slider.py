@@ -70,7 +70,6 @@ class Slider(Scene):
 def bounce_update(ball, dt, floor=0, eps=0.6):
     ball.velocity = ball.velocity + ball.acceleration * dt
     ball.shift(ball.velocity * dt)
-
     #Bounce off ground and roof
     if ball.get_bottom()[1] <= floor:
         ball.shift(-ball.get_bottom()[1]*UP)
