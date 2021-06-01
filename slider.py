@@ -101,7 +101,8 @@ class BouncingLabel(Scene):
         dt = 1. / 60
         sol.velocity = 0*UP
         sol.acceleration = 10*DOWN
-        self.play(FadeOut(three_sol), run_time=.5)
+        if self.show_sol_3:
+            self.play(FadeOut(three_sol), run_time=.5)
         sol.add_updater(bounce_update)
         self.wait(3)
 
