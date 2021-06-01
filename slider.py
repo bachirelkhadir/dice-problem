@@ -67,6 +67,14 @@ class Slider(Scene):
         self.wait()
 
 
+def bounce_update(ball, dt):
+    ball.acceleration = np.array((0, -5, 0))
+    ball.velocity = ball.velocity + ball.acceleration * dt
+    ball.shift(ball.velocity * dt)
+    #Bounce off ground and roof
+    if ball.get_bottom() <= 0:
+        ball.velocity[1] =- ball.velocity[1]
+
 class BouncingSolution(Slider):
     def construct(self):
         t2c = {
@@ -78,12 +86,7 @@ class BouncingSolution(Slider):
         sol = three_sol[1:-1]
         self.add(sol)
         self.wait()
-        dt =self.frame_duration / number_of_computations_per_frame
-        ball =self.ball
-        box =self.box
-        for i inrange(0,number_of_computations_per_frame):#Update ball
-            ball.acceleration = np.array((0, -5, 0))
-            ball.velocity = ball.velocity + ball.acceleration * dt                ball.shift(ball.velocity * dt)
-            #Bounce off ground and roof
-            if ball.get_bottom() <= box.bottom or ball.get_top() >=box.top:
-                ball.velocity[1] =- ball.velocity[1]
+        dt = 1. / 60
+        sol.velocity = 0*UP
+        sol.add_updater(bounce_update)
+        self.wait()
