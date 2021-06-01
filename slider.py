@@ -83,7 +83,7 @@ class BouncingSolution(Slider):
         }
         three_sol = Text("3 Solutions", t2c=t2c).scale(SCALE).to_corner(UP)
         three_sol = VGroup(*three_sol)
-        sol = three_sol[1:-1]
+        sol = VGroup(*three_sol[1:-1])
         self.add(*three_sol)
         #self.add(sol)
         #self.wait()
