@@ -79,5 +79,5 @@ class BouncingSolution(Slider):
         elegant = Text("Elegant", color=COLOR3).scale(.6)
 
 
-        self.add(three_sol)
+        self.add(three_sol[:2])
         self.wait()
