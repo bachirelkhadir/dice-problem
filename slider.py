@@ -85,7 +85,7 @@ class BouncingSolution(Slider):
 
         sol = three_sol[1:-1]
         self.add(three_sol)
-        self.wait()
+        #self.wait()
 
         dt = 1. / 60
         sol.velocity = 0*UP
