@@ -141,6 +141,7 @@ class Thankyou(TextScene):
         t2c = {
             "Thanks": YELLOW,
             "comments": BLUE_A,
+            "Share": RED_A,
         }
         text =vstack([Text(r"Thanks for watching", t2c=t2c),
                         Text("Share you answers in the comments!", t2c=t2c)])
