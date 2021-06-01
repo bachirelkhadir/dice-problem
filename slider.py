@@ -134,7 +134,7 @@ class BouncingSolution3(BouncingLabel):
 
 class BouncingQuestion1(BouncingLabel):
     CONFIG = {
-        "show_sol_3": True,
+        "show_sol_3": False,
         "idx_sol": 1,
         "label": "Question"
     }
